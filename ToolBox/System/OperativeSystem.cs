@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ToolBox
+namespace ToolBox.System
 {
     public static class OperativeSystem
     {
