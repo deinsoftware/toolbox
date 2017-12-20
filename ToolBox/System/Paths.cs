@@ -34,7 +34,7 @@ namespace ToolBox.System
             return path.Replace(@"/",@"\");
         }
 
-        public static string Combine(params string[] paths)
+        public static string Combine(params string[] paths) 
         {
             string path = Path.Combine(paths);
             path = _cmd.GetUserFolder(path);
@@ -45,7 +45,7 @@ namespace ToolBox.System
             try
             {
                 List<string> list = new List<string>();
-                list = new List<string>(Directory.EnumerateDirectories(path, filter).OrderBy(name => name));
+                list = new List<string>(Directory.EnumerateDirectories(path, (filter ?? "")).OrderBy(name => name));
                 return list;
             }
             catch (Exception){

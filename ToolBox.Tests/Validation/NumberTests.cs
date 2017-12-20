@@ -4,11 +4,11 @@ using ToolBox;
 
 namespace ToolBox.Validations.Tests
 {
-    public class NumericTests
+    public class NumberTests
     {
-        public NumericTests()
+        public NumberTests()
         {
-
+            //Arrange
         }
 
         [Theory]
@@ -39,7 +39,7 @@ namespace ToolBox.Validations.Tests
         [InlineData(1, 2, 3)]
         [InlineData(1, 2, 2)]
         [InlineData(2, 2, 3)]
-        public void IsNumber_WhenNumberIsOnRange_ReturnsTrue(int min, int value, int max)
+        public void IsOnRange_WhenNumberIsOnRange_ReturnsTrue(int min, int value, int max)
         {
             //Act
             var result = Validations.Number.IsOnRange(min, value, max);
@@ -50,7 +50,7 @@ namespace ToolBox.Validations.Tests
         [Theory]
         [InlineData(1, 0, 2)]
         [InlineData(1, 3, 2)]
-        public void IsNumber_WhenNumberIsOutOfRange_ReturnsFalse(int min, int value, int max)
+        public void IsOnRange_WhenNumberIsOutOfRange_ReturnsFalse(int min, int value, int max)
         {
             //Act
             var result = Validations.Number.IsOnRange(min, value, max);

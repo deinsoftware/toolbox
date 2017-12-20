@@ -7,15 +7,17 @@ namespace ToolBox.Validations.Tests
     public class WebTests
     {
         public WebTests(){
-
+            //Arrange
         }
 
         [Theory]
-        [InlineData("http://www.dein.com.co")]
-        [InlineData("https://www.dein.com.co")]
-        [InlineData("http://www.dein.com.co/index.html")]
-        [InlineData("http://www.dein.com.co/Controller")]
-        [InlineData("http://www.dein.com.co/Controller/Action")]
+        [InlineData("http://www.web.com.co")]
+        [InlineData("https://www.web.com.co")]
+        [InlineData("http://www.web.com.co/index.html")]
+        [InlineData("http://www.web.com.co/index.html?paramter=1")]
+        [InlineData("http://www.web.com.co/index.html?paramter=1&parameter=2")]
+        [InlineData("http://www.web.com.co/Controller")]
+        [InlineData("http://www.web.com.co/Controller/Action")]
         public void IsUrl_WhenIsValidUrl_ReturnsTrue(string value)
         {
             //Act
@@ -25,7 +27,7 @@ namespace ToolBox.Validations.Tests
         }
 
         [Theory]
-        [InlineData("www.dein.com.co")]
+        [InlineData("www.web.com.co")]
         [InlineData("index.html")]
         [InlineData("D:/web/index.html")]
         public void IsUrl_WhenIsInvalidUrl_ReturnsFalse(string value)

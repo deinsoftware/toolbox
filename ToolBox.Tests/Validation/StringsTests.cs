@@ -7,13 +7,13 @@ namespace ToolBox.Validations.Tests
     public class StringsTests
     {
         public StringsTests(){
-
+            //Arrange
         }
 
         [Theory]
         [InlineData("a")]
         [InlineData("a", "b")]
-        public void IsUrl_WhenIsValidInput_ReturnsFalse(params string[] values)
+        public void SomeNullOrEmpty_WhenIsValidInput_ReturnsFalse(params string[] values)
         {
             //Act
             var result = Validations.Strings.SomeNullOrEmpty(values);
@@ -26,7 +26,7 @@ namespace ToolBox.Validations.Tests
         [InlineData("", "a")]
         [InlineData("a", "")]
         [InlineData("", "a", "")]
-        public void IsUrl_WhenIsInvalidInput_ReturnsTrue(params string[] values)
+        public void SomeNullOrEmpty_WhenIsInvalidInput_ReturnsTrue(params string[] values)
         {
             //Act
             var result = Validations.Strings.SomeNullOrEmpty(values);

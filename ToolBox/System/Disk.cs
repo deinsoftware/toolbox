@@ -27,6 +27,7 @@ namespace ToolBox.System
                     break;
             }
         }
+        
         private static bool IsFiltered(List<string> filter, string file)
         {
             try

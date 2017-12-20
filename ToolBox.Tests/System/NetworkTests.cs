@@ -8,7 +8,13 @@ namespace ToolBox.System.Tests
     {
         public NetworkTests()
         {
+            //Arrange
+        }
 
+        [Fact(Skip="It's Ssystem Functionality")]
+        public void GetLocalIPv4_WhenCalls_NotImplemented()
+        {
+            throw new NotImplementedException();
         }
 
         [Fact]

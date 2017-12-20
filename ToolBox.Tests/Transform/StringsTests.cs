@@ -8,7 +8,7 @@ namespace ToolBox.Transform.Tests
     {
         public StringsTests()
         {
-
+            //Arrange
         }
 
         [Theory]
