@@ -4,6 +4,7 @@ using ToolBox;
 using ToolBox.System.Command;
 using System.Collections.Generic;
 using System.Collections;
+using System.IO;
 
 namespace ToolBox.System.Tests
 {
@@ -99,13 +100,13 @@ namespace ToolBox.System.Tests
         public void GetDirectories_WhenCalls_ReturnsDirectoriesList(string[] expectedDirectories, string filter)
         {
             //Arrange
-            string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "Test");
             List<string> expectedResult = new List<string>();
             foreach (var directory in expectedDirectories)
             {
                 expectedResult.Add(System.Paths.Combine(_userFolder, "Test", directory));
             }
+            string path = String.Empty;
+            path = System.Paths.Combine(_userFolder, "Test");
 
             //Act
             var result = System.Paths.GetDirectories(path, filter);
@@ -113,10 +114,94 @@ namespace ToolBox.System.Tests
             Assert.Equal(expectedResult, result);
         }
 
-        [Theory(Skip="Not implemented test")]
-        public void GetFiles_WhenCalls_ReturnsFilesList(string[] expectedFiles, string filter)
+        [Fact]
+        public void GetDirectories_WhenPathNotFound_ReturnsException()
         {
-            throw new NotImplementedException();
+            //Arrange
+            string path = String.Empty;
+            path = System.Paths.Combine(_userFolder, "NotExist");
+
+            //Act
+            Action result = () => System.Paths.GetDirectories(path, null);
+            //Assert
+            Assert.Throws<DirectoryNotFoundException>(result);
+        }
+
+        [Fact]
+        public void GetDirectories_WhenThereIsNoDirectories_ReturnsEmpty()
+        {
+            //Arrange
+            string path = String.Empty;
+            path = System.Paths.Combine(_userFolder, "Test");
+
+            //Act
+            var result = System.Paths.GetDirectories(path, "FilterNotExists");
+            //Assert
+            Assert.Empty(result);
+        }
+
+        [Theory]
+        [InlineData(
+            "Folder3",
+            new[] {
+                "File3_1.csv",
+                "File3_2.csv",
+                "File3_3.csv"
+            }
+            , "*.csv")
+        ]
+        [InlineData(
+            "Folder3",
+            new[] {
+                "File3_1.csv",
+                "File3_1.txt",
+                "File3_2.csv",
+                "File3_2.txt",
+                "File3_3.csv",
+                "File3_3.txt"
+            }
+            , null)
+        ]
+        public void GetFiles_WhenCalls_ReturnsFileList(string path, string[] expectedFiles, string extensionFilter)
+        {
+            //Arrange
+            List<string> expectedResult = new List<string>();
+            foreach (var file in expectedFiles)
+            {
+                expectedResult.Add(System.Paths.Combine(_userFolder, "Test", path, file));
+            }
+            path = System.Paths.Combine(_userFolder, "Test", path);
+
+            //Act
+            var result = System.Paths.GetFiles(path, extensionFilter);
+            //Assert
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Fact]
+        public void GetFiles_WhenPathNotFound_ReturnsException()
+        {
+            //Arrange
+            string path = String.Empty;
+            path = System.Paths.Combine(_userFolder, "NotExist");
+
+            //Act
+            Action result = () => System.Paths.GetFiles(path, null);
+            //Assert
+            Assert.Throws<DirectoryNotFoundException>(result);
+        }
+
+        [Fact]
+        public void GetFiles_WhenThereIsNoFiles_ReturnsEmpty()
+        {
+            //Arrange
+            string path = String.Empty;
+            path = System.Paths.Combine(_userFolder, "Test");
+
+            //Act
+            var result = System.Paths.GetFiles(path, "FilterNotExists");
+            //Assert
+            Assert.Empty(result);
         }
     }
 }
