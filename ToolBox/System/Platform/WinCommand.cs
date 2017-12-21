@@ -11,7 +11,7 @@ namespace ToolBox.System.Command
         public string PathNormalizer(string path) {
             try
             {
-                return path.ToSlash();
+                return path.ToBackslash();
             }
             catch (Exception)
             {
@@ -21,7 +21,7 @@ namespace ToolBox.System.Command
         public string GetUserFolder(string path) {
             try
             {
-                return path.Replace("~",$"{Env.Get("USERPROFILE")}").ToSlash();
+                return path.Replace("~",$"{Env.Get("USERPROFILE")}").ToBackslash();
             }
             catch (Exception)
             {

@@ -63,10 +63,10 @@ namespace ToolBox.System.Tests
             switch (System.Platform.GetCurrent())
             {
                 case "win":
-                    expectedResult = _userFolder + @"/" + expectedWinResult;
+                    expectedResult = _userFolder + @"\" + expectedWinResult;
                     break;
                 case "mac":
-                    expectedResult = _userFolder + @"\" + expectedWinResult;
+                    expectedResult = _userFolder + @"/" + expectedMacResult;
                     break;
             }
 
@@ -77,43 +77,40 @@ namespace ToolBox.System.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetData))]
-        public void GetDirectories_WhenCalls_ReturnsDirectoriesList(List<string> expectedResult, string filter)
+        [InlineData(
+            new[] {
+                "_Folder1",
+                "_Folder2",
+                "_Folder3"
+            }
+            , "_*")
+        ]
+        [InlineData(
+            new[] {
+                "_Folder1",
+                "_Folder2",
+                "_Folder3",
+                "Folder1",
+                "Folder2",
+                "Folder3"
+            }
+            , null)
+        ]
+        public void GetDirectories_WhenCalls_ReturnsDirectoriesList(string[] expectedDirectories, string filter)
         {
             //Arrange
             string path = String.Empty;
             path = System.Paths.Combine(_userFolder, "Test");
+            List<string> expectedResult = new List<string>();
+            foreach (var directory in expectedDirectories)
+            {
+                expectedResult.Add(System.Paths.Combine(_userFolder, "Test", directory));
+            }
 
             //Act
             var result = System.Paths.GetDirectories(path, filter);
             //Assert
             Assert.Equal(expectedResult, result);
-        }
-
-        public static IEnumerable<object[]> GetData()
-        {
-            yield return new object[]
-            {
-                new List<string> {
-                    System.Paths.Combine(_userFolder, "Test", "_Folder1"), 
-                    System.Paths.Combine(_userFolder, "Test", "_Folder2"), 
-                    System.Paths.Combine(_userFolder, "Test", "_Folder3")
-                },
-                "_*"
-            };
-
-            yield return new object[]
-            {
-                new List<string> {
-                    System.Paths.Combine(_userFolder, "Test", "_Folder1"), 
-                    System.Paths.Combine(_userFolder, "Test", "_Folder2"), 
-                    System.Paths.Combine(_userFolder, "Test", "_Folder3"), 
-                    System.Paths.Combine(_userFolder, "Test",  "Folder1"), 
-                    System.Paths.Combine(_userFolder, "Test",  "Folder2"), 
-                    System.Paths.Combine(_userFolder, "Test",  "Folder3")
-                },
-                null
-            };
         }
     }
 }

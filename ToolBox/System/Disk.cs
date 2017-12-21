@@ -28,17 +28,19 @@ namespace ToolBox.System
             }
         }
         
-        private static bool IsFiltered(List<string> filter, string file)
+        private static bool IsFiltered(List<string> extensionFilter, string file)
         {
             try
             {
                 bool valid = false;
-                if (filter == null)
+                if (extensionFilter == null)
                 {
                     valid = true;
                 } else 
                 {
-                    valid = filter.Any(f => file.EndsWith(f, StringComparison.OrdinalIgnoreCase));
+                    valid = extensionFilter.Any(
+                        f => file.EndsWith(f, StringComparison.OrdinalIgnoreCase)
+                    );
                 }
                 return valid;
             }
@@ -47,7 +49,7 @@ namespace ToolBox.System
             }
         }
 
-        public static void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> filter = null)
+        public static void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
         {
             try
             {
@@ -60,7 +62,7 @@ namespace ToolBox.System
 
                 var files = Directory
                     .GetFiles(sourcePath, "*.*", SearchOption.AllDirectories)
-                    .Where(f => IsFiltered(filter, f));
+                    .Where(f => IsFiltered(extensionFilter, f));
                 Parallel.ForEach(files, newPath =>
                 {
                     File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), overWrite);

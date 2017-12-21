@@ -41,11 +41,11 @@ namespace ToolBox.System
             return path;
         }
 
-        public static List<string> GetDirectories(this string path, string filter){
+        public static List<string> GetDirectories(this string path, string filter = null){
             try
             {
                 List<string> list = new List<string>();
-                list = new List<string>(Directory.EnumerateDirectories(path, (filter ?? "")).OrderBy(name => name));
+                list = new List<string>(Directory.EnumerateDirectories(path, (filter ?? "*")).OrderBy(name => name));
                 return list;
             }
             catch (Exception){
@@ -53,11 +53,11 @@ namespace ToolBox.System
             }
         }
     
-        public static List<string> GetFiles(this string path, string filter){
+        public static List<string> GetFiles(this string path, string filter = null){
             try
             {
                 List<string> files = new List<string>();
-                files = new List<string>(Directory.EnumerateFiles(path, filter).OrderBy(name => name));
+                files = new List<string>(Directory.EnumerateFiles(path, (filter ?? "*")).OrderBy(name => name));
                 return files;
             }
             catch (Exception){
