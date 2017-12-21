@@ -11,7 +11,7 @@ namespace ToolBox.System.Tests
     {
         public PlatformTests()
         {
-            
+            //Arrange
         }
 
         [Fact(Skip="It's System Functionality")]
