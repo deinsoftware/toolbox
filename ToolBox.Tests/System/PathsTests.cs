@@ -112,5 +112,11 @@ namespace ToolBox.System.Tests
             //Assert
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory(Skip="Not implemented test")]
+        public void GetFiles_WhenCalls_ReturnsFilesList(string[] expectedFiles, string filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

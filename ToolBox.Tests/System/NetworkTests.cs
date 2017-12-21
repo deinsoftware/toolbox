@@ -11,7 +11,7 @@ namespace ToolBox.System.Tests
             //Arrange
         }
 
-        [Fact(Skip="It's Ssystem Functionality")]
+        [Fact(Skip="It's System Functionality")]
         public void GetLocalIPv4_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
