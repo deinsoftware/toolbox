@@ -101,9 +101,9 @@ namespace ToolBox.System.Tests
             yield return new object[]
             {
                 new List<string> {
-                    System.Paths.Combine(userFolder, "_Filter1"), 
-                    System.Paths.Combine(userFolder, "_Filter2"), 
-                    System.Paths.Combine(userFolder, "_Filter3")
+                    System.Paths.Combine(userFolder, "_Folder1"), 
+                    System.Paths.Combine(userFolder, "_Folder2"), 
+                    System.Paths.Combine(userFolder, "_Folder3")
                 },
                 "_*"
             };
@@ -111,12 +111,12 @@ namespace ToolBox.System.Tests
             yield return new object[]
             {
                 new List<string> {
-                    System.Paths.Combine(userFolder, "_Filter1"), 
-                    System.Paths.Combine(userFolder, "_Filter2"), 
-                    System.Paths.Combine(userFolder, "_Filter3"), 
-                    System.Paths.Combine(userFolder,  "Filter1"), 
-                    System.Paths.Combine(userFolder,  "Filter2"), 
-                    System.Paths.Combine(userFolder,  "Filter3")
+                    System.Paths.Combine(userFolder, "_Folder1"), 
+                    System.Paths.Combine(userFolder, "_Folder2"), 
+                    System.Paths.Combine(userFolder, "_Folder3"), 
+                    System.Paths.Combine(userFolder,  "Folder1"), 
+                    System.Paths.Combine(userFolder,  "Folder2"), 
+                    System.Paths.Combine(userFolder,  "Folder3")
                 },
                 null
             };
