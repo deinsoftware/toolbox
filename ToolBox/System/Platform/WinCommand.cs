@@ -21,7 +21,7 @@ namespace ToolBox.System.Command
         public string GetUserFolder(string path) {
             try
             {
-                return path.Replace("~",$"{Env.Get("USERPROFILE")}").ToBackslash();
+                return path.Replace("~",$"{Env.GetValue("USERPROFILE")}").ToBackslash();
             }
             catch (Exception)
             {

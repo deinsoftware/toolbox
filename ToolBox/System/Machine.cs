@@ -12,7 +12,7 @@ namespace ToolBox.System
         public static string GetUser(){
             try
             {
-                return Env.Get("USERNAME") ?? Env.Get("USER");
+                return Env.GetValue("USERNAME") ?? Env.GetValue("USER");
             }
             catch (Exception)
             {
@@ -24,7 +24,7 @@ namespace ToolBox.System
         public static string GetDomain(){
             try
             {
-                return Env.Get("USERDOMAIN") ?? Env.Get("HOSTNAME");
+                return Env.GetValue("USERDOMAIN") ?? Env.GetValue("HOSTNAME");
             }
             catch (Exception)
             {
