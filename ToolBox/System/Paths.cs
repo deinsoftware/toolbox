@@ -6,42 +6,41 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Collections.Generic;
-using ToolBox.System.Command;
+using ToolBox.System;
 
 namespace ToolBox.System
 {
-    public static class Paths
+    public class Paths
     {
-        private static ICommand _cmd;
+        private ICommandSystem _commandSystem;
+        private IFileSystem _fileSystem;
 
-        static Paths(){
-            switch (Platform.GetCurrent())
+        public Paths(ICommandSystem commandSystem, IFileSystem fileSystem)
+        {
+            if (commandSystem == null)
             {
-                case "win":
-                    _cmd = new WinCommand();
-                    break;
-                case "mac":
-                    _cmd = new MacCommand();
-                    break;
+                throw new ArgumentNullException("fileSystem is required");
             }
+
+            if (fileSystem == null)
+            {
+                throw new ArgumentNullException("fileSystem is required");
+            }
+
+            _commandSystem = commandSystem;
+            _fileSystem = fileSystem;
+            
         }
 
-        public static string ToSlash(this string path){
-            return path.Replace(@"\",@"/");
-        }
-
-        public static string ToBackslash(this string path){
-            return path.Replace(@"/",@"\");
-        }
-
-        public static string Combine(params string[] paths) 
+        public string Combine(params string[] paths)
         {
             string path = Path.Combine(paths);
-            path = _cmd.GetUserFolder(path);
+            path = _commandSystem.GetUserFolder(path);
             return path;
         }
 
-        public static List<string> GetDirectories(this string path, string filter = null){
+        public List<string> GetDirectories(string path, string filter = null)
+        {
             try
             {
                 List<string> list = new List<string>();
@@ -53,7 +52,8 @@ namespace ToolBox.System
             }
         }
     
-        public static List<string> GetFiles(this string path, string filter = null){
+        public List<string> GetFiles(string path, string filter = null)
+        {
             try
             {
                 List<string> files = new List<string>();

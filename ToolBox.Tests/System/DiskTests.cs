@@ -7,33 +7,27 @@ using System.Collections;
 
 namespace ToolBox.System.Tests
 {
-    public class PlatformTests
+    public class DiskTests
     {
-        public PlatformTests()
+        public DiskTests()
         {
             //Arrange
         }
 
         [Fact(Skip="It's System Functionality")]
-        public void IsWin_WhenCalls_NotImplemented()
+        public void GetValue_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }
 
         [Fact(Skip="It's System Functionality")]
-        public void IsMac_WhenCalls_NotImplemented()
+        public void SetValue_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }
 
         [Fact(Skip="It's System Functionality")]
-        public void IsGnu_WhenCalls_NotImplemented()
-        {
-            throw new NotImplementedException();
-        }
-
-        [Fact(Skip="It's System Functionality")]
-        public void GetCurrent_WhenCalls_NotImplemented()
+        public void IsNullOrEmpty_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }

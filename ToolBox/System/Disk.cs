@@ -8,22 +8,21 @@ using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ToolBox.Transform;
-using ToolBox.System.Command;
 
 namespace ToolBox.System
 {
     public static class Disk
     {
-        private static ICommand _cmd;
+        private static ICommandSystem _cmd;
 
         static Disk(){
             switch (Platform.GetCurrent())
             {
                 case "win":
-                    _cmd = new WinCommand();
+                    _cmd = new WinCommandSystem();
                     break;
                 case "mac":
-                    _cmd = new MacCommand();
+                    _cmd = new MacCommandSystem();
                     break;
             }
         }

@@ -1,17 +1,21 @@
 using System;
 using Xunit;
 using ToolBox;
-using ToolBox.System.Command;
+using ToolBox.System;
 using System.Collections.Generic;
 using System.Collections;
 using System.IO;
+using Moq;
 
 namespace ToolBox.System.Tests
 {
     public class PathsTests
     {
-        private static ICommand _cmd;
+        private static ICommandSystem _commandSystem;
         private static string _userFolder;
+        private Mock<IFileSystem> _fileSystemMock;
+        private IFileSystem _fileSystem;
+        private Paths _paths;
 
         public PathsTests()
         {
@@ -19,41 +23,20 @@ namespace ToolBox.System.Tests
             switch (System.Platform.GetCurrent())
             {
                 case "win":
-                    _cmd = new Command.WinCommand();
+                    _commandSystem = new WinCommandSystem();
                     break;
                 case "mac":
-                    _cmd = new Command.MacCommand();
+                    _commandSystem = new MacCommandSystem();
                     break;
             }
-            _userFolder = _cmd.GetUserFolder("~");
-        }
+            _userFolder = _commandSystem.GetUserFolder("~");
 
-        [Theory]
-        [InlineData(@"", @"")]
-        [InlineData(@"/foo/bar", @"/foo/bar")]
-        [InlineData(@"/foo/bar", @"\foo\bar")]
-        [InlineData(@"/foo/bar", @"\foo/bar")]
-        public void ToSlash_WhenCalls_ReturnsPathWithSlash(string expectedResult, string path)
-        {
-            //Act
-            var result = System.Paths.ToSlash(path);
-            //Assert
-            Assert.Equal(expectedResult, result);
-        }
+            _fileSystemMock = new Mock<IFileSystem>();
+            _fileSystem = _fileSystemMock.Object;
 
-        [Theory]
-        [InlineData(@"", @"")]
-        [InlineData(@"C:\foo\bar", @"C:/foo/bar")]
-        [InlineData(@"C:\foo\bar", @"C:\foo\bar")]
-        [InlineData(@"C:\foo\bar", @"C:\foo/bar")]
-        public void ToBackslash_WhenCalls_ReturnsPathWithSlash(string expectedResult, string path)
-        {
-            //Act
-            var result = System.Paths.ToBackslash(path);
-            //Assert
-            Assert.Equal(expectedResult, result);
+            _paths = new Paths(_commandSystem, _fileSystem);
         }
-
+        
         [Theory]
         [InlineData(@"foo\bar"     , @"foo/bar"     , "~", "foo", "bar")]
         [InlineData(@"foo\bar.dll" , @"foo/bar.dll" , "~", "foo", "bar.dll")]
@@ -72,7 +55,7 @@ namespace ToolBox.System.Tests
             }
 
             //Act
-            var result = System.Paths.Combine(paths);
+            var result = _paths.Combine(paths);
             //Assert
             Assert.Equal(expectedResult, result);
         }
@@ -103,13 +86,13 @@ namespace ToolBox.System.Tests
             List<string> expectedResult = new List<string>();
             foreach (var directory in expectedDirectories)
             {
-                expectedResult.Add(System.Paths.Combine(_userFolder, "xUnit", "Paths", directory));
+                expectedResult.Add(_paths.Combine(_userFolder, "xUnit", "Paths", directory));
             }
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
+            path = _paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
-            var result = System.Paths.GetDirectories(path, filter);
+            var result = _paths.GetDirectories(path, filter);
             //Assert
             Assert.Equal(expectedResult, result);
         }
@@ -119,10 +102,10 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "NotExist");
+            path = _paths.Combine(_userFolder, "NotExist");
 
             //Act
-            Action result = () => System.Paths.GetDirectories(path, null);
+            Action result = () => _paths.GetDirectories(path, null);
             //Assert
             Assert.Throws<DirectoryNotFoundException>(result);
         }
@@ -132,10 +115,10 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
+            path = _paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
-            var result = System.Paths.GetDirectories(path, "FilterNotExists");
+            var result = _paths.GetDirectories(path, "FilterNotExists");
             //Assert
             Assert.Empty(result);
         }
@@ -168,12 +151,12 @@ namespace ToolBox.System.Tests
             List<string> expectedResult = new List<string>();
             foreach (var file in expectedFiles)
             {
-                expectedResult.Add(System.Paths.Combine(_userFolder, "xUnit", "Paths", path, file));
+                expectedResult.Add(_paths.Combine(_userFolder, "xUnit", "Paths", path, file));
             }
-            path = System.Paths.Combine(_userFolder, "xUnit", "Paths", path);
+            path = _paths.Combine(_userFolder, "xUnit", "Paths", path);
 
             //Act
-            var result = System.Paths.GetFiles(path, extensionFilter);
+            var result = _paths.GetFiles(path, extensionFilter);
             //Assert
             Assert.Equal(expectedResult, result);
         }
@@ -183,10 +166,10 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "NotExist");
+            path = _paths.Combine(_userFolder, "NotExist");
 
             //Act
-            Action result = () => System.Paths.GetFiles(path, null);
+            Action result = () => _paths.GetFiles(path, null);
             //Assert
             Assert.Throws<DirectoryNotFoundException>(result);
         }
@@ -196,10 +179,10 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
+            path = _paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
-            var result = System.Paths.GetFiles(path, "FilterNotExists");
+            var result = _paths.GetFiles(path, "FilterNotExists");
             //Assert
             Assert.Empty(result);
         }

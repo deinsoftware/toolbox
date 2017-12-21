@@ -12,7 +12,7 @@ namespace ToolBox.Log
 
         public LogFileCsv(string path, string fileName, char delimiter = ',')
         {
-            _logFile = Paths.Combine(path, fileName + ".csv");
+            _logFile = Path.Combine(path, fileName + ".csv");
             _logDelimiter = delimiter;
 
             AccessValidation();

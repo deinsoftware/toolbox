@@ -10,7 +10,7 @@ namespace ToolBox.Log
 
         public LogFileTxt(string path, string fileName)
         {
-            _logFile = Paths.Combine(path, fileName + ".txt");
+            _logFile = Path.Combine(path, fileName + ".txt");
             AccessValidation();
         }
 

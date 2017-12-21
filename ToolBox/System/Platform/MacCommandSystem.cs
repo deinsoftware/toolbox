@@ -4,24 +4,35 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Linq;
 
-namespace ToolBox.System.Command
+namespace ToolBox.System
 {
-    public class WinCommand : ICommand
+    public static partial class CommandSystem
+    {
+        public static ICommandSystem Mac
+        {
+            get
+            {
+                return new MacCommandSystem();
+            }
+        }
+    }
+    public sealed class MacCommandSystem : ICommandSystem
     {
         public string PathNormalizer(string path) {
             try
             {
-                return path.ToBackslash();
+                return path.Replace(@"\",@"/");
             }
             catch (Exception)
             {
                 throw;
             }
         }
+        
         public string GetUserFolder(string path) {
             try
             {
-                return path.Replace("~",$"{Env.GetValue("USERPROFILE")}").ToBackslash();
+                return PathNormalizer(path.Replace("~",$"/Users/{Machine.GetUser()}"));
             }
             catch (Exception)
             {

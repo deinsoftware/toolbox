@@ -1,8 +1,8 @@
 using System;
 
-namespace ToolBox.System.Command
+namespace ToolBox.System
 {
-    public interface ICommand
+    public interface ICommandSystem
     {
         string PathNormalizer(string path);
         string GetUserFolder(string path);
