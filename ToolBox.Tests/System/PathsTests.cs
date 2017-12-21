@@ -103,10 +103,10 @@ namespace ToolBox.System.Tests
             List<string> expectedResult = new List<string>();
             foreach (var directory in expectedDirectories)
             {
-                expectedResult.Add(System.Paths.Combine(_userFolder, "Test", directory));
+                expectedResult.Add(System.Paths.Combine(_userFolder, "xUnit", "Paths", directory));
             }
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "Test");
+            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
             var result = System.Paths.GetDirectories(path, filter);
@@ -132,7 +132,7 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "Test");
+            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
             var result = System.Paths.GetDirectories(path, "FilterNotExists");
@@ -168,9 +168,9 @@ namespace ToolBox.System.Tests
             List<string> expectedResult = new List<string>();
             foreach (var file in expectedFiles)
             {
-                expectedResult.Add(System.Paths.Combine(_userFolder, "Test", path, file));
+                expectedResult.Add(System.Paths.Combine(_userFolder, "xUnit", "Paths", path, file));
             }
-            path = System.Paths.Combine(_userFolder, "Test", path);
+            path = System.Paths.Combine(_userFolder, "xUnit", "Paths", path);
 
             //Act
             var result = System.Paths.GetFiles(path, extensionFilter);
@@ -196,7 +196,7 @@ namespace ToolBox.System.Tests
         {
             //Arrange
             string path = String.Empty;
-            path = System.Paths.Combine(_userFolder, "Test");
+            path = System.Paths.Combine(_userFolder, "xUnit", "Paths");
 
             //Act
             var result = System.Paths.GetFiles(path, "FilterNotExists");
