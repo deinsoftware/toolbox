@@ -8,7 +8,7 @@ namespace ToolBox.System
 {
     public static class Env
     {
-        public static string Get(string name) {
+        public static string GetValue(string name) {
             try
             {
                 return Environment.GetEnvironmentVariable(name);
@@ -19,7 +19,7 @@ namespace ToolBox.System
             }
         }
 
-        public static void Set(string name, string value) {
+        public static void SetValue(string name, string value) {
             try
             {
                 Environment.SetEnvironmentVariable(name, value);
@@ -33,7 +33,7 @@ namespace ToolBox.System
         public static bool IsNullOrEmpty(string name){
             try
             {
-                string env = Env.Get(name);
+                string env = Env.GetValue(name);
                 return String.IsNullOrEmpty(env);
             }
             catch (Exception)
