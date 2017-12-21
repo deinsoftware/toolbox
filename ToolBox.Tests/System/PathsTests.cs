@@ -9,14 +9,8 @@ namespace ToolBox.System.Tests
 {
     public class PathsTests
     {
-        private ICommand _cmd;
-        private string _userFolder;
-        public string UserFolder
-        {
-            get { return _userFolder;}
-            set { _userFolder = value;}
-        }
-        
+        private static ICommand _cmd;
+        private static string _userFolder;
 
         public PathsTests()
         {
@@ -83,7 +77,7 @@ namespace ToolBox.System.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetData(_userFolder)))]
+        [MemberData(nameof(GetData))]
         public void GetDirectories_WhenCalls_ReturnsDirectoriesList(List<string> expectedResult, string filter)
         {
             //Arrange
@@ -96,14 +90,14 @@ namespace ToolBox.System.Tests
             Assert.Equal(expectedResult, result);
         }
 
-        public static IEnumerable<object[]> GetData(string userFolder)
+        public static IEnumerable<object[]> GetData()
         {
             yield return new object[]
             {
                 new List<string> {
-                    System.Paths.Combine(userFolder, "_Folder1"), 
-                    System.Paths.Combine(userFolder, "_Folder2"), 
-                    System.Paths.Combine(userFolder, "_Folder3")
+                    System.Paths.Combine(_userFolder, "_Folder1"), 
+                    System.Paths.Combine(_userFolder, "_Folder2"), 
+                    System.Paths.Combine(_userFolder, "_Folder3")
                 },
                 "_*"
             };
@@ -111,12 +105,12 @@ namespace ToolBox.System.Tests
             yield return new object[]
             {
                 new List<string> {
-                    System.Paths.Combine(userFolder, "_Folder1"), 
-                    System.Paths.Combine(userFolder, "_Folder2"), 
-                    System.Paths.Combine(userFolder, "_Folder3"), 
-                    System.Paths.Combine(userFolder,  "Folder1"), 
-                    System.Paths.Combine(userFolder,  "Folder2"), 
-                    System.Paths.Combine(userFolder,  "Folder3")
+                    System.Paths.Combine(_userFolder, "_Folder1"), 
+                    System.Paths.Combine(_userFolder, "_Folder2"), 
+                    System.Paths.Combine(_userFolder, "_Folder3"), 
+                    System.Paths.Combine(_userFolder,  "Folder1"), 
+                    System.Paths.Combine(_userFolder,  "Folder2"), 
+                    System.Paths.Combine(_userFolder,  "Folder3")
                 },
                 null
             };

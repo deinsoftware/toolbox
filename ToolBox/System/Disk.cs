@@ -14,7 +14,7 @@ namespace ToolBox.System
 {
     public static class Disk
     {
-        static ICommand _cmd;
+        private static ICommand _cmd;
 
         static Disk(){
             switch (Platform.GetCurrent())

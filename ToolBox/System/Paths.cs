@@ -12,7 +12,7 @@ namespace ToolBox.System
 {
     public static class Paths
     {
-        static ICommand _cmd;
+        private static ICommand _cmd;
 
         static Paths(){
             switch (Platform.GetCurrent())
