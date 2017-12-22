@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ToolBox.System
+namespace ToolBox.Platform
 {
-    public static class Platform
+    public static class OS
     {
         public static bool IsWin() =>
             RuntimeInformation.IsOSPlatform(OSPlatform.Windows);

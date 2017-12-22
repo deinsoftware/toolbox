@@ -7,22 +7,23 @@ using System.Text;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ToolBox.Platform;
 using ToolBox.Transform;
 
-namespace ToolBox.System
+namespace ToolBox.Files
 {
     public static class Disk
     {
         private static ICommandSystem _cmd;
 
         static Disk(){
-            switch (Platform.GetCurrent())
+            switch (OS.GetCurrent())
             {
                 case "win":
-                    _cmd = new WinCommandSystem();
+                    _cmd = new CommandSystemWin();
                     break;
                 case "mac":
-                    _cmd = new MacCommandSystem();
+                    _cmd = new CommandSystemMac();
                     break;
             }
         }

@@ -3,8 +3,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Linq;
+using ToolBox.System;
 
-namespace ToolBox.System
+namespace ToolBox.Platform
 {
     public static partial class CommandSystem
     {
@@ -12,11 +13,11 @@ namespace ToolBox.System
         {
             get
             {
-                return new MacCommandSystem();
+                return new CommandSystemMac();
             }
         }
     }
-    public sealed class MacCommandSystem : ICommandSystem
+    public sealed class CommandSystemMac : ICommandSystem
     {
         public string PathNormalizer(string path) {
             try
@@ -29,10 +30,10 @@ namespace ToolBox.System
             }
         }
         
-        public string GetUserFolder(string path) {
+        public string GetHomeFolder(string path) {
             try
             {
-                return PathNormalizer(path.Replace("~",$"/Users/{Machine.GetUser()}"));
+                return path.Replace("~",$"/Users/{Machine.GetUser()}").Replace(@"\",@"/");
             }
             catch (Exception)
             {

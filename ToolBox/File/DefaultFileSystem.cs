@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using System.IO;
 
-namespace ToolBox.System
+namespace ToolBox.Files
 {
     public static class FileSystem
     {
@@ -20,9 +21,9 @@ namespace ToolBox.System
             return Path.GetFullPath(path);
         }
 
-        public string PathCombine(string firstPath, string secondPath)
+        public string PathCombine(params string[] paths)
         {
-            return Path.Combine(firstPath, secondPath);
+            return Path.Combine(paths);
         }
 
         public string GetFileName(string filePath)
@@ -48,6 +49,16 @@ namespace ToolBox.System
         public string GetPathRoot(string path)
         {
             return Path.GetPathRoot(path);
+        }
+
+        public IEnumerable<string> GetDirectories(string path, string filter)
+        {
+            return Directory.EnumerateDirectories(path, (filter ?? "*"));
+        }
+
+        public IEnumerable<string> GetFiles(string path, string filter)
+        {
+            return Directory.EnumerateFiles(path, (filter ?? "*"));
         }
     }
 }

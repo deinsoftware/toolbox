@@ -1,4 +1,6 @@
-namespace ToolBox.System
+using System.Collections.Generic;
+
+namespace ToolBox.Files
 {
     public interface IFileSystem
     {
@@ -7,7 +9,9 @@ namespace ToolBox.System
         string GetFileName(string filePath);
         string GetPathRoot(string path);
         string GetDirectoryName(string path);
-        string PathCombine(string firstPath, string secondPath);
+        string PathCombine(params string[] paths);
         void MoveFile(string filePath, string newFilePath);
+        IEnumerable<string> GetDirectories(string path, string filter);
+        IEnumerable<string> GetFiles(string path, string filter);
     }
 }

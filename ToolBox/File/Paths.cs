@@ -6,16 +6,17 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Collections.Generic;
-using ToolBox.System;
+using ToolBox.Files;
+using ToolBox.Platform;
 
-namespace ToolBox.System
+namespace ToolBox.Files
 {
-    public class Paths
+    public class PathsConfigurator
     {
         private ICommandSystem _commandSystem;
         private IFileSystem _fileSystem;
 
-        public Paths(ICommandSystem commandSystem, IFileSystem fileSystem)
+        public PathsConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem)
         {
             if (commandSystem == null)
             {
@@ -35,7 +36,7 @@ namespace ToolBox.System
         public string Combine(params string[] paths)
         {
             string path = Path.Combine(paths);
-            path = _commandSystem.GetUserFolder(path);
+            path = _commandSystem.GetHomeFolder(path);
             return path;
         }
 
@@ -44,7 +45,7 @@ namespace ToolBox.System
             try
             {
                 List<string> list = new List<string>();
-                list = new List<string>(Directory.EnumerateDirectories(path, (filter ?? "*")).OrderBy(name => name));
+                list = new List<string>(_fileSystem.GetDirectories(path, filter).OrderBy(name => name));
                 return list;
             }
             catch (Exception){
@@ -57,7 +58,7 @@ namespace ToolBox.System
             try
             {
                 List<string> files = new List<string>();
-                files = new List<string>(Directory.EnumerateFiles(path, (filter ?? "*")).OrderBy(name => name));
+                files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
                 return files;
             }
             catch (Exception){

@@ -5,7 +5,7 @@ using ToolBox.System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace ToolBox.System.Tests
+namespace ToolBox.Files.Tests
 {
     public class DiskTests
     {
