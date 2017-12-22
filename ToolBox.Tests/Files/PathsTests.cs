@@ -22,10 +22,10 @@ namespace ToolBox.Files.Tests
         public PathsTests()
         {
             //Arrange
-            _commandSystemMock = new Mock<ICommandSystem>();
+            _commandSystemMock = new Mock<ICommandSystem>(MockBehavior.Strict);
             _commandSystem = _commandSystemMock.Object;
 
-            _fileSystemMock = new Mock<IFileSystem>();
+            _fileSystemMock = new Mock<IFileSystem>(MockBehavior.Strict);
             _fileSystem = _fileSystemMock.Object;
 
             _commandSystemMock
@@ -42,18 +42,16 @@ namespace ToolBox.Files.Tests
             //Arrange
             PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
 
-            string expectedResult = Path.Combine(_userFolder, expected);
+            string expectedResult = creator.Combine(_userFolder, expected);
             _commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.IsAny<string>()))
                 .Returns(expectedResult);
-            _fileSystemMock
-                .Setup(fs => fs.PathCombine(It.IsAny<string[]>()))
-                .Returns(expectedResult);
-
+            
             //Act
             var result = creator.Combine(paths);
             //Assert
             Assert.Equal(expectedResult, result);
+            _commandSystemMock.VerifyAll();
         }
 
         [Theory]
@@ -92,6 +90,7 @@ namespace ToolBox.Files.Tests
             var result = creator.GetDirectories(path, filter);
             //Assert
             Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact]
@@ -113,6 +112,7 @@ namespace ToolBox.Files.Tests
             Action result = () => creator.GetDirectories(path, null);
             //Assert
             Assert.Throws<DirectoryNotFoundException>(result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact]
@@ -134,6 +134,7 @@ namespace ToolBox.Files.Tests
             var result = creator.GetDirectories(path, "FilterNotExists");
             //Assert
             Assert.Empty(result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Theory]
@@ -172,6 +173,7 @@ namespace ToolBox.Files.Tests
             var result = creator.GetFiles(path, filter);
             //Assert
             Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact]
@@ -193,6 +195,7 @@ namespace ToolBox.Files.Tests
             Action result = () => creator.GetFiles(path, null);
             //Assert
             Assert.Throws<DirectoryNotFoundException>(result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact]
@@ -214,6 +217,7 @@ namespace ToolBox.Files.Tests
             var result = creator.GetFiles(path, "FilterNotExists");
             //Assert
             Assert.Empty(result);
+            _fileSystemMock.VerifyAll();
         }
     }
 }
