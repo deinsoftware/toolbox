@@ -42,7 +42,7 @@ namespace ToolBox.Files.Tests
             //Arrange
             PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
 
-            string expectedResult = creator.Combine(_userFolder, expected);
+            string expectedResult = Path.Combine(_userFolder, expected);
             _commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.IsAny<string>()))
                 .Returns(expectedResult);
