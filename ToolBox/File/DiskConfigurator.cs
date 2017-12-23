@@ -12,23 +12,20 @@ using ToolBox.Transform;
 
 namespace ToolBox.Files
 {
-    public static class Disk
+    public sealed class DiskConfigurator
     {
-        private static ICommandSystem _cmd;
+        private ICommandSystem _commandSystem;
 
-        static Disk(){
-            switch (OS.GetCurrent())
+        public DiskConfigurator(ICommandSystem commandSystem){
+            if (commandSystem == null)
             {
-                case "win":
-                    _cmd = new CommandSystemWin();
-                    break;
-                case "mac":
-                    _cmd = new CommandSystemMac();
-                    break;
+                throw new ArgumentNullException("fileSystem is required");
             }
+
+            _commandSystem = commandSystem;
         }
         
-        private static bool IsFiltered(List<string> extensionFilter, string file)
+        private bool IsFiltered(List<string> extensionFilter, string file)
         {
             try
             {
@@ -49,7 +46,7 @@ namespace ToolBox.Files
             }
         }
 
-        public static void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
+        public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
         {
             try
             {
@@ -73,7 +70,7 @@ namespace ToolBox.Files
             }
         }
 
-        public static void DeleteAll(string sourcePath, bool recursive)
+        public void DeleteAll(string sourcePath, bool recursive)
         {
             try
             {

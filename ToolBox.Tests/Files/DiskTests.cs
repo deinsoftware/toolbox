@@ -14,20 +14,14 @@ namespace ToolBox.Files.Tests
             //Arrange
         }
 
-        [Fact(Skip="It's System Functionality")]
-        public void GetValue_WhenCalls_NotImplemented()
+        [Fact(Skip="Not Implemented Yet")]
+        public void CopyAll_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }
 
-        [Fact(Skip="It's System Functionality")]
-        public void SetValue_WhenCalls_NotImplemented()
-        {
-            throw new NotImplementedException();
-        }
-
-        [Fact(Skip="It's System Functionality")]
-        public void IsNullOrEmpty_WhenCalls_NotImplemented()
+        [Fact(Skip="Not Implemented Yet")]
+        public void DeleteAll_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }

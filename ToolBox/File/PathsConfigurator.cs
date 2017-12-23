@@ -11,7 +11,7 @@ using ToolBox.Platform;
 
 namespace ToolBox.Files
 {
-    public class PathsConfigurator
+    public sealed class PathsConfigurator
     {
         private ICommandSystem _commandSystem;
         private IFileSystem _fileSystem;

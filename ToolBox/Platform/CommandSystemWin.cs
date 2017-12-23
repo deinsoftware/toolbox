@@ -30,6 +30,7 @@ namespace ToolBox.Platform
                 throw;
             }
         }
+        
         public string GetHomeFolder(string path) {
             try
             {

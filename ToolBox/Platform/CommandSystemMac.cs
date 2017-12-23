@@ -17,6 +17,7 @@ namespace ToolBox.Platform
             }
         }
     }
+
     public sealed class CommandSystemMac : ICommandSystem
     {
         public string PathNormalizer(string path) {
