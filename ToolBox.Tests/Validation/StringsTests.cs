@@ -1,22 +1,17 @@
-using System;
 using Xunit;
-using ToolBox;
+using ToolBox.Validations;
 
 namespace ToolBox.Validations.Tests
 {
     public class StringsTests
     {
-        public StringsTests(){
-            //Arrange
-        }
-
         [Theory]
         [InlineData("a")]
         [InlineData("a", "b")]
         public void SomeNullOrEmpty_WhenIsValidInput_ReturnsFalse(params string[] values)
         {
             //Act
-            var result = Validations.Strings.SomeNullOrEmpty(values);
+            var result = Strings.SomeNullOrEmpty(values);
             //Assert
             Assert.False(result);
         }
@@ -29,7 +24,7 @@ namespace ToolBox.Validations.Tests
         public void SomeNullOrEmpty_WhenIsInvalidInput_ReturnsTrue(params string[] values)
         {
             //Act
-            var result = Validations.Strings.SomeNullOrEmpty(values);
+            var result = Strings.SomeNullOrEmpty(values);
             //Assert
             Assert.True(result);
         }

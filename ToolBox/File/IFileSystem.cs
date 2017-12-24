@@ -11,6 +11,8 @@ namespace ToolBox.Files
 
         string GetFileName(string filePath);
         bool FileExists(string path);
+        FileStream FileCreate(string path);
+        StreamWriter FileAppendText(string text);
         void CopyFile(string filePath, string newFilePath, bool overwrite = false);
         void MoveFile(string filePath, string newFilePath);
         void DeleteFile(string filePath);

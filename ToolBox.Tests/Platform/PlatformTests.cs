@@ -1,19 +1,10 @@
 using System;
 using Xunit;
-using ToolBox;
-using ToolBox.System;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace ToolBox.System.Tests
 {
     public class PlatformTests
     {
-        public PlatformTests()
-        {
-            //Arrange
-        }
-
         [Fact(Skip="It's System Functionality")]
         public void IsWin_WhenCalls_NotImplemented()
         {

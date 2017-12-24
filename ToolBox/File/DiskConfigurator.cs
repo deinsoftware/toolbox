@@ -14,25 +14,18 @@ namespace ToolBox.Files
 {
     public sealed class DiskConfigurator
     {
-        private ICommandSystem _commandSystem;
-        private IFileSystem _fileSystem;
+        static IFileSystem _fileSystem;
 
-        public DiskConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem){
-            if (commandSystem == null)
-            {
-                throw new ArgumentNullException("fileSystem is required");
-            }
-
+        public DiskConfigurator(IFileSystem fileSystem){
             if (fileSystem == null)
             {
-                throw new ArgumentNullException("fileSystem is required");
+                throw new ArgumentException(nameof(fileSystem));
             }
 
-            _commandSystem = commandSystem;
             _fileSystem = fileSystem;
         }
         
-        private bool IsFiltered(List<string> extensionFilter, string file)
+        bool IsFiltered(List<string> extensionFilter, string file)
         {
             try
             {

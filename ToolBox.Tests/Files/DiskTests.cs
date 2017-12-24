@@ -1,23 +1,20 @@
 using System;
 using Xunit;
-using ToolBox;
-using ToolBox.System;
-using System.Collections.Generic;
-using System.Collections;
 using Moq;
-using ToolBox.Platform;
 using System.IO;
 using System.Linq;
+using ToolBox.Files;
+using ToolBox.Platform;
 
 namespace ToolBox.Files.Tests
 {
     public class DiskTests
     {
-        private Mock<ICommandSystem> _commandSystemMock;
-        private static ICommandSystem _commandSystem;
-        private static string _userFolder;
-        private Mock<IFileSystem> _fileSystemMock;
-        private IFileSystem _fileSystem;
+        readonly Mock<ICommandSystem> _commandSystemMock;
+        static ICommandSystem _commandSystem;
+        static string _userFolder;
+        readonly Mock<IFileSystem> _fileSystemMock;
+        static IFileSystem _fileSystem;
 
         public DiskTests()
         {
@@ -44,7 +41,7 @@ namespace ToolBox.Files.Tests
         public void CopyAll_WhenPathNotFound_ReturnsException()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             string sourcePath = Path.Combine(_userFolder, "NotExist");
             string destinationPath = Path.Combine(_userFolder, "NotMatters");
@@ -63,7 +60,7 @@ namespace ToolBox.Files.Tests
         public void CopyDirectories_WhenDestinationExists_CopyFolders()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -82,7 +79,7 @@ namespace ToolBox.Files.Tests
         public void CopyDirectories_WhenDestinationNotExists_CreateFolders()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -108,7 +105,7 @@ namespace ToolBox.Files.Tests
         public void CopyDirectories_WhenSourceIsEmpty_CopyAnything()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -128,7 +125,7 @@ namespace ToolBox.Files.Tests
         public void CopyDirectories_WhenPathNotFound_ReturnsException()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             string sourcePath = Path.Combine(_userFolder, "NotExist");
             string destinationPath = Path.Combine(_userFolder, "NotMatters");
@@ -147,7 +144,7 @@ namespace ToolBox.Files.Tests
         public void CopyFiles_WhenDestinationFolderExists_CopyFiles()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -173,7 +170,7 @@ namespace ToolBox.Files.Tests
         public void CopyFiles_WhenDestinationFolderNotExists_CreateFoldersAndCopyFiles()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -201,7 +198,7 @@ namespace ToolBox.Files.Tests
         public void CopyFiles_WhenSourceIsEmpty_CopyAnything()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             var sourcePath = Path.Combine(_userFolder, "Source");
             var destinationPath = Path.Combine(_userFolder, "Destination");
@@ -221,7 +218,7 @@ namespace ToolBox.Files.Tests
         public void CopyFiles_WhenPathNotFound_ReturnsException()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             string sourcePath = Path.Combine(_userFolder, "NotExist");
             string destinationPath = Path.Combine(_userFolder, "NotMatters");
@@ -239,7 +236,7 @@ namespace ToolBox.Files.Tests
         [Fact]
         public void DeleteAll_WhenCalls_DeleteFilesAndFolders()
         {
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             string path = Path.Combine(_userFolder, "Exist");
             _fileSystemMock
@@ -259,7 +256,7 @@ namespace ToolBox.Files.Tests
         public void DeleteAll_WhenPathNotFound_ReturnsException()
         {
             //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_commandSystem, _fileSystem);
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
 
             string path = Path.Combine(_userFolder, "NotExist");
             _fileSystemMock

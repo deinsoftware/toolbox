@@ -1,16 +1,11 @@
 using System;
 using Xunit;
-using ToolBox;
 
 namespace ToolBox.Transform.Tests
 {
     public class StringsTests
     {
-        public StringsTests()
-        {
-            //Arrange
-        }
-
+        
         [Theory]
         [InlineData("", "", "Word")]
         [InlineData("", "Word", "Word")]
@@ -43,7 +38,7 @@ namespace ToolBox.Transform.Tests
         {
             //Arrange
             string oldValue = "Word";
-            string[] wordsToRemove = new string[] {null};
+            string[] wordsToRemove = null;
             //Act
             Action result =( () => Transform.Strings.RemoveWords(oldValue, wordsToRemove) );
             //Assert

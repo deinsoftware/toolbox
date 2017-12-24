@@ -1,9 +1,6 @@
 using System;
 using Xunit;
-using ToolBox;
-using ToolBox.System;
 using System.Collections.Generic;
-using System.Collections;
 using System.IO;
 using Moq;
 using ToolBox.Files;
@@ -13,11 +10,11 @@ namespace ToolBox.Files.Tests
 {
     public class PathsTests
     {
-        private Mock<ICommandSystem> _commandSystemMock;
-        private static ICommandSystem _commandSystem;
-        private static string _userFolder;
-        private Mock<IFileSystem> _fileSystemMock;
-        private IFileSystem _fileSystem;
+        readonly Mock<ICommandSystem> _commandSystemMock;
+        static ICommandSystem _commandSystem;
+        static string _userFolder;
+        readonly Mock<IFileSystem> _fileSystemMock;
+        static IFileSystem _fileSystem;
 
         public PathsTests()
         {

@@ -13,19 +13,19 @@ namespace ToolBox.Files
 {
     public sealed class PathsConfigurator
     {
-        private ICommandSystem _commandSystem;
-        private IFileSystem _fileSystem;
+        static ICommandSystem _commandSystem;
+        static IFileSystem _fileSystem;
 
         public PathsConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem)
         {
             if (commandSystem == null)
             {
-                throw new ArgumentNullException("fileSystem is required");
+                throw new ArgumentNullException(nameof(commandSystem));
             }
 
             if (fileSystem == null)
             {
-                throw new ArgumentNullException("fileSystem is required");
+                throw new ArgumentNullException(nameof(fileSystem));
             }
 
             _commandSystem = commandSystem;

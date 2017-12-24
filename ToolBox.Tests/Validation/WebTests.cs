@@ -1,16 +1,12 @@
-using System;
 using Xunit;
-using ToolBox;
+using ToolBox.Validations;
 
 namespace ToolBox.Validations.Tests
 {
     public class WebTests
     {
-        public WebTests(){
-            //Arrange
-        }
-
         [Theory]
+        [InlineData("http://web.com.co")]
         [InlineData("http://www.web.com.co")]
         [InlineData("https://www.web.com.co")]
         [InlineData("http://www.web.com.co/index.html")]
@@ -21,7 +17,7 @@ namespace ToolBox.Validations.Tests
         public void IsUrl_WhenIsValidUrl_ReturnsTrue(string value)
         {
             //Act
-            var result = Validations.Web.IsUrl(value);
+            var result = Web.IsUrl(value);
             //Assert
             Assert.True(result, $"{value} is a Valid URL");
         }
@@ -33,7 +29,7 @@ namespace ToolBox.Validations.Tests
         public void IsUrl_WhenIsInvalidUrl_ReturnsFalse(string value)
         {
             //Act
-            var result = Validations.Web.IsUrl(value);
+            var result = Web.IsUrl(value);
             //Assert
             Assert.False(result, $"{value} is an Invalid URL");
         }
@@ -46,7 +42,7 @@ namespace ToolBox.Validations.Tests
         public void IsUrl_WhenHaveAnoherProtocol_ReturnsFalse(string value)
         {
             //Act
-            var result = Validations.Web.IsUrl(value);
+            var result = Web.IsUrl(value);
             //Assert
             Assert.False(result, $"{value} is an Invalid URL");
         }

@@ -1,16 +1,11 @@
 using System;
 using Xunit;
-using ToolBox;
+using ToolBox.System;
 
 namespace ToolBox.System.Tests
 {
     public class NetworkTests
     {
-        public NetworkTests()
-        {
-            //Arrange
-        }
-
         [Fact(Skip="It's System Functionality")]
         public void GetLocalIPv4_WhenCalls_NotImplemented()
         {
@@ -23,7 +18,7 @@ namespace ToolBox.System.Tests
             //Arrange
             string ip = "192.168.21.0";
             //Act
-            var result = System.Network.RemoveLastOctetIPv4(ip);
+            var result = Network.RemoveLastOctetIPv4(ip);
             //Assert
             Assert.Equal("192.168.21.", result);
         }

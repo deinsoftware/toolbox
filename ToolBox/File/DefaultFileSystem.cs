@@ -43,6 +43,16 @@ namespace ToolBox.Files
         {
             return File.Exists(path);
         }
+
+        public FileStream FileCreate(string path)
+        {
+            return File.Create(path);
+        }
+
+        public StreamWriter FileAppendText(string text)
+        {
+            return File.AppendText(text);
+        }
         
         public void CopyFile(string filePath, string newFilePath, bool overwrite = false)
         {
