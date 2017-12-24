@@ -4,7 +4,7 @@ using ToolBox.Files;
 
 namespace ToolBox.Log
 {
-    public class FileLogTxt : ILog
+    public class FileLogTxt : ILogSystem
     {
         static IFileSystem _fileSystem;
         static string _logFile;
@@ -27,7 +27,7 @@ namespace ToolBox.Log
             }
 
             _fileSystem = fileSystem;
-            _logFile = _fileSystem.PathCombine(path, fileName + ".txt");
+            _logFile = _fileSystem.PathCombine(path, $"{fileName}.txt");
             AccessValidation();
         }
 

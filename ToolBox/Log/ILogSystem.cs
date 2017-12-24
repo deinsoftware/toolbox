@@ -2,7 +2,8 @@ using System;
 
 namespace ToolBox.Log
 {
-    public interface ILog
+    public interface ILogSystem
+    
     {
         void AccessValidation();
         void Save(Exception ex, LogLevel logLevel);

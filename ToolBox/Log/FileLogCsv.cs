@@ -5,7 +5,7 @@ using ToolBox.Files;
 
 namespace ToolBox.Log
 {
-    public class FileLogCsv : ILog
+    public class FileLogCsv : ILogSystem
     {
         static IFileSystem _fileSystem;
         static string _logFile;
@@ -29,7 +29,7 @@ namespace ToolBox.Log
             }
 
             _fileSystem = fileSystem;
-            _logFile = _fileSystem.PathCombine(path, fileName + ".csv");
+            _logFile = _fileSystem.PathCombine(path, $"{fileName}.csv");
             _logDelimiter = delimiter;
 
             AccessValidation();
@@ -77,17 +77,17 @@ namespace ToolBox.Log
         {
             try
             {
-                var exception = new StringBuilder();
-                exception.Append($"{DateTime.Now}{_logDelimiter}");
-                exception.Append($"{logLevel.ToString()}{_logDelimiter}");
-                exception.Append($"{ex.Message}{_logDelimiter}");
-                exception.Append($"{ex.StackTrace}{_logDelimiter}");
-                exception.Append($"{ex.InnerException?.Message ?? ""}{_logDelimiter}");
-                exception.Append($"{ex.InnerException?.StackTrace ?? ""}{_logDelimiter}");
+                var message = new StringBuilder();
+                message.Append($"{DateTime.Now}{_logDelimiter}");
+                message.Append($"{logLevel.ToString()}{_logDelimiter}");
+                message.Append($"{ex.Message}{_logDelimiter}");
+                message.Append($"{ex.StackTrace}{_logDelimiter}");
+                message.Append($"{ex.InnerException?.Message ?? ""}{_logDelimiter}");
+                message.Append($"{ex.InnerException?.StackTrace ?? ""}{_logDelimiter}");
 
                 using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
                 {
-                    sw.WriteLine(exception);
+                    sw.WriteLine(message);
                 }
             }
             catch (Exception)

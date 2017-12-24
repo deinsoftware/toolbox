@@ -1,36 +1,13 @@
 ﻿<Properties StartupConfiguration="{F5353098-BCC1-46C7-8858-0A704EF742CB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ToolBox/Log/FileLogCsv.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ToolBox/File/PathsConfigurator.cs">
     <Files>
-      <File FileName="ToolBox.Tests/Files/DiskTests.cs" Line="6" Column="21" />
-      <File FileName="ToolBox.Tests/Files/PathsTests.cs" Line="8" Column="1" />
-      <File FileName="ToolBox/Platform/ICommandSystem.cs" Line="3" Column="11" />
-      <File FileName="ToolBox/File/DefaultFileSystem.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/File/DiskConfigurator.cs" Line="28" Column="9" />
-      <File FileName="ToolBox/File/IFileSystem.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/File/PathsConfigurator.cs" Line="17" Column="9" />
-      <File FileName="ToolBox/Log/ILog.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/Platform/CommandSystemMac.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/Platform/CommandSystemWin.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/Platform/Platform.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/System/Env.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/System/Machine.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/System/Network.cs" Line="7" Column="11" />
-      <File FileName="ToolBox/Transform/Strings.cs" Line="19" Column="52" />
-      <File FileName="ToolBox/Validation/Number.cs" Line="14" Column="36" />
-      <File FileName="ToolBox/Validation/Web.cs" Line="1" Column="1" />
-      <File FileName="ToolBox/Validation/Strings.cs" Line="1" Column="1" />
-      <File FileName="ToolBox.Tests/Log/LogTest.cs" Line="1" Column="1" />
-      <File FileName="ToolBox.Tests/Platform/PlatformTests.cs" Line="2" Column="13" />
-      <File FileName="ToolBox.Tests/System/EnvTests.cs" Line="2" Column="13" />
-      <File FileName="ToolBox.Tests/System/MachineTests.cs" Line="2" Column="13" />
-      <File FileName="ToolBox.Tests/System/NetworkTests.cs" Line="21" Column="26" />
-      <File FileName="ToolBox.Tests/Transform/StringsTests.cs" Line="41" Column="43" />
-      <File FileName="ToolBox.Tests/Validation/NumberTests.cs" Line="50" Column="26" />
-      <File FileName="ToolBox.Tests/Validation/StringsTests.cs" Line="1" Column="1" />
-      <File FileName="ToolBox.Tests/Validation/WebTests.cs" Line="45" Column="26" />
-      <File FileName="ToolBox/Log/EventLog.cs" Line="58" Column="76" />
-      <File FileName="ToolBox/Log/FileLogCsv.cs" Line="1" Column="1" />
+      <File FileName="ToolBox.Tests/Log/LogTest.cs" Line="35" Column="49" />
       <File FileName="ToolBox/Log/FileLogTxt.cs" Line="1" Column="1" />
+      <File FileName="ToolBox.Tests/Files/DiskTests.cs" Line="44" Column="74" />
+      <File FileName="ToolBox/File/DiskConfigurator.cs" Line="28" Column="9" />
+      <File FileName="ToolBox/File/FileSystemDefault.cs" Line="13" Column="45" />
+      <File FileName="ToolBox/Log/ILog.cs" Line="1" Column="1" />
+      <File FileName="ToolBox/File/PathsConfigurator.cs" Line="17" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -70,8 +70,9 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(fs => fs.GetDirectories(sourcePath, null, SearchOption.AllDirectories))
                 .Returns(new[] { "/Users/user/Source/Exist" });
-            
+            //Act
             creator.CopyDirectories(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.VerifyAll();
         }
 
@@ -95,8 +96,9 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(fs => fs.CreateDirectory(It.IsAny<string>()))
                 .Verifiable();
-            
+            //Act
             creator.CopyDirectories(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.Verify(fs => fs.CreateDirectory(It.IsAny<string>()), Times.Exactly(1));
             _fileSystemMock.VerifyAll();
         }
@@ -115,8 +117,9 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(fs => fs.GetDirectories(sourcePath, null, SearchOption.AllDirectories))
                 .Returns(Enumerable.Empty<string>);
-            
+            //Act
             creator.CopyDirectories(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.Verify(fs => fs.DirectoryExists(It.IsAny<string>()), Times.Exactly(1));
             _fileSystemMock.VerifyAll();
         }
@@ -160,8 +163,9 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(fs => fs.CopyFile(It.IsAny<string>(), It.IsAny<string>(), false))
                 .Verifiable();
-            
+            //Act
             creator.CopyFiles(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.Verify(fs => fs.CreateDirectory(It.IsAny<string>()), Times.Exactly(0));
             _fileSystemMock.VerifyAll();
         }
@@ -188,8 +192,9 @@ namespace ToolBox.Files.Tests
                 .Returns("/Users/user/Destination/NotExist/");
             _fileSystemMock.Setup(fs => fs.CreateDirectory(It.IsAny<string>())).Verifiable();
             _fileSystemMock.Setup(fs => fs.CopyFile(It.IsAny<string>(), It.IsAny<string>(), false)).Verifiable();
-            
+            //Act
             creator.CopyFiles(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.Verify(fs => fs.CreateDirectory(It.IsAny<string>()), Times.Exactly(1));
             _fileSystemMock.VerifyAll();
         }
@@ -208,8 +213,9 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(fs => fs.GetFiles(sourcePath, null, SearchOption.AllDirectories))
                 .Returns(Enumerable.Empty<string>);
-            
+            //Act
             creator.CopyFiles(sourcePath, destinationPath);
+            //Assert
             _fileSystemMock.Verify(fs => fs.DirectoryExists(It.IsAny<string>()), Times.Exactly(1));
             _fileSystemMock.VerifyAll();
         }
