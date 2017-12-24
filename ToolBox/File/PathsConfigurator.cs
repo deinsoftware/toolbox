@@ -35,7 +35,7 @@ namespace ToolBox.Files
 
         public string Combine(params string[] paths)
         {
-            string path = Path.Combine(paths);
+            string path = _fileSystem.PathCombine(paths);
             path = _commandSystem.GetHomeFolder(path);
             return path;
         }
@@ -44,6 +44,10 @@ namespace ToolBox.Files
         {
             try
             {
+                if (!_fileSystem.DirectoryExists(path)){
+                    throw new DirectoryNotFoundException();
+                }
+
                 List<string> list = new List<string>();
                 list = new List<string>(_fileSystem.GetDirectories(path, filter).OrderBy(name => name));
                 return list;
@@ -57,6 +61,10 @@ namespace ToolBox.Files
         {
             try
             {
+                if (!_fileSystem.DirectoryExists(path)){
+                    throw new DirectoryNotFoundException();
+                }
+
                 List<string> files = new List<string>();
                 files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
                 return files;

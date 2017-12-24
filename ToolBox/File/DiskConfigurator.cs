@@ -15,14 +15,21 @@ namespace ToolBox.Files
     public sealed class DiskConfigurator
     {
         private ICommandSystem _commandSystem;
+        private IFileSystem _fileSystem;
 
-        public DiskConfigurator(ICommandSystem commandSystem){
+        public DiskConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem){
             if (commandSystem == null)
             {
                 throw new ArgumentNullException("fileSystem is required");
             }
 
+            if (fileSystem == null)
+            {
+                throw new ArgumentNullException("fileSystem is required");
+            }
+
             _commandSystem = commandSystem;
+            _fileSystem = fileSystem;
         }
         
         private bool IsFiltered(List<string> extensionFilter, string file)
@@ -50,19 +57,35 @@ namespace ToolBox.Files
         {
             try
             {
-                string[] directories = Directory
-                    .GetDirectories(sourcePath, "*.*", SearchOption.AllDirectories);
+                if (!_fileSystem.DirectoryExists(sourcePath)){
+                    throw new DirectoryNotFoundException();
+                }
+                
+                CopyDirectories(sourcePath, destinationPath);
+                CopyFiles(sourcePath, destinationPath, overWrite, extensionFilter);
+            }
+            catch (Exception){
+                throw;
+            }
+        }
+
+        public void CopyDirectories(string sourcePath, string destinationPath)
+        {
+            try
+            {
+                if (!_fileSystem.DirectoryExists(sourcePath)){
+                    throw new DirectoryNotFoundException();
+                }
+                
+                var directories = _fileSystem
+                    .GetDirectories(sourcePath, null, SearchOption.AllDirectories);
                 Parallel.ForEach(directories, dirPath =>
                 {
-                    Directory.CreateDirectory(dirPath.Replace(sourcePath, destinationPath));
-                });
-
-                var files = Directory
-                    .GetFiles(sourcePath, "*.*", SearchOption.AllDirectories)
-                    .Where(f => IsFiltered(extensionFilter, f));
-                Parallel.ForEach(files, newPath =>
-                {
-                    File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), overWrite);
+                    var newPath = dirPath.Replace(sourcePath, destinationPath);
+                    if (!_fileSystem.DirectoryExists(newPath))
+                    {
+                        _fileSystem.CreateDirectory(newPath);
+                    }
                 });
             }
             catch (Exception){
@@ -70,16 +93,42 @@ namespace ToolBox.Files
             }
         }
 
-        public void DeleteAll(string sourcePath, bool recursive)
+        public void CopyFiles(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
         {
             try
             {
-                Directory.Delete(sourcePath, recursive);
+                if (!_fileSystem.DirectoryExists(sourcePath)){
+                    throw new DirectoryNotFoundException();
+                }
+                
+                var files = _fileSystem
+                    .GetFiles(sourcePath, null, SearchOption.AllDirectories)
+                    .Where(f => IsFiltered(extensionFilter, f));
+                Parallel.ForEach(files, filePath =>
+                {
+                    var newFile = filePath.Replace(sourcePath, destinationPath);
+                    var newPath = _fileSystem.GetDirectoryName(newFile);
+                    if (!_fileSystem.DirectoryExists(newPath))
+                    {
+                        _fileSystem.CreateDirectory(newPath);
+                    }
+                    _fileSystem.CopyFile(filePath, newFile, overWrite);
+                });
             }
-            catch (DirectoryNotFoundException) 
+            catch (Exception){
+                throw;
+            }
+        }
+
+        public void DeleteAll(string path, bool recursive)
+        {
+            try
             {
-                //Avoid Exception when try delete files inside deleted folder.
-                return;
+                if (!_fileSystem.DirectoryExists(path)){
+                    throw new DirectoryNotFoundException();
+                }
+
+                _fileSystem.DeleteDirectory(path, recursive);
             }
             catch (Exception){
                 throw;

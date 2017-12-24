@@ -42,7 +42,11 @@ namespace ToolBox.Files.Tests
             //Arrange
             PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
 
-            string expectedResult = Path.Combine(_userFolder, expected);
+            string expectedResult = Path.Combine(paths);
+            _fileSystemMock
+                .Setup(fs => fs.PathCombine(It.IsAny<string[]>()))
+                .Returns(expectedResult);
+            expectedResult = Path.Combine(_userFolder, expected);
             _commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.IsAny<string>()))
                 .Returns(expectedResult);
@@ -51,6 +55,7 @@ namespace ToolBox.Files.Tests
             var result = creator.Combine(paths);
             //Assert
             Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
             _commandSystemMock.VerifyAll();
         }
 
@@ -83,7 +88,14 @@ namespace ToolBox.Files.Tests
 
             path = Path.Combine(_userFolder, path);
             _fileSystemMock
-                .Setup(fs => fs.GetDirectories(It.IsAny<string>(), It.IsAny<string>()))
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
+            _fileSystemMock
+                .Setup(fs => fs.GetDirectories(
+                    It.IsAny<string>(), It.IsAny<string>())
+                )
                 .Returns(expectedResult);
 
             //Act
@@ -101,12 +113,10 @@ namespace ToolBox.Files.Tests
 
             string path = Path.Combine(_userFolder, "NotExist");
             _fileSystemMock
-                .Setup(
-                    fs => fs.GetDirectories(
-                        It.Is<string>(s => s == path), It.IsAny<string>()
-                    )
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
                 )
-                .Throws(new DirectoryNotFoundException());
+                .Returns(false);
 
             //Act
             Action result = () => creator.GetDirectories(path, null);
@@ -122,6 +132,11 @@ namespace ToolBox.Files.Tests
             PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
 
             string path = Path.Combine(_userFolder, "Exist");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
             _fileSystemMock
                 .Setup(
                     fs => fs.GetDirectories(
@@ -166,6 +181,11 @@ namespace ToolBox.Files.Tests
 
             path = Path.Combine(_userFolder, path);
             _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
+            _fileSystemMock
                 .Setup(fs => fs.GetFiles(path, It.IsAny<string>()))
                 .Returns(expectedResult);
 
@@ -184,12 +204,10 @@ namespace ToolBox.Files.Tests
 
             string path = Path.Combine(_userFolder, "NotExist");
             _fileSystemMock
-                .Setup(
-                    fs => fs.GetFiles(
-                        It.Is<string>(s => s == path), It.IsAny<string>()
-                    )
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
                 )
-                .Throws(new DirectoryNotFoundException());
+                .Returns(false);
 
             //Act
             Action result = () => creator.GetFiles(path, null);
@@ -205,6 +223,11 @@ namespace ToolBox.Files.Tests
             PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
 
             string path = Path.Combine(_userFolder, "Exist");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
             _fileSystemMock
                 .Setup(
                     fs => fs.GetFiles(
