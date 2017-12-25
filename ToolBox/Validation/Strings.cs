@@ -5,18 +5,23 @@ namespace ToolBox.Validations
 {
     public static class Strings {
         public static bool SomeNullOrEmpty(params string[] values){
-            bool result = false;
             try{
-                foreach (var value in values)
+                foreach (string value in values)
                 {
-                    result = result || String.IsNullOrEmpty(value);
+                    if (String.IsNullOrEmpty(value)){
+                        return true;
+                    }
                 }
+                return false;
+            }
+            catch (NullReferenceException)
+            {
+                return true;
             }
             catch (Exception)
             {
                 throw;
             }
-            return result;
         }
     }
 }

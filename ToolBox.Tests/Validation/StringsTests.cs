@@ -17,6 +17,7 @@ namespace ToolBox.Validations.Tests
         }
 
         [Theory]
+        [InlineData(null)]
         [InlineData("")]
         [InlineData("", "a")]
         [InlineData("a", "")]
