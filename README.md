@@ -200,8 +200,8 @@ Env.IsNullOrEmpty(key);   //Return true when value from key is defined
 #### Network
 
 ```csharp
-Env.GetLocalIPv4();           //Return current ip address
-Env.RemoveLastOctetIPv4(ip);  //Return ip address with 3 first octets
+Network.GetLocalIPv4();           //Return current ip address
+Network.RemoveLastOctetIPv4(ip);  //Return ip address with 3 first octets
 ```
 
 #### User
