@@ -84,24 +84,24 @@ On the main class Program, add static properties DiskConfigurator and PathsConfi
 ```csharp
 class Program
 {
-  private static DiskConfigurator _disk {get; set;}
-  private static PathsConfigurator _path {get; set;}
+    private static DiskConfigurator _disk {get; set;}
+    private static PathsConfigurator _path {get; set;}
 
-  static void Main(string[] args)
-  {
-      _disk = new DiskConfigurator(FileSystem.Default);
-      switch (OS.GetCurrent())
-      {
-          case "win":
-              _path = new PathsConfigurator(CommandSystem.Win, FileSystem.Default);
-              break;
-          case "mac":
-              _path = new PathsConfigurator(CommandSystem.Mac, FileSystem.Default);
-              break;
-      }
-      //Foo()
-      //Bar()
-  }
+    static void Main(string[] args)
+    {
+        _disk = new DiskConfigurator(FileSystem.Default);
+        switch (OS.GetCurrent())
+        {
+            case "win":
+                _path = new PathsConfigurator(CommandSystem.Win, FileSystem.Default);
+                break;
+            case "mac":
+                _path = new PathsConfigurator(CommandSystem.Mac, FileSystem.Default);
+                break;
+        }
+        //Foo()
+        //Bar()
+    }
 }
 ```
 
@@ -137,24 +137,24 @@ On the main class Program, add static properties ILogSystem and inside Main meth
 ```csharp
 class Program
 {
-  private static Config _conf { get; set; }
-  private static ILogSystem _log {get; set;}
+    private static Config _conf { get; set; }
+    private static ILogSystem _log {get; set;}
 
-  static void Main(string[] args)
-  {
-      _conf = Settings.Read();
-      switch (_conf.log.system)
-      {
-          case "csv":
-              _log = new FileLogCsv(FileSystem.Default);
-              break;
-          case "txt":
-              _log = new FileLogTxt(FileSystem.Default);
-              break;
-      }
-      //Foo()
-      //Bar()
-  }
+    static void Main(string[] args)
+    {
+        _conf = Settings.Read();
+        switch (_conf.log.system)
+        {
+            case "csv":
+                _log = new FileLogCsv(FileSystem.Default);
+                break;
+            case "txt":
+                _log = new FileLogTxt(FileSystem.Default);
+                break;
+        }
+        //Foo()
+        //Bar()
+    }
 }
 ```
 
