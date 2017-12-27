@@ -105,7 +105,7 @@ class Program
 }
 ```
 
-Add a static using if want to use it on another class:
+If you want to use `_path` and/or `_disk` in other class, add an static using to `Program` class:
 
 ```csharp
 using static Namesapace.Program;
