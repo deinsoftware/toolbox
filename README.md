@@ -84,8 +84,8 @@ On the main class Program, add static properties DiskConfigurator and PathsConfi
 ```csharp
 class Program
 {
-    private static DiskConfigurator _disk {get; set;}
-    private static PathsConfigurator _path {get; set;}
+    public static DiskConfigurator _disk {get; set;}
+    public static PathsConfigurator _path {get; set;}
 
     static void Main(string[] args)
     {
@@ -108,18 +108,18 @@ class Program
 #### Disk
 
 ```csharp
-_disk.CopyAll(source, destination, overwrite, filter[]); //Copy all files and folder from source to destination
-_disk.CopyDirectories(source, destination); //Copy all folder from source to destination
-_disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from source to destination
-_disk.DeleteAll(source, recursive); //Delete all files and folders from source
+Program._disk.CopyAll(source, destination, overwrite, filter[]); //Copy all files and folder from source to destination
+Program._disk.CopyDirectories(source, destination); //Copy all folder from source to destination
+Program._disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from source to destination
+Program._disk.DeleteAll(source, recursive); //Delete all files and folders from source
 ```
 
 #### Paths
 
 ```csharp
-_path.Combine(values[]); //Return combined path. Automatic detect `~` as user folder
-_path.GetDirectories(path, filter); //Return Folders inside path
-_path.GetFiles(path, filter); //Return Files inside path
+Program._path.Combine(values[]); //Return combined path. Automatic detect `~` as user folder
+Program._path.GetDirectories(path, filter); //Return Folders inside path
+Program._path.GetFiles(path, filter); //Return Files inside path
 ```
 
 ### Log
