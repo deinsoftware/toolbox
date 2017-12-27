@@ -34,7 +34,7 @@ namespace ToolBox.Platform
         public string GetHomeFolder(string path) {
             try
             {
-                return path.Replace("~",$"/Users/{Machine.GetUser()}").Replace(@"\",@"/");
+                return path.Replace("~",$"/Users/{User.GetUserName()}").Replace(@"\",@"/");
             }
             catch (Exception)
             {

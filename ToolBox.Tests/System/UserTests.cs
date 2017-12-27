@@ -3,10 +3,16 @@ using Xunit;
 
 namespace ToolBox.System.Tests
 {
-    public class MachineTests
+    public class UserTests
     {
         [Fact(Skip="It's System Functionality")]
-        public void GetUser_WhenCalls_NotImplemented()
+        public void GetUserName_WhenCalls_NotImplemented()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Fact(Skip="It's System Functionality")]
+        public void GetMachine_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }

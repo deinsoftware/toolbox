@@ -1,7 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-  </PropertyGroup>
+    <AssemblyName>ToolBox</AssemblyName>
+    <PackageId>ToolBox</PackageId>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    
+    <Authors>Camilo Martinez</Authors>
+    <Company>dein Software</Company>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyTitle>ToolBox</AssemblyTitle>
+    <Description>C# NETCore ToolBox Library</Description>
+    <Copyright>dein Software © 2017</Copyright>
 
+    <PackageTags>dotnet;core;win10-x64;osx.10.12-x64</PackageTags>
+    <PackageIconUrl>https://github.com/equiman/toolbox/blob/master/ToolBox/icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/equiman/toolbox</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/equiman/toolbox</RepositoryUrl>
+
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;osx.10.12-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <!-- Resources -->
+    <None Update="icon.png" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Packages -->
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
 </Project>
