@@ -105,21 +105,28 @@ class Program
 }
 ```
 
+Add a static using if want to use it on another class:
+
+```csharp
+using static Namesapace.Program;
+```
+replace Namespace with defined namespace in your project.
+
 #### Disk
 
 ```csharp
-Program._disk.CopyAll(source, destination, overwrite, filter[]); //Copy all files and folder from source to destination
-Program._disk.CopyDirectories(source, destination); //Copy all folder from source to destination
-Program._disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from source to destination
-Program._disk.DeleteAll(source, recursive); //Delete all files and folders from source
+_disk.CopyAll(source, destination, overwrite, filter[]); //Copy all files and folder from source to destination
+_disk.CopyDirectories(source, destination); //Copy all folder from source to destination
+_disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from source to destination
+_disk.DeleteAll(source, recursive); //Delete all files and folders from source
 ```
 
 #### Paths
 
 ```csharp
-Program._path.Combine(values[]); //Return combined path. Automatic detect `~` as user folder
-Program._path.GetDirectories(path, filter); //Return Folders inside path
-Program._path.GetFiles(path, filter); //Return Files inside path
+_path.Combine(values[]); //Return combined path. Automatic detect `~` as user folder
+_path.GetDirectories(path, filter); //Return Folders inside path
+_path.GetFiles(path, filter); //Return Files inside path
 ```
 
 ### Log
