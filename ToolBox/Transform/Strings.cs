@@ -15,7 +15,7 @@ namespace ToolBox.Transform
                 result = oldValue;
                 foreach (var word in wordsToRemove)
                 {
-                    if ( String.IsNullOrEmpty(word.Trim()) ) {
+                    if ( String.IsNullOrEmpty(word) || (word == " ") ) {
                         throw new ArgumentException("Can't remove empty or blank spaces.", nameof(wordsToRemove));
                     }     
                     result = result.Replace(word, "");
