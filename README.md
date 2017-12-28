@@ -84,8 +84,8 @@ On the main class Program, add static properties DiskConfigurator and PathsConfi
 ```csharp
 class Program
 {
-    private static DiskConfigurator _disk {get; set;}
-    private static PathsConfigurator _path {get; set;}
+    public static DiskConfigurator _disk {get; set;}
+    public static PathsConfigurator _path {get; set;}
 
     static void Main(string[] args)
     {
@@ -104,6 +104,13 @@ class Program
     }
 }
 ```
+
+If you want to use `_path` and/or `_disk` in other class, add an static using to `Program` class:
+
+```csharp
+using static Namesapace.Program;
+```
+replace Namespace with defined namespace in your project.
 
 #### Disk
 
@@ -200,8 +207,8 @@ Env.IsNullOrEmpty(key);   //Return true when value from key is defined
 #### Network
 
 ```csharp
-Env.GetLocalIPv4();           //Return current ip address
-Env.RemoveLastOctetIPv4(ip);  //Return ip address with 3 first octets
+Network.GetLocalIPv4();           //Return current ip address
+Network.RemoveLastOctetIPv4(ip);  //Return ip address with 3 first octets
 ```
 
 #### User
