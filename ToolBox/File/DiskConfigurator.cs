@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToolBox.Platform;
-using ToolBox.Transform;
+using ToolBox.Validations;
+using System.Text.RegularExpressions;
 
 namespace ToolBox.Files
 {
@@ -24,21 +20,19 @@ namespace ToolBox.Files
 
             _fileSystem = fileSystem;
         }
-        
-        bool IsFiltered(List<string> extensionFilter, string file)
+
+        bool IsFiltered(List<string> regexFilter, string file)
         {
             try
             {
                 bool valid = false;
-                if (extensionFilter == null)
+                if (regexFilter == null)
                 {
                     valid = true;
                 } else 
-                {
-                    valid = extensionFilter.Any(
-                        f => file.EndsWith(f, StringComparison.OrdinalIgnoreCase)
-                    );
-                }
+                valid = regexFilter.All(
+                    filter => Regex.IsMatch(file, filter)
+                );
                 return valid;
             }
             catch (Exception){
@@ -46,7 +40,7 @@ namespace ToolBox.Files
             }
         }
 
-        public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
+        public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
             try
             {
@@ -55,7 +49,7 @@ namespace ToolBox.Files
                 }
                 
                 CopyDirectories(sourcePath, destinationPath);
-                CopyFiles(sourcePath, destinationPath, overWrite, extensionFilter);
+                CopyFiles(sourcePath, destinationPath, overWrite, regexFilter);
             }
             catch (Exception){
                 throw;
@@ -86,7 +80,7 @@ namespace ToolBox.Files
             }
         }
 
-        public void CopyFiles(string sourcePath, string destinationPath, bool overWrite = false, List<string> extensionFilter = null)
+        public void CopyFiles(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
             try
             {
@@ -96,7 +90,7 @@ namespace ToolBox.Files
                 
                 var files = _fileSystem
                     .GetFiles(sourcePath, null, SearchOption.AllDirectories)
-                    .Where(f => IsFiltered(extensionFilter, f));
+                    .Where(f => IsFiltered(regexFilter, f));
                 Parallel.ForEach(files, filePath =>
                 {
                     var newFile = filePath.Replace(sourcePath, destinationPath);

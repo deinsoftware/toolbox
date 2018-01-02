@@ -3,7 +3,6 @@ using Xunit;
 using Moq;
 using System.IO;
 using System.Linq;
-using ToolBox.Files;
 using ToolBox.Platform;
 
 namespace ToolBox.Files.Tests

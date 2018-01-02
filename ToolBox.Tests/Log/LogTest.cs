@@ -1,8 +1,4 @@
 using System;
-using System.IO;
-using Moq;
-using ToolBox.Files;
-using ToolBox.Platform;
 using Xunit;
 
 namespace ToolBox.Log.Tests

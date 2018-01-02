@@ -3,7 +3,6 @@ using Xunit;
 using System.Collections.Generic;
 using System.IO;
 using Moq;
-using ToolBox.Files;
 using ToolBox.Platform;
 
 namespace ToolBox.Files.Tests
@@ -54,6 +53,109 @@ namespace ToolBox.Files.Tests
             Assert.Equal(expectedResult, result);
             _fileSystemMock.VerifyAll();
             _commandSystemMock.VerifyAll();
+        }
+
+        [Fact(Skip="It's System Functionality")]
+        public void GetFileName_WhenCalls_NotImplemented()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Theory]
+        [InlineData(
+            new[] {
+                "/Users/user/Exist/File3_1.csv",
+                "/Users/user/Exist/File3_2.csv",
+                "/Users/user/Exist/File3_3.csv"
+            }
+            , "Exists"
+            , "*.csv")
+        ]
+        [InlineData(
+            new[] {
+                "/Users/user/Exist/File3_1.csv",
+                "/Users/user/Exist/File3_1.txt",
+                "/Users/user/Exist/File3_2.csv",
+                "/Users/user/Exist/File3_2.txt",
+                "/Users/user/Exist/File3_3.csv",
+                "/Users/user/Exist/File3_3.txt"
+            }
+            , "Exists"
+            , null)
+        ]
+        public void GetFiles_WhenCalls_ReturnsFileList(string[] expectedResult, string path, string filter)
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+
+            path = Path.Combine(_userFolder, path);
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
+            _fileSystemMock
+                .Setup(fs => fs.GetFiles(path, It.IsAny<string>()))
+                .Returns(expectedResult);
+
+            //Act
+            var result = creator.GetFiles(path, filter);
+            //Assert
+            Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void GetFiles_WhenPathNotFound_ReturnsException()
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+
+            string path = Path.Combine(_userFolder, "NotExist");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(false);
+
+            //Act
+            Action result = () => creator.GetFiles(path, null);
+            //Assert
+            Assert.Throws<DirectoryNotFoundException>(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void GetFiles_WhenThereIsNoFiles_ReturnsEmpty()
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+
+            string path = Path.Combine(_userFolder, "Exist");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(
+                    It.Is<string>(s => s == path))
+                )
+                .Returns(true);
+            _fileSystemMock
+                .Setup(
+                    fs => fs.GetFiles(
+                        It.Is<string>(s => s == path), It.IsAny<string>()
+                    )
+                )
+                .Returns(new List<string>());
+
+            //Act
+            var result = creator.GetFiles(path, "FilterNotExists");
+            //Assert
+            Assert.Empty(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact(Skip="It's System Functionality")]
+        public void GetDirectoryName_WhenCalls_NotImplemented()
+        {
+            throw new NotImplementedException();
         }
 
         [Theory]
@@ -149,95 +251,6 @@ namespace ToolBox.Files.Tests
             _fileSystemMock.VerifyAll();
         }
 
-        [Theory]
-        [InlineData(
-            new[] {
-                "/Users/user/Exist/File3_1.csv",
-                "/Users/user/Exist/File3_2.csv",
-                "/Users/user/Exist/File3_3.csv"
-            }
-            , "Exists"
-            , "*.csv")
-        ]
-        [InlineData(
-            new[] {
-                "/Users/user/Exist/File3_1.csv",
-                "/Users/user/Exist/File3_1.txt",
-                "/Users/user/Exist/File3_2.csv",
-                "/Users/user/Exist/File3_2.txt",
-                "/Users/user/Exist/File3_3.csv",
-                "/Users/user/Exist/File3_3.txt"
-            }
-            , "Exists"
-            , null)
-        ]
-        public void GetFiles_WhenCalls_ReturnsFileList(string[] expectedResult, string path, string filter)
-        {
-            //Arrange
-            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
-
-            path = Path.Combine(_userFolder, path);
-            _fileSystemMock
-                .Setup(fs => fs.DirectoryExists(
-                    It.Is<string>(s => s == path))
-                )
-                .Returns(true);
-            _fileSystemMock
-                .Setup(fs => fs.GetFiles(path, It.IsAny<string>()))
-                .Returns(expectedResult);
-
-            //Act
-            var result = creator.GetFiles(path, filter);
-            //Assert
-            Assert.Equal(expectedResult, result);
-            _fileSystemMock.VerifyAll();
-        }
-
-        [Fact]
-        public void GetFiles_WhenPathNotFound_ReturnsException()
-        {
-            //Arrange
-            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
-
-            string path = Path.Combine(_userFolder, "NotExist");
-            _fileSystemMock
-                .Setup(fs => fs.DirectoryExists(
-                    It.Is<string>(s => s == path))
-                )
-                .Returns(false);
-
-            //Act
-            Action result = () => creator.GetFiles(path, null);
-            //Assert
-            Assert.Throws<DirectoryNotFoundException>(result);
-            _fileSystemMock.VerifyAll();
-        }
-
-        [Fact]
-        public void GetFiles_WhenThereIsNoFiles_ReturnsEmpty()
-        {
-            //Arrange
-            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
-
-            string path = Path.Combine(_userFolder, "Exist");
-            _fileSystemMock
-                .Setup(fs => fs.DirectoryExists(
-                    It.Is<string>(s => s == path))
-                )
-                .Returns(true);
-            _fileSystemMock
-                .Setup(
-                    fs => fs.GetFiles(
-                        It.Is<string>(s => s == path), It.IsAny<string>()
-                    )
-                )
-                .Returns(new List<string>());
-
-            //Act
-            var result = creator.GetFiles(path, "FilterNotExists");
-            //Assert
-            Assert.Empty(result);
-            _fileSystemMock.VerifyAll();
-        }
+        
     }
 }

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Collections.Generic;
-using ToolBox.Files;
 using ToolBox.Platform;
 
 namespace ToolBox.Files
