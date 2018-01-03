@@ -90,7 +90,7 @@ namespace ToolBox.Files
                 
                 var files = _fileSystem
                     .GetFiles(sourcePath, null, SearchOption.AllDirectories)
-                    .Where(f => IsFiltered(regexFilter, f));
+                    .Where(file => IsFiltered(regexFilter, file));
                 Parallel.ForEach(files, filePath =>
                 {
                     var newFile = filePath.Replace(sourcePath, destinationPath);
