@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>dein.ToolBox</id>
+    <version>1.0.0</version>
+    <title>dein ToolBox</title>
+    <authors>equiman</authors>
+    <owners>dein Software</owners>
+    <licenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/equiman/toolbox</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/equiman/toolbox/master/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>C# NETCore ToolBox Library</description>
+    <summary>C# NETCore Library [for Win and Mac] with utilities like: files, log, platform, system, transform and validation.</summary>
+    <releaseNotes>This is where it all begins...</releaseNotes>
+    <copyright>dein Software © 2017</copyright>
+    <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection</tags>
+    <language>en-US</language>
+    <developmentDependency>true</developmentDependency>
+    <dependencies>
+        <dependency id="Newtonsoft.Json" version="10.0.3" />
+    </dependencies>
+  </metadata>
+</package>

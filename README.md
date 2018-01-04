@@ -1,10 +1,8 @@
-# ToolBox [ for Win & Mac ]
+# dein ToolBox [ for Win & Mac ]
 
+**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/equiman/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
 
-**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in 
-[HardHat](https://github.com/equiman/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
-
-Contributions or Beer :beers: will be appreciated :thumbsup:
+Contributions or Beer will be appreciated
 
 > The Code is Dark and Full of Errors!  
 > Console is your friend ... don't be afraid!
@@ -13,8 +11,9 @@ Contributions or Beer :beers: will be appreciated :thumbsup:
 
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Installing](#installing)
-  * [Add Reference](#add-reference)
+  * [Install](#install)
+    * [Add As Package](#add-as-package)
+    * [Add As Reference](#add-as-reference)
   * [Instantiate Library](#instantiate-library)
 * [Usage](#usage)
   * [Files](#files)
@@ -45,7 +44,21 @@ What things you need to install?
 
 ### Installing
 
-Follow this steps to install on your local machine
+**ToolBox** is available as [project](https://github.com/equiman/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on source code library.
+
+Follow this instructions to add **ToolBox** in your project.
+
+#### Add As Package
+
+In your project folder, where is located .csproj file run this command on terminal:
+
+```terminal
+dotnet add package dein.toolbox
+```
+
+Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package)
+
+#### Add As Reference
 
 Clone **ToolBox** from GitHub on *recommended* path. Using this command on terminal:
 
@@ -54,8 +67,6 @@ Clone **ToolBox** from GitHub on *recommended* path. Using this command on termi
 | win | `git clone https://github.com/equiman/toolbox.git "D:\Developer\DEIN\Projects\_devTB"` |
 | mac | `git clone https://github.com/equiman/toolbox.git ~/Developer/DEIN/Projects/_devTB` |
 
-## Add Reference
-
 In your project folder, where is located .csproj file run this command on terminal:
 
 | OS | Command |
@@ -63,7 +74,7 @@ In your project folder, where is located .csproj file run this command on termin
 | win | `dotnet add reference "D:\Developer\DEIN\Projects\_devCC\ToolBox\ToolBox.csproj"` |
 | mac | `dotnet add reference ~/Developer/DEIN/Projects/_devCC/ToolBox/ToolBox.csproj` |
 
-Take a look on official documentation: [dotnet-add reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference)
+Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference)
 
 Keep calm, you are almost done. Review this final steps and enjoy the life, no more tedious and repetitive tasks stealing your precious time.
 

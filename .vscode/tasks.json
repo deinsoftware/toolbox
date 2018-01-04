@@ -55,6 +55,20 @@
                 "osx.10.12-x64"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "pack",
+            "command": "dotnet",
+            "args": [
+                "pack",
+                "${workspaceRoot}/ToolBox/ToolBox.csproj",
+                "/p:NuspecFile=${workspaceRoot}/ToolBox/ToolBox.nuspec",
+                "-o",
+                "${workspaceRoot}/Package/",
+                "-c",
+                "release"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }
