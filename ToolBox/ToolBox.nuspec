@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/equiman/toolbox</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/equiman/toolbox/master/icon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>C# NETCore ToolBox Library</description>
-    <summary>C# NETCore Library [for Win and Mac] with utilities like: files, log, platform, system, transform and validation.</summary>
+    <description>C# NETCore ToolBox Library [for Win and Mac]</description>
+    <summary>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</summary>
     <releaseNotes>This is where it all begins...</releaseNotes>
     <copyright>dein Software © 2017</copyright>
     <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection</tags>
