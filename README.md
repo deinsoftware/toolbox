@@ -58,7 +58,7 @@ Follow this instructions to add **ToolBox** in your project.
 In your project folder, where is located .csproj file run this command on terminal:
 
 ```terminal
-dotnet add package dein.toolbox
+dotnet add package dein.ToolBox
 dotnet add package Newtonsoft.Json --version 10.0.3
 ```
 
