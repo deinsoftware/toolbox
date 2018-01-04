@@ -13,7 +13,7 @@
     <Copyright>dein Software © 2017</Copyright>
 
     <PackageTags>dotnet;core;win10-x64;osx.10.12-x64</PackageTags>
-    <PackageIconUrl>https://github.com/equiman/toolbox/blob/master/ToolBox/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/equiman/toolbox/blob/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/equiman/toolbox</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

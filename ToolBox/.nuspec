@@ -9,7 +9,7 @@
         <language>en-US</language>
         <projectUrl>https://github.com/equiman/toolbox</projectUrl>
         <licenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</licenseUrl>
-        <iconUrl>https://github.com/equiman/toolbox/blob/master/ToolBox/icon.png</iconUrl>
+        <iconUrl>https://github.com/equiman/toolbox/blob/master/icon.png</iconUrl>
         <releaseNotes>This is where it all begins...</releaseNotes>
         <copyright>dein Software © 2017</copyright>
         <tags>dotnet-core macos windows library csharp toolbox validation-library osdetection</tags>
