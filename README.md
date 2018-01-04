@@ -12,6 +12,7 @@ Contributions or Beer will be appreciated
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Install](#install)
+    * [Dependencies](#dependencies)
     * [Add As Package](#add-as-package)
     * [Add As Reference](#add-as-reference)
   * [Instantiate Library](#instantiate-library)
@@ -48,12 +49,17 @@ What things you need to install?
 
 Follow this instructions to add **ToolBox** in your project.
 
+#### Dependencies
+
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/10.0.3) Library
+
 #### Add As Package
 
 In your project folder, where is located .csproj file run this command on terminal:
 
 ```terminal
 dotnet add package dein.toolbox
+dotnet add package Newtonsoft.Json --version 10.0.3
 ```
 
 Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package)
@@ -76,9 +82,9 @@ In your project folder, where is located .csproj file run this command on termin
 
 Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference)
 
-Keep calm, you are almost done. Review this final steps and enjoy the life, no more tedious and repetitive tasks stealing your precious time.
-
 ## Usage
+
+Keep calm, you are almost done. Review this usage steps and enjoy the life.
 
 ### Files
 
