@@ -4,8 +4,8 @@
     <id>dein.ToolBox</id>
     <version>1.0.0</version>
     <title>dein ToolBox</title>
-    <authors>equiman</authors>
-    <owners>dein Software</owners>
+    <authors>Camilo Martinez</authors>
+    <owners>dein,equiman</owners>
     <licenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/equiman/toolbox</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/equiman/toolbox/master/icon.png</iconUrl>
