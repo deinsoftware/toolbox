@@ -12,7 +12,7 @@
         <iconUrl>https://github.com/equiman/toolbox/blob/master/icon.png</iconUrl>
         <releaseNotes>This is where it all begins...</releaseNotes>
         <copyright>dein Software © 2017</copyright>
-        <tags>dotnet-core macos windows library csharp toolbox validation-library osdetection</tags>
+        <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection</tags>
     </metadata>
     <dependencies>
         <dependency id="Newtonsoft.Json" version="10.0.3" />
