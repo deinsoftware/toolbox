@@ -9,6 +9,18 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.1.0] - 2018-01-05
+
+**Added:**
+
+* FilterCreator function.
+* INotificationSystem interface that notify actions on COPY or DELETE files.
+* NuGet package.
+
+**Fixed:**
+
+* Update [ToolBox](https://github.com/equiman/toolbox) and [Colorify](https://github.com/equiman/colorify) library, that solves bug with text on resize window.
+
 ## [1.0.0] - 2017-12-26
 
 Where it all begins...

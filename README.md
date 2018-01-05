@@ -132,10 +132,29 @@ replace Namespace with defined namespace in your project.
 #### Disk
 
 ```csharp
+_disk.FilterCreator(extension[]); //Create a Regex with accepted extensions.
 _disk.CopyAll(source, destination, overwrite, filter[]); //Copy all files and folder from source to destination
 _disk.CopyDirectories(source, destination); //Copy all folder from source to destination
 _disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from source to destination
 _disk.DeleteAll(source, recursive); //Delete all files and folders from source
+```
+
+If you want get Notification about copy or delete process, need implement `INotificationSystem` interface.
+
+```csharp
+public sealed class ConsoleNotificationSystem : INotificationSystem
+{
+    public void ShowAction(string action, string message)
+    {
+        Console.WriteLine($" [{action}] {message}", txtPrimary);
+    }
+}
+```
+
+And send it as parameter on `DiskConfiguration` definition.
+
+```csharp
+_disk = new DiskConfigurator(FileSystem.Default, new ConsoleNotificationSystem());
 ```
 
 #### Paths
