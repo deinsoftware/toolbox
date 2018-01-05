@@ -8,8 +8,8 @@ namespace ToolBox.Files
 {
     public sealed class PathsConfigurator
     {
-        static ICommandSystem _commandSystem;
-        static IFileSystem _fileSystem;
+        static ICommandSystem _commandSystem {get; set;}
+        static IFileSystem _fileSystem {get; set;}
 
         public PathsConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem)
         {
@@ -80,7 +80,7 @@ namespace ToolBox.Files
                 throw;
             }
         }
-        
+
         public List<string> GetDirectories(string path, string filter = null)
         {
             try

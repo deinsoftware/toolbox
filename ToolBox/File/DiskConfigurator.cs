@@ -10,8 +10,8 @@ namespace ToolBox.Files
 {
     public sealed class DiskConfigurator
     {
-        static IFileSystem _fileSystem;
-        static INotificationSystem _notificationSystem;
+        static IFileSystem _fileSystem {get; set;}
+        static INotificationSystem _notificationSystem {get; set;}
 
         public DiskConfigurator(IFileSystem fileSystem, INotificationSystem notificationSystem = null){
             if (fileSystem == null)
