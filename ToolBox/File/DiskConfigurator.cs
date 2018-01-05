@@ -20,9 +20,29 @@ namespace ToolBox.Files
             }
 
             _fileSystem = fileSystem;
-            if (notificationSystem != null){
+            if (notificationSystem == null){
+                _notificationSystem = NotificationSystem.Default;
+            } else {
                 _notificationSystem = notificationSystem;
             }
+        }
+
+        public List<string> FilterCreator(params string[] extension){
+            string extensions = string.Join(
+                "|", 
+                Array.ConvertAll(
+                    extension, 
+                    ext => ext.ToString().Replace(".", "")
+                )
+            );
+
+            List<string> filter = new List<string>();
+            //Extensions
+            filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
+            //Ignore
+            filter.Add(@"^(?!\.).*");
+
+            return filter;
         }
 
         bool IsFiltered(List<string> regexFilter, string file)
@@ -75,7 +95,7 @@ namespace ToolBox.Files
                     var newPath = dirPath.Replace(sourcePath, destinationPath);
                     if (!_fileSystem.DirectoryExists(newPath))
                     {
-                        _notificationSystem.ShowAction("COPY", Strings.RemoveWords(dirPath,sourcePath));
+                        _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newPath, destinationPath));
                         _fileSystem.CreateDirectory(newPath);
                     }
                 });
@@ -104,7 +124,7 @@ namespace ToolBox.Files
                     {
                         _fileSystem.CreateDirectory(newPath);
                     }
-                    _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newPath,sourcePath));
+                    _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newFile, destinationPath));
                     _fileSystem.CopyFile(filePath, newFile, overWrite);
                 });
             }
