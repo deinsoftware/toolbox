@@ -3,7 +3,7 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToolBox.Validations;
+using ToolBox.Transform;
 using System.Text.RegularExpressions;
 
 namespace ToolBox.Files
@@ -11,14 +11,18 @@ namespace ToolBox.Files
     public sealed class DiskConfigurator
     {
         static IFileSystem _fileSystem;
+        static INotificationSystem _notificationSystem;
 
-        public DiskConfigurator(IFileSystem fileSystem){
+        public DiskConfigurator(IFileSystem fileSystem, INotificationSystem notificationSystem = null){
             if (fileSystem == null)
             {
                 throw new ArgumentException(nameof(fileSystem));
             }
 
             _fileSystem = fileSystem;
+            if (notificationSystem != null){
+                _notificationSystem = notificationSystem;
+            }
         }
 
         bool IsFiltered(List<string> regexFilter, string file)
@@ -71,6 +75,7 @@ namespace ToolBox.Files
                     var newPath = dirPath.Replace(sourcePath, destinationPath);
                     if (!_fileSystem.DirectoryExists(newPath))
                     {
+                        _notificationSystem.ShowAction("COPY", Strings.RemoveWords(dirPath,sourcePath));
                         _fileSystem.CreateDirectory(newPath);
                     }
                 });
@@ -99,6 +104,7 @@ namespace ToolBox.Files
                     {
                         _fileSystem.CreateDirectory(newPath);
                     }
+                    _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newPath,sourcePath));
                     _fileSystem.CopyFile(filePath, newFile, overWrite);
                 });
             }
@@ -115,6 +121,7 @@ namespace ToolBox.Files
                     throw new DirectoryNotFoundException();
                 }
 
+                _notificationSystem.ShowAction("DEL", path);
                 _fileSystem.DeleteDirectory(path, recursive);
             }
             catch (Exception){

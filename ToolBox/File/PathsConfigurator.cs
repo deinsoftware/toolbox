@@ -25,7 +25,6 @@ namespace ToolBox.Files
 
             _commandSystem = commandSystem;
             _fileSystem = fileSystem;
-            
         }
 
         public string Combine(params string[] paths)
@@ -57,7 +56,7 @@ namespace ToolBox.Files
                 if (!_fileSystem.DirectoryExists(path)){
                     throw new DirectoryNotFoundException();
                 }
-
+                
                 List<string> files = new List<string>();
                 files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
                 return files;
