@@ -26,8 +26,12 @@ namespace ToolBox.Files
                 _notificationSystem = notificationSystem;
             }
         }
-
+        
         public List<string> FilterCreator(params string[] extension){
+            return FilterCreator(false, extension);
+        }
+
+        public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension){
             string extensions = string.Join(
                 "|", 
                 Array.ConvertAll(
@@ -37,10 +41,10 @@ namespace ToolBox.Files
             );
 
             List<string> filter = new List<string>();
-            //Extensions
             filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
-            //Ignore
-            filter.Add(@"^(?!\.).*");
+            if (ignoreSystemFiles){
+                filter.Add(@"^(?!\.).*");
+            }
 
             return filter;
         }
