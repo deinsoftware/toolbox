@@ -15,7 +15,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 * FilterCreator function.
 * INotificationSystem interface that notify actions on COPY or DELETE files.
-* NuGet package.
+* NuGet package configuration.
 
 **Fixed:**
 
