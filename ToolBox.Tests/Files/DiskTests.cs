@@ -30,6 +30,12 @@ namespace ToolBox.Files.Tests
             _userFolder = _commandSystem.GetHomeFolder("~");
         }
 
+        [Fact(Skip = "TODO")]
+        public void FilterCreator_WhenCalls_NotImplemented()
+        {
+            throw new NotImplementedException();
+        }
+
         [Fact(Skip="It Calls CopyDirectories and CopyFiles")]
         public void CopyAll_WhenCalls_NotImplemented()
         {
