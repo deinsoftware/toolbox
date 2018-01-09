@@ -18,8 +18,8 @@ namespace ToolBox.Files
             {
                 throw new ArgumentException(nameof(fileSystem));
             }
-
             _fileSystem = fileSystem;
+
             if (notificationSystem == null){
                 _notificationSystem = NotificationSystem.Default;
             } else {
@@ -32,21 +32,35 @@ namespace ToolBox.Files
         }
 
         public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension){
-            string extensions = string.Join(
-                "|", 
-                Array.ConvertAll(
-                    extension, 
-                    ext => ext.ToString().Replace(".", "")
-                )
-            );
+            try
+            {
+                if (extension == null)
+                {
+                    throw new ArgumentException(nameof(extension));
+                }
 
-            List<string> filter = new List<string>();
-            filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
-            if (ignoreSystemFiles){
-                filter.Add(@"^(?!\.).*");
+                List<string> filter = new List<string>();
+
+                string extensions = string.Join(
+                    "|", 
+                    Array.ConvertAll(
+                        extension, 
+                        ext => ext.ToString().Replace(".", "")
+                    )
+                );
+                if (!String.IsNullOrEmpty(extensions)){
+                    filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
+                }
+                if (ignoreSystemFiles){
+                    filter.Add(@"^(?!\.).*");
+                }
+
+                return filter;
             }
-
-            return filter;
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         bool IsFiltered(List<string> regexFilter, string file)

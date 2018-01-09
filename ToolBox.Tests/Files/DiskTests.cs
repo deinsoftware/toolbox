@@ -14,6 +14,8 @@ namespace ToolBox.Files.Tests
         static string _userFolder;
         readonly Mock<IFileSystem> _fileSystemMock;
         static IFileSystem _fileSystem;
+        readonly Mock<INotificationSystem> _notificationSystemMock;
+        static INotificationSystem _notificationSystem;
 
         public DiskTests()
         {
@@ -28,12 +30,38 @@ namespace ToolBox.Files.Tests
                 .Setup(cs => cs.GetHomeFolder(It.Is<string>(s => s == "~")))
                 .Returns("/Users/user");
             _userFolder = _commandSystem.GetHomeFolder("~");
+
+            _notificationSystemMock = new Mock<INotificationSystem>(MockBehavior.Strict);
+            _notificationSystem = _notificationSystemMock.Object;
         }
 
-        [Fact(Skip = "TODO")]
-        public void FilterCreator_WhenCalls_NotImplemented()
+        [Fact]
+        public void FilterCreator_WhenExtensionIsNull_ReturnsException()
         {
-            throw new NotImplementedException();
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            //Act
+            Action result = () => creator.FilterCreator(false, null);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Theory]
+        [InlineData(new string[] {}, false, "")]
+        [InlineData(new string[] { @"^(?!\.).*" }, true, "")]
+        [InlineData(new string[] { @"([^\s]+(\.(?i)(css|js))$)", @"^(?!\.).*" }, true, ".css", ".js")]
+        [InlineData(new string[] { @"([^\s]+(\.(?i)(css|js))$)", @"^(?!\.).*" }, true, "css", "js")]
+        [InlineData(new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, false, "css", "js")]
+        public void FilterCreator_WhenCalls_ReturnFilterList(string[] expectedResult, bool ignoreSystemFiles, params string[] extension)
+        {
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            //Act
+            var result = creator.FilterCreator(ignoreSystemFiles, extension);
+            //Assert
+            Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact(Skip="It Calls CopyDirectories and CopyFiles")]

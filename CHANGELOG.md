@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.1.1] - 2018-01-09
+
+**Fixed:**
+
+* FilterCreator function when extension is null.
+
 ## [1.1.0] - 2018-01-05
 
 **Added:**
