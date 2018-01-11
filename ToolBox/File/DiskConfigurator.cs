@@ -32,35 +32,28 @@ namespace ToolBox.Files
         }
 
         public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension){
-            try
+            if (extension == null)
             {
-                if (extension == null)
-                {
-                    throw new ArgumentException(nameof(extension));
-                }
-
-                List<string> filter = new List<string>();
-
-                string extensions = string.Join(
-                    "|", 
-                    Array.ConvertAll(
-                        extension, 
-                        ext => ext.ToString().Replace(".", "")
-                    )
-                );
-                if (!String.IsNullOrEmpty(extensions)){
-                    filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
-                }
-                if (ignoreSystemFiles){
-                    filter.Add(@"^(?!\.).*");
-                }
-
-                return filter;
+                throw new ArgumentException(nameof(extension));
             }
-            catch (Exception)
-            {
-                throw;
+
+            List<string> filter = new List<string>();
+
+            string extensions = string.Join(
+                "|", 
+                Array.ConvertAll(
+                    extension, 
+                    ext => ext.ToString().Replace(".", "")
+                )
+            );
+            if (!String.IsNullOrEmpty(extensions)){
+                filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
             }
+            if (ignoreSystemFiles){
+                filter.Add(@"^(?!\.).*");
+            }
+
+            return filter;
         }
 
         bool IsFiltered(List<string> regexFilter, string file)
@@ -71,10 +64,11 @@ namespace ToolBox.Files
                 if (regexFilter == null)
                 {
                     valid = true;
-                } else 
-                valid = regexFilter.All(
-                    filter => Regex.IsMatch(file, filter)
-                );
+                } else {
+                    valid = regexFilter.All(
+                        filter => Regex.IsMatch(file, filter)
+                    );
+                }
                 return valid;
             }
             catch (Exception){
@@ -84,87 +78,63 @@ namespace ToolBox.Files
 
         public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
-            try
-            {
-                if (!_fileSystem.DirectoryExists(sourcePath)){
-                    throw new DirectoryNotFoundException();
-                }
-                
-                CopyDirectories(sourcePath, destinationPath);
-                CopyFiles(sourcePath, destinationPath, overWrite, regexFilter);
+            if (!_fileSystem.DirectoryExists(sourcePath)){
+                throw new DirectoryNotFoundException();
             }
-            catch (Exception){
-                throw;
-            }
+            
+            CopyDirectories(sourcePath, destinationPath);
+            CopyFiles(sourcePath, destinationPath, overWrite, regexFilter);
         }
 
         public void CopyDirectories(string sourcePath, string destinationPath)
         {
-            try
+            if (!_fileSystem.DirectoryExists(sourcePath)){
+                throw new DirectoryNotFoundException();
+            }
+            
+            var directories = _fileSystem
+                .GetDirectories(sourcePath, null, SearchOption.AllDirectories);
+            Parallel.ForEach(directories, dirPath =>
             {
-                if (!_fileSystem.DirectoryExists(sourcePath)){
-                    throw new DirectoryNotFoundException();
-                }
-                
-                var directories = _fileSystem
-                    .GetDirectories(sourcePath, null, SearchOption.AllDirectories);
-                Parallel.ForEach(directories, dirPath =>
+                var newPath = dirPath.Replace(sourcePath, destinationPath);
+                if (!_fileSystem.DirectoryExists(newPath))
                 {
-                    var newPath = dirPath.Replace(sourcePath, destinationPath);
-                    if (!_fileSystem.DirectoryExists(newPath))
-                    {
-                        _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newPath, destinationPath));
-                        _fileSystem.CreateDirectory(newPath);
-                    }
-                });
-            }
-            catch (Exception){
-                throw;
-            }
+                    _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newPath, destinationPath));
+                    _fileSystem.CreateDirectory(newPath);
+                }
+            });
         }
 
         public void CopyFiles(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
-            try
+            if (!_fileSystem.DirectoryExists(sourcePath)){
+                throw new DirectoryNotFoundException();
+            }
+            
+            var files = _fileSystem
+                .GetFiles(sourcePath, null, SearchOption.AllDirectories)
+                .Where(file => IsFiltered(regexFilter, file));
+            Parallel.ForEach(files, filePath =>
             {
-                if (!_fileSystem.DirectoryExists(sourcePath)){
-                    throw new DirectoryNotFoundException();
-                }
-                
-                var files = _fileSystem
-                    .GetFiles(sourcePath, null, SearchOption.AllDirectories)
-                    .Where(file => IsFiltered(regexFilter, file));
-                Parallel.ForEach(files, filePath =>
+                var newFile = filePath.Replace(sourcePath, destinationPath);
+                var newPath = _fileSystem.GetDirectoryName(newFile);
+                if (!_fileSystem.DirectoryExists(newPath))
                 {
-                    var newFile = filePath.Replace(sourcePath, destinationPath);
-                    var newPath = _fileSystem.GetDirectoryName(newFile);
-                    if (!_fileSystem.DirectoryExists(newPath))
-                    {
-                        _fileSystem.CreateDirectory(newPath);
-                    }
-                    _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newFile, destinationPath));
-                    _fileSystem.CopyFile(filePath, newFile, overWrite);
-                });
-            }
-            catch (Exception){
-                throw;
-            }
+                    _fileSystem.CreateDirectory(newPath);
+                }
+                _notificationSystem.ShowAction("COPY", Strings.RemoveWords(newFile, destinationPath));
+                _fileSystem.CopyFile(filePath, newFile, overWrite);
+            });
         }
 
         public void DeleteAll(string path, bool recursive)
         {
-            try
-            {
-                if (!_fileSystem.DirectoryExists(path)){
-                    throw new DirectoryNotFoundException();
-                }
+            if (!_fileSystem.DirectoryExists(path)){
+                throw new DirectoryNotFoundException();
+            }
 
-                _notificationSystem.ShowAction("DEL", path);
-                _fileSystem.DeleteDirectory(path, recursive);
-            }
-            catch (Exception){
-                throw;
-            }
+            _notificationSystem.ShowAction("DEL", path);
+            _fileSystem.DeleteDirectory(path, recursive);
         }
     }
 }

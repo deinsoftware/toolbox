@@ -21,7 +21,7 @@ namespace ToolBox.Files
 
         string GetDirectoryName(string path);
         bool DirectoryExists(string path);
-        void DeleteDirectory(string path, bool recursive = false);
+        void DeleteDirectory(string path, bool recursive = true);
         void CreateDirectory(string path);
         IEnumerable<string> GetDirectories(string path, string filter);
         IEnumerable<string> GetDirectories(string path, string filter, SearchOption searchOption);

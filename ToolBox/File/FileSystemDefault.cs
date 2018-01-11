@@ -99,7 +99,6 @@ namespace ToolBox.Files
             catch (DirectoryNotFoundException) 
             {
                 //Avoid Exception when try delete files inside deleted folder.
-                return;
             }
             catch (Exception){
                 throw;
@@ -107,18 +106,7 @@ namespace ToolBox.Files
         }
 
         public void CreateDirectory(string path){            
-            try
-            {
-                Directory.CreateDirectory(path);
-            }
-            catch (DirectoryNotFoundException) 
-            {
-                //Avoid Exception when try delete files inside deleted folder.
-                return;
-            }
-            catch (Exception){
-                throw;
-            }
+            Directory.CreateDirectory(path);
         }
 
         public IEnumerable<string> GetDirectories(string path, string filter)

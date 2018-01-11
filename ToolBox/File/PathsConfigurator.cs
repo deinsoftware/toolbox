@@ -36,17 +36,11 @@ namespace ToolBox.Files
 
         public string GetFileName(string filePath)
         {
-            try
-            {
-                if (String.IsNullOrEmpty(filePath)){
-                    throw new ArgumentException(nameof(filePath));
-                }
+            if (String.IsNullOrEmpty(filePath)){
+                throw new ArgumentException(nameof(filePath));
+            }
 
-                return _fileSystem.GetFileName(filePath);
-            }
-            catch (Exception){
-                throw;
-            }
+            return _fileSystem.GetFileName(filePath);
         }
 
         public List<string> GetFiles(string path, string filter = null)
@@ -57,8 +51,7 @@ namespace ToolBox.Files
                     throw new DirectoryNotFoundException();
                 }
                 
-                List<string> files = new List<string>();
-                files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
+                List<string> files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
                 return files;
             }
             catch (Exception){
@@ -68,34 +61,21 @@ namespace ToolBox.Files
 
         public string GetDirectoryName(string path)
         {
-            try
-            {
-                if (String.IsNullOrEmpty(path)){
-                    throw new ArgumentException(nameof(path));
-                }
+            if (String.IsNullOrEmpty(path)){
+                throw new ArgumentException(nameof(path));
+            }
 
-                return _fileSystem.GetDirectoryName(path);
-            }
-            catch (Exception){
-                throw;
-            }
+            return _fileSystem.GetDirectoryName(path);
         }
 
         public List<string> GetDirectories(string path, string filter = null)
         {
-            try
-            {
-                if (!_fileSystem.DirectoryExists(path)){
-                    throw new DirectoryNotFoundException();
-                }
+            if (!_fileSystem.DirectoryExists(path)){
+                throw new DirectoryNotFoundException();
+            }
 
-                List<string> list = new List<string>();
-                list = new List<string>(_fileSystem.GetDirectories(path, filter).OrderBy(name => name));
-                return list;
-            }
-            catch (Exception){
-                throw;
-            }
+            List<string> list = new List<string>(_fileSystem.GetDirectories(path, filter).OrderBy(name => name));
+            return list;
         }
     }
 }
