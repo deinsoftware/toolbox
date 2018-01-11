@@ -311,7 +311,7 @@ Web.IsUrl(value); //Return true if value is an http or https valid address
 ### Built With
 
 * [VS Code](https://code.visualstudio.com/) - Code editing redefined.
-* [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox).
+* [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
 
 ### Contributing
 
