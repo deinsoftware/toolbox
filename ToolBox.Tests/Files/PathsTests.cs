@@ -10,10 +10,10 @@ namespace ToolBox.Files.Tests
     public class PathsTests
     {
         readonly Mock<ICommandSystem> _commandSystemMock;
-        ICommandSystem _commandSystem;
-        string _userFolder;
+        readonly ICommandSystem _commandSystem;
+        readonly string _userFolder;
         readonly Mock<IFileSystem> _fileSystemMock;
-        IFileSystem _fileSystem;
+        readonly IFileSystem _fileSystem;
 
         public PathsTests()
         {

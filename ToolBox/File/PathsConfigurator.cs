@@ -45,18 +45,12 @@ namespace ToolBox.Files
 
         public List<string> GetFiles(string path, string filter = null)
         {
-            try
-            {
-                if (!_fileSystem.DirectoryExists(path)){
-                    throw new DirectoryNotFoundException();
-                }
-                
-                List<string> files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
-                return files;
+            if (!_fileSystem.DirectoryExists(path)){
+                throw new DirectoryNotFoundException();
             }
-            catch (Exception){
-                throw;
-            }
+            
+            List<string> files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
+            return files;
         }
 
         public string GetDirectoryName(string path)
