@@ -6,7 +6,7 @@ namespace ToolBox.Log
     
     {
         void AccessValidation();
-        void Save(Exception ex, LogLevel logLevel);
+        void Save(Exception ex, LogLevel logLevel = LogLevel.Information);
     }
 
     public enum LogLevel

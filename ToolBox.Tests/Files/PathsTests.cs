@@ -10,24 +10,24 @@ namespace ToolBox.Files.Tests
     public class PathsTests
     {
         readonly Mock<ICommandSystem> _commandSystemMock;
-        static ICommandSystem _commandSystem;
-        static string _userFolder;
+        ICommandSystem _commandSystem;
+        string _userFolder;
         readonly Mock<IFileSystem> _fileSystemMock;
-        static IFileSystem _fileSystem;
+        IFileSystem _fileSystem;
 
         public PathsTests()
         {
             //Arrange
             _commandSystemMock = new Mock<ICommandSystem>(MockBehavior.Strict);
-            _commandSystem = _commandSystemMock.Object;
+            this._commandSystem = _commandSystemMock.Object;
 
             _fileSystemMock = new Mock<IFileSystem>(MockBehavior.Strict);
-            _fileSystem = _fileSystemMock.Object;
+            this._fileSystem = _fileSystemMock.Object;
 
             _commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.Is<string>(s => s == "~")))
                 .Returns("/Users/user");
-            _userFolder = _commandSystem.GetHomeFolder("~");
+            this._userFolder = _commandSystem.GetHomeFolder("~");
         }
         
         [Theory]

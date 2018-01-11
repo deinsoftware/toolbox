@@ -9,30 +9,28 @@ namespace ToolBox.Files.Tests
 {
     public class DiskTests
     {
-        readonly Mock<ICommandSystem> _commandSystemMock;
-        static ICommandSystem _commandSystem;
-        static string _userFolder;
+        ICommandSystem _commandSystem;
+        string _userFolder;
         readonly Mock<IFileSystem> _fileSystemMock;
-        static IFileSystem _fileSystem;
-        readonly Mock<INotificationSystem> _notificationSystemMock;
-        static INotificationSystem _notificationSystem;
+        IFileSystem _fileSystem;
+        INotificationSystem _notificationSystem;
 
         public DiskTests()
         {
             //Arrange
-            _commandSystemMock = new Mock<ICommandSystem>(MockBehavior.Strict);
-            _commandSystem = _commandSystemMock.Object;
+            Mock<ICommandSystem> commandSystemMock = new Mock<ICommandSystem>(MockBehavior.Strict);
+            _commandSystem = commandSystemMock.Object;
 
             _fileSystemMock = new Mock<IFileSystem>(MockBehavior.Strict);
-            _fileSystem = _fileSystemMock.Object;
+            this._fileSystem = _fileSystemMock.Object;
 
-            _commandSystemMock
+            commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.Is<string>(s => s == "~")))
                 .Returns("/Users/user");
-            _userFolder = _commandSystem.GetHomeFolder("~");
+            this._userFolder = _commandSystem.GetHomeFolder("~");
 
-            _notificationSystemMock = new Mock<INotificationSystem>(MockBehavior.Strict);
-            _notificationSystem = _notificationSystemMock.Object;
+            Mock<INotificationSystem> notificationSystemMock = new Mock<INotificationSystem>(MockBehavior.Strict);
+            this._notificationSystem = notificationSystemMock.Object;
         }
 
         [Fact]

@@ -5,37 +5,16 @@ namespace ToolBox.System
     public static class Env
     {
         public static string GetValue(string name) {
-            try
-            {
-                return Environment.GetEnvironmentVariable(name);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return Environment.GetEnvironmentVariable(name);
         }
 
         public static void SetValue(string name, string value) {
-            try
-            {
-                Environment.SetEnvironmentVariable(name, value);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            Environment.SetEnvironmentVariable(name, value);
         }
 
         public static bool IsNullOrEmpty(string name){
-            try
-            {
-                string env = Env.GetValue(name);
-                return String.IsNullOrEmpty(env);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            string env = Env.GetValue(name);
+            return String.IsNullOrEmpty(env);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace ToolBox.Validations.Tests
             //Act
             var result = Web.IsUrl(value);
             //Assert
-            Assert.False(result, $"{value} is an Invalid URL");
+            Assert.False(result, $"{value} is an Invalid Protocol");
         }
     }
 }

@@ -6,28 +6,14 @@ namespace ToolBox.Validations
     {
         public static bool IsNumber(string value)
         {
-            try
-            {
-                int number;
-                bool isNumeric = int.TryParse(value, out number);
-                return (isNumeric);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            int number;
+            bool isNumeric = int.TryParse(value, out number);
+            return (isNumeric);
         }
         
         public static bool IsOnRange(int min, int value, int max)
         {
-            try
-            {
-                return (min <= value && value <= max);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return (min <= value && value <= max);
         }
     }
 }

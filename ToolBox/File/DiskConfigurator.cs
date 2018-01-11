@@ -58,22 +58,16 @@ namespace ToolBox.Files
 
         bool IsFiltered(List<string> regexFilter, string file)
         {
-            try
+            bool valid = false;
+            if (regexFilter == null)
             {
-                bool valid = false;
-                if (regexFilter == null)
-                {
-                    valid = true;
-                } else {
-                    valid = regexFilter.All(
-                        filter => Regex.IsMatch(file, filter)
-                    );
-                }
-                return valid;
+                valid = true;
+            } else {
+                valid = regexFilter.All(
+                    filter => Regex.IsMatch(file, filter)
+                );
             }
-            catch (Exception){
-                throw;
-            }
+            return valid;
         }
 
         public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)

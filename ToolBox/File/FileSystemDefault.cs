@@ -98,10 +98,7 @@ namespace ToolBox.Files
             }
             catch (DirectoryNotFoundException) 
             {
-                //Avoid Exception when try delete files inside deleted folder.
-            }
-            catch (Exception){
-                throw;
+                //Avoid Exception when try delete files inside previous deleted folder.
             }
         }
 

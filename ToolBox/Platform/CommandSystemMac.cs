@@ -21,25 +21,11 @@ namespace ToolBox.Platform
     public sealed class CommandSystemMac : ICommandSystem
     {
         public string PathNormalizer(string path) {
-            try
-            {
-                return path.Replace(@"\",@"/");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return path.Replace(@"\",@"/");
         }
         
         public string GetHomeFolder(string path) {
-            try
-            {
-                return path.Replace("~",$"/Users/{User.GetUserName()}").Replace(@"\",@"/");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return path.Replace("~",$"/Users/{User.GetUserName()}").Replace(@"\",@"/");
         }
     }
 }

@@ -19,7 +19,7 @@ namespace ToolBox.Files
     {
         public void ShowAction(string action, string message)
         {
-            //do nothing;
+            //Do nothing.
         }
     }
 }

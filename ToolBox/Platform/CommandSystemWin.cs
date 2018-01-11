@@ -21,25 +21,11 @@ namespace ToolBox.Platform
     public sealed class CommandSystemWin : ICommandSystem
     {
         public string PathNormalizer(string path) {
-            try
-            {
-                return path.Replace(@"/",@"\");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return path.Replace(@"/",@"\");
         }
         
         public string GetHomeFolder(string path) {
-            try
-            {
-                return path.Replace("~",$"{Env.GetValue("USERPROFILE")}").Replace(@"/",@"\");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return path.Replace("~",$"{Env.GetValue("USERPROFILE")}").Replace(@"/",@"\");
         }
     }
 }

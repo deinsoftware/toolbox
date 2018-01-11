@@ -17,10 +17,6 @@ namespace ToolBox.Validations
             {
                 return true;
             }
-            catch (Exception)
-            {
-                throw;
-            }
         }
     }
 }

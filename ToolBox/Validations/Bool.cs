@@ -7,7 +7,7 @@ namespace ToolBox.Validations
             try{
                 foreach (bool value in values)
                 {
-                    if (value == false){
+                    if (!value){
                         return true;
                     }
                 }
@@ -16,10 +16,6 @@ namespace ToolBox.Validations
             catch (NullReferenceException)
             {
                 return true;
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
     }

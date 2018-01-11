@@ -6,37 +6,15 @@ namespace ToolBox.System
     {
 
         public static string GetUserName(){
-            try
-            {
-                return Env.GetValue("USERNAME") ?? Env.GetValue("USER");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return Env.GetValue("USERNAME") ?? Env.GetValue("USER");
         }
 
         public static string GetMachine(){
-            try
-            {
-                return Environment.MachineName;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            
+            return Environment.MachineName;
         }
 
         public static string GetDomain(){
-            try
-            {
-                return Env.GetValue("USERDOMAIN") ?? Env.GetValue("HOSTNAME");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return Env.GetValue("USERDOMAIN") ?? Env.GetValue("HOSTNAME");
         }
     }
 }

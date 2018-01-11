@@ -37,62 +37,41 @@ namespace ToolBox.Log
 
         public void AccessValidation()
         {
-            try
+            if (!_fileSystem.FileExists(_logFile))
             {
-                if (!_fileSystem.FileExists(_logFile))
-                {
-                    _fileSystem.FileCreate(_logFile).Dispose();
-                    AddHeaders();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
+                _fileSystem.FileCreate(_logFile).Dispose();
+                AddHeaders();
             }
         }
 
         void AddHeaders()
         {
-            try
+            var header = new StringBuilder();
+            header.Append($"Date/Time{_logDelimiter}");
+            header.Append($"Level{_logDelimiter}");
+            header.Append($"Error Message{_logDelimiter}");
+            header.Append($"Stack Trace{_logDelimiter}");
+            header.Append($"Inner Error Message{_logDelimiter}");
+            header.Append($"Inner Stack Trace{_logDelimiter}");
+            using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
             {
-                var header = new StringBuilder();
-                header.Append($"Date/Time{_logDelimiter}");
-                header.Append($"Level{_logDelimiter}");
-                header.Append($"Error Message{_logDelimiter}");
-                header.Append($"Stack Trace{_logDelimiter}");
-                header.Append($"Inner Error Message{_logDelimiter}");
-                header.Append($"Inner Stack Trace{_logDelimiter}");
-                using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
-                {
-                    sw.WriteLine(header);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
+                sw.WriteLine(header);
             }
         }
 
         public void Save(Exception ex, LogLevel logLevel = LogLevel.Information)
         {
-            try
-            {
-                var message = new StringBuilder();
-                message.Append($"{DateTime.Now}{_logDelimiter}");
-                message.Append($"{logLevel.ToString()}{_logDelimiter}");
-                message.Append($"{ex.Message}{_logDelimiter}");
-                message.Append($"{ex.StackTrace}{_logDelimiter}");
-                message.Append($"{ex.InnerException?.Message ?? ""}{_logDelimiter}");
-                message.Append($"{ex.InnerException?.StackTrace ?? ""}{_logDelimiter}");
+            var message = new StringBuilder();
+            message.Append($"{DateTime.Now}{_logDelimiter}");
+            message.Append($"{logLevel.ToString()}{_logDelimiter}");
+            message.Append($"{ex.Message}{_logDelimiter}");
+            message.Append($"{ex.StackTrace}{_logDelimiter}");
+            message.Append($"{ex.InnerException?.Message ?? ""}{_logDelimiter}");
+            message.Append($"{ex.InnerException?.StackTrace ?? ""}{_logDelimiter}");
 
-                using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
-                {
-                    sw.WriteLine(message);
-                }
-            }
-            catch (Exception)
+            using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
             {
-                throw;
+                sw.WriteLine(message);
             }
         }
     }

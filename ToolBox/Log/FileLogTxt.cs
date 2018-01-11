@@ -33,43 +33,29 @@ namespace ToolBox.Log
 
         public void AccessValidation()
         {
-            try
+            if (!_fileSystem.FileExists(_logFile))
             {
-                if (!_fileSystem.FileExists(_logFile))
-                {
-                    _fileSystem.FileCreate(_logFile).Dispose();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
+                _fileSystem.FileCreate(_logFile).Dispose();
             }
         }
 
         public void Save(Exception ex, LogLevel logLevel = LogLevel.Information)
         {
-            try
+            using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
             {
-                using (StreamWriter sw = _fileSystem.FileAppendText(_logFile))
+                sw.WriteLine();
+                sw.WriteLine($"EXCEPTION");
+                sw.WriteLine($"Date/Time:     {DateTime.Now}");
+                sw.WriteLine($"Level:         {logLevel.ToString()}");
+                sw.WriteLine($"Error Message: {ex.Message}");
+                sw.WriteLine($"Stack Trace:   {ex.StackTrace}");
+                if (ex.InnerException != null)
                 {
                     sw.WriteLine();
-                    sw.WriteLine($"EXCEPTION");
-                    sw.WriteLine($"Date/Time:     {DateTime.Now}");
-                    sw.WriteLine($"Level:         {logLevel.ToString()}");
-                    sw.WriteLine($"Error Message: {ex.Message}");
-                    sw.WriteLine($"Stack Trace:   {ex.StackTrace}");
-                    if (ex.InnerException != null)
-                    {
-                        sw.WriteLine();
-                        sw.WriteLine($"INNER EXCEPTION");
-                        sw.WriteLine($"Error Message: {ex.InnerException.Message}");
-                        sw.WriteLine($"Stack Trace:   {ex.InnerException.StackTrace}");
-                    }
+                    sw.WriteLine($"INNER EXCEPTION");
+                    sw.WriteLine($"Error Message: {ex.InnerException.Message}");
+                    sw.WriteLine($"Stack Trace:   {ex.InnerException.StackTrace}");
                 }
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
     }
