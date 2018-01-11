@@ -74,10 +74,10 @@
             "label": "sonar",
             "type": "shell",
             "windows": {
-                "command": ".\\sonar.bat"
+                "command": "${workspaceRoot}\\sonar.bat"
             },
             "osx": {
-                "command": "./sonar.sh"
+                "command": "${workspaceRoot}/sonar.sh"
             },
             "presentation": {
                 "reveal": "always",
