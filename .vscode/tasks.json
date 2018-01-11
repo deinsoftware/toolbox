@@ -69,6 +69,21 @@
                 "release"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "sonar",
+            "type": "shell",
+            "windows": {
+                "command": ".\\sonar.bat"
+            },
+            "osx": {
+                "command": "./sonar.sh"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
         }
     ]
 }
