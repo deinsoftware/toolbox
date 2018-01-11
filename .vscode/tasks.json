@@ -27,6 +27,17 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "group": "test",
+            "args": [
+                "test",
+                "${workspaceFolder}/ToolBox.Tests/ToolBox.Tests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "publish win",
             "command": "dotnet",
             "args": [
