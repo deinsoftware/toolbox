@@ -1,6 +1,6 @@
 # dein ToolBox [ for Win & Mac ]
 
-**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/equiman/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
+**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
 
 Contributions or Beer will be appreciated
 
@@ -45,7 +45,7 @@ What things you need to install?
 
 ### Installing
 
-**ToolBox** is available as [project](https://github.com/equiman/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on source code library.
+**ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on source code library.
 
 Follow this instructions to add **ToolBox** in your project.
 
@@ -70,8 +70,8 @@ Clone **ToolBox** from GitHub on *recommended* path. Using this command on termi
 
 | OS | Command |
 | --- | --- |
-| win | `git clone https://github.com/equiman/toolbox.git "D:\Developer\DEIN\Projects\_devTB"` |
-| mac | `git clone https://github.com/equiman/toolbox.git ~/Developer/DEIN/Projects/_devTB` |
+| win | `git clone https://github.com/deinsoftware/toolbox.git "D:\Developer\DEIN\Projects\_devTB"` |
+| mac | `git clone https://github.com/deinsoftware/toolbox.git ~/Developer/DEIN/Projects/_devTB` |
 
 In your project folder, where is located .csproj file run this command on terminal:
 
@@ -319,13 +319,13 @@ Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, 
 
 ### Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [Colorify](https://github.com/equiman/colorify/tags) on GitHub.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [ToolBox](https://github.com/deinsoftware/toolbox/tags) on GitHub.
 
 ### Authors
 
 * **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
 
-See also the list of [contributors](https://github.com/equiman/colorify/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/deinsoftware/toolbox/contributors) who participated in this project.
 
 ### License
 
