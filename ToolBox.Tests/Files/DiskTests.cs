@@ -9,17 +9,17 @@ namespace ToolBox.Files.Tests
 {
     public class DiskTests
     {
-        ICommandSystem _commandSystem;
-        string _userFolder;
+        readonly string _userFolder;
         readonly Mock<IFileSystem> _fileSystemMock;
-        IFileSystem _fileSystem;
-        INotificationSystem _notificationSystem;
+        readonly IFileSystem _fileSystem;
+        readonly Mock<INotificationSystem> _notificationSystemMock;
+        readonly INotificationSystem _notificationSystem;
 
         public DiskTests()
         {
             //Arrange
             Mock<ICommandSystem> commandSystemMock = new Mock<ICommandSystem>(MockBehavior.Strict);
-            _commandSystem = commandSystemMock.Object;
+            ICommandSystem commandSystem = commandSystemMock.Object;
 
             _fileSystemMock = new Mock<IFileSystem>(MockBehavior.Strict);
             this._fileSystem = _fileSystemMock.Object;
@@ -27,10 +27,10 @@ namespace ToolBox.Files.Tests
             commandSystemMock
                 .Setup(cs => cs.GetHomeFolder(It.Is<string>(s => s == "~")))
                 .Returns("/Users/user");
-            this._userFolder = _commandSystem.GetHomeFolder("~");
+            this._userFolder = commandSystem.GetHomeFolder("~");
 
-            Mock<INotificationSystem> notificationSystemMock = new Mock<INotificationSystem>(MockBehavior.Strict);
-            this._notificationSystem = notificationSystemMock.Object;
+            _notificationSystemMock = new Mock<INotificationSystem>(MockBehavior.Strict);
+            this._notificationSystem = _notificationSystemMock.Object;
         }
 
         [Fact]
@@ -287,6 +287,29 @@ namespace ToolBox.Files.Tests
             creator.DeleteAll(path, true);
             //Assert
             _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void DeleteAll_WhenCallsWithNotification_DeleteFilesAndFolders()
+        {
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem, _notificationSystem);
+
+            string path = Path.Combine(_userFolder, "Exist");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(It.Is<string>(s => s == path)))
+                .Returns(true);
+            _fileSystemMock
+                .Setup(fs => fs.DeleteDirectory(It.IsAny<string>(), true))
+                .Verifiable();
+            _notificationSystemMock
+                .Setup(ns => ns.ShowAction(It.IsAny<string>(), It.IsAny<string>()))
+                .Verifiable();
+
+            //Act
+            creator.DeleteAll(path, true);
+            //Assert
+            _fileSystemMock.VerifyAll();
+            _notificationSystemMock.VerifyAll();
         }
         
         [Fact]
