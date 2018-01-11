@@ -30,7 +30,10 @@
             "label": "test",
             "command": "dotnet",
             "type": "process",
-            "group": "test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
             "args": [
                 "test",
                 "${workspaceFolder}/ToolBox.Tests/ToolBox.Tests.csproj"
@@ -40,6 +43,7 @@
         {
             "label": "publish win",
             "command": "dotnet",
+            "group": "none",
             "args": [
                 "publish",
                 "${workspaceRoot}/ToolBox/ToolBox.csproj",
