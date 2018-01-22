@@ -12,6 +12,8 @@
 ### SonarQube ###
 .sonarqube/
 sonar.txt
+**/Coverage/*
+!**/Coverage/opencover.xml
 
 ### Project ###
 **/bin
