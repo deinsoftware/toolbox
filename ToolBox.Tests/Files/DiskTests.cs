@@ -41,7 +41,7 @@ namespace ToolBox.Files.Tests
             //Arrange
             Action creator = () => new DiskConfigurator(null);
             //Act/Assert
-            Assert.Throws<ArgumentException>(creator);
+            Assert.Throws<ArgumentNullException>(creator);
             _fileSystemMock.VerifyAll();
         }
 
@@ -53,7 +53,7 @@ namespace ToolBox.Files.Tests
             //Act
             Action result = () => creator.FilterCreator(false, null);
             //Assert
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<ArgumentNullException>(result);
             _fileSystemMock.VerifyAll();
         }
 
@@ -93,10 +93,10 @@ namespace ToolBox.Files.Tests
             DiskConfigurator creator = new DiskConfigurator(_fileSystem);
             MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
             //Act
-            object[] parameters = {new string[] {}, null};
+            object[] parameters = {new List<string>(new string[] {}), null};
             Action result = () => method.Invoke(creator, parameters);
             //Assert
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<TargetInvocationException>(result);
             _fileSystemMock.VerifyAll();
         }
 

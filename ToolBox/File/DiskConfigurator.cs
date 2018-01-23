@@ -16,7 +16,7 @@ namespace ToolBox.Files
         public DiskConfigurator(IFileSystem fileSystem, INotificationSystem notificationSystem = null){
             if (fileSystem == null)
             {
-                throw new ArgumentException(nameof(fileSystem));
+                throw new ArgumentNullException(nameof(fileSystem));
             }
             _fileSystem = fileSystem;
 
@@ -34,7 +34,7 @@ namespace ToolBox.Files
         public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension){
             if (extension == null)
             {
-                throw new ArgumentException(nameof(extension));
+                throw new ArgumentNullException(nameof(extension));
             }
 
             List<string> filter = new List<string>();
@@ -60,7 +60,7 @@ namespace ToolBox.Files
         {
             if (file == null)
             {
-                throw new ArgumentException(nameof(file));
+                throw new ArgumentNullException(nameof(file));
             }
             
             bool valid = false;
