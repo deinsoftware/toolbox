@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace ToolBox.Validations.Tests
@@ -23,6 +24,15 @@ namespace ToolBox.Validations.Tests
         {
             //Act
             var result = Bool.SomeFalse(values);
+            //Assert
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void SomeFalse_WhenValuesIsNull_ReturnsTrue()
+        {
+            //Act
+            var result = Bool.SomeFalse(null);
             //Assert
             Assert.True(result);
         }

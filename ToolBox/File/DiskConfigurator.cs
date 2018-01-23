@@ -58,13 +58,18 @@ namespace ToolBox.Files
 
         bool IsFiltered(List<string> regexFilter, string file)
         {
+            if (file == null)
+            {
+                throw new ArgumentException(nameof(file));
+            }
+            
             bool valid = false;
-            if (regexFilter == null)
+            if (regexFilter == null || regexFilter.Count < 1)
             {
                 valid = true;
             } else {
                 valid = regexFilter.All(
-                    filter => Regex.IsMatch(file, filter)
+                    filter => Regex.IsMatch(_fileSystem.GetFileName(file), filter)
                 );
             }
             return valid;

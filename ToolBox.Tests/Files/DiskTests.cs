@@ -4,6 +4,8 @@ using Moq;
 using System.IO;
 using System.Linq;
 using ToolBox.Platform;
+using System.Reflection;
+using System.Collections.Generic;
 
 namespace ToolBox.Files.Tests
 {
@@ -34,6 +36,16 @@ namespace ToolBox.Files.Tests
         }
 
         [Fact]
+        public void DiskConfigurator_WhenFileSystemIsNull_ReturnsException()
+        {
+            //Arrange
+            Action creator = () => new DiskConfigurator(null);
+            //Act/Assert
+            Assert.Throws<ArgumentException>(creator);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
         public void FilterCreator_WhenExtensionIsNull_ReturnsException()
         {
             //Arrange
@@ -42,6 +54,18 @@ namespace ToolBox.Files.Tests
             Action result = () => creator.FilterCreator(false, null);
             //Assert
             Assert.Throws<ArgumentException>(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void FilterCreator_WhitoutFileSystemParameter_ReturnFilterListWithExtensions()
+        {
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            //Act
+            var result = creator.FilterCreator("css", "js");
+            //Assert
+            Assert.Equal(new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, result);
             _fileSystemMock.VerifyAll();
         }
 
@@ -62,10 +86,104 @@ namespace ToolBox.Files.Tests
             _fileSystemMock.VerifyAll();
         }
 
-        [Fact(Skip="It Calls CopyDirectories and CopyFiles")]
-        public void CopyAll_WhenCalls_NotImplemented()
+        [Fact]
+        public void IsFilter_WhenFileIsNull_ReturnsException()
         {
-            throw new NotImplementedException();
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
+            //Act
+            object[] parameters = {new string[] {}, null};
+            Action result = () => method.Invoke(creator, parameters);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void IsFilter_WhenFilterIsNull_ReturnsException()
+        {
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
+            //Act
+            object[] parameters = {null, "/Users/user/Source/Exist/File.txt"};
+            var result = method.Invoke(creator, parameters);
+            //Assert
+            Assert.Equal(true, result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Theory]
+        [InlineData(
+            true, 
+            new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, 
+            "/Users/user/Source/Exist/File.css",
+            "File.css"
+        )]
+        [InlineData(
+            true, 
+            new string[] { @"([^\s]+(\.(?i)(css|js))$)" },
+            "/Users/user/Source/Exist/File.js",
+            "File.js"
+        )]
+        [InlineData(
+            false, 
+            new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, 
+            "/Users/user/Source/Exist/File.txt",
+            "File.txt"
+        )]
+        [InlineData(
+            false, 
+            new string[] { @"([^\s]+(\.(?i)(sys))$)", @"^(?!\.).*" }, 
+            "/Users/user/Source/Exist/.File.sys",
+            ".File.sys"
+        )]
+        public void IsFiltered_WhenCalls_VerifyFileWithRules(bool expectedResult, string[] regexFilter, string filePath, string file)
+        {
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+            MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            _fileSystemMock
+                .Setup(fs => fs.GetFileName(It.Is<string>(s => s == filePath)))
+                .Returns(file);
+            //Act
+            object[] parameters = {(regexFilter == null ? null : new List<string>(regexFilter)), filePath};
+            var result = method.Invoke(creator, parameters);
+            //Assert
+            Assert.Equal(expectedResult, result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void CopyAll_WhenCalls_CallsCopyDirectoriesAndFiles()
+        {
+            //Arrange
+            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
+
+            var sourcePath = Path.Combine(_userFolder, "Source");
+            var destinationPath = Path.Combine(_userFolder, "Destination");
+            _fileSystemMock
+                .Setup(fs => fs.DirectoryExists(It.IsAny<string>()))
+                .Returns(true);
+            _fileSystemMock
+                .Setup(fs => fs.GetDirectories(sourcePath, null, SearchOption.AllDirectories))
+                .Returns(new[] { "/Users/user/Source/Exist" });
+            _fileSystemMock
+                .Setup(fs => fs.GetFiles(sourcePath, null, SearchOption.AllDirectories))
+                .Returns(new[] { "/Users/user/Source/Exist/File1.txt" });
+            _fileSystemMock
+                .Setup(fs => fs.GetDirectoryName(It.IsAny<string>()))
+                .Returns("/Users/user/Source/Exist/");
+            _fileSystemMock
+                .Setup(fs => fs.CopyFile(It.IsAny<string>(), It.IsAny<string>(), false))
+                .Verifiable();
+            //Act
+            creator.CopyAll(sourcePath, destinationPath);
+            //Assert
+            _fileSystemMock.Verify(fs => fs.CreateDirectory(It.IsAny<string>()), Times.Exactly(0));
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact]
