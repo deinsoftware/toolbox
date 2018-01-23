@@ -15,12 +15,12 @@ namespace ToolBox.Files
         {
             if (commandSystem == null)
             {
-                throw new ArgumentNullException(nameof(commandSystem));
+                throw new ArgumentException(nameof(commandSystem));
             }
 
             if (fileSystem == null)
             {
-                throw new ArgumentNullException(nameof(fileSystem));
+                throw new ArgumentException(nameof(fileSystem));
             }
 
             _commandSystem = commandSystem;

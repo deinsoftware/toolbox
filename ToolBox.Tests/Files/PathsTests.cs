@@ -29,6 +29,26 @@ namespace ToolBox.Files.Tests
                 .Returns("/Users/user");
             this._userFolder = _commandSystem.GetHomeFolder("~");
         }
+
+        [Fact]
+        public void PathConfigurator_WhenCommandSystemIsNull_ReturnsException()
+        {
+            //Arrange
+            Action creator = () => new PathsConfigurator(null, _fileSystem);
+            //Act/Assert
+            Assert.Throws<ArgumentException>(creator);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void PathConfigurator_WhenFileSystemIsNull_ReturnsException()
+        {
+            //Arrange
+            Action creator = () => new PathsConfigurator(_commandSystem, null);
+            //Act/Assert
+            Assert.Throws<ArgumentException>(creator);
+            _fileSystemMock.VerifyAll();
+        }
         
         [Theory]
         [InlineData(@"foo/bar"     , "~", "foo", "bar")]
@@ -53,6 +73,18 @@ namespace ToolBox.Files.Tests
             Assert.Equal(expectedResult, result);
             _fileSystemMock.VerifyAll();
             _commandSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void GetFileName_WhenFilePathIsNull_ReturnsException()
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+            //Act
+            Action result = () => creator.GetFileName(null);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
+            _fileSystemMock.VerifyAll();
         }
 
         [Fact(Skip="It's System Functionality")]
@@ -149,6 +181,18 @@ namespace ToolBox.Files.Tests
             var result = creator.GetFiles(path, "FilterNotExists");
             //Assert
             Assert.Empty(result);
+            _fileSystemMock.VerifyAll();
+        }
+
+        [Fact]
+        public void GetDirectoryName_WhenPathIsNull_ReturnsException()
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+            //Act
+            Action result = () => creator.GetDirectoryName(null);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
             _fileSystemMock.VerifyAll();
         }
 

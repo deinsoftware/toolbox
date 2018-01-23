@@ -13,17 +13,17 @@ namespace ToolBox.Log
         {
             if (fileSystem == null)
             {
-                throw new ArgumentNullException(nameof(fileSystem));
+                throw new ArgumentException(nameof(fileSystem));
             }
 
             if (path == null)
             {
-                throw new ArgumentNullException(nameof(path));
+                throw new ArgumentException(nameof(path));
             }
 
             if (fileName == null)
             {
-                throw new ArgumentNullException(nameof(fileName));
+                throw new ArgumentException(nameof(fileName));
             }
 
             _fileSystem = fileSystem;

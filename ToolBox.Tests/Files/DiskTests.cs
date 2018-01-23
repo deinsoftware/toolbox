@@ -41,7 +41,7 @@ namespace ToolBox.Files.Tests
             //Arrange
             Action creator = () => new DiskConfigurator(null);
             //Act/Assert
-            Assert.Throws<ArgumentNullException>(creator);
+            Assert.Throws<ArgumentException>(creator);
             _fileSystemMock.VerifyAll();
         }
 
@@ -53,7 +53,7 @@ namespace ToolBox.Files.Tests
             //Act
             Action result = () => creator.FilterCreator(false, null);
             //Assert
-            Assert.Throws<ArgumentNullException>(result);
+            Assert.Throws<ArgumentException>(result);
             _fileSystemMock.VerifyAll();
         }
 
