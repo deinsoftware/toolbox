@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -21,4 +21,8 @@
         <dependency id="Newtonsoft.Json" version="10.0.3" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\release\netcoreapp2.0\T*.dll" target="lib\netcoreapp2.0" />
+    <file src="bin\release\netcoreapp2.0\T*.pdb" target="lib\netcoreapp2.0" />
+  </files>
 </package>
