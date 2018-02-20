@@ -82,6 +82,10 @@ In your project folder, where is located .csproj file run this command on termin
 
 Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference)
 
+⇧ [Back to menu](#menu)
+
+---
+
 ## Usage
 
 Keep calm, you are almost done. Review this usage steps and enjoy the life.
