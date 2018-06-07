@@ -10,28 +10,34 @@ namespace ToolBox.Files
 {
     public sealed class DiskConfigurator
     {
-        static IFileSystem _fileSystem {get; set;}
-        static INotificationSystem _notificationSystem {get; set;}
+        static IFileSystem _fileSystem { get; set; }
+        static INotificationSystem _notificationSystem { get; set; }
 
-        public DiskConfigurator(IFileSystem fileSystem, INotificationSystem notificationSystem = null){
+        public DiskConfigurator(IFileSystem fileSystem, INotificationSystem notificationSystem = null)
+        {
             if (fileSystem == null)
             {
                 throw new ArgumentException(nameof(fileSystem));
             }
             _fileSystem = fileSystem;
 
-            if (notificationSystem == null){
+            if (notificationSystem == null)
+            {
                 _notificationSystem = NotificationSystem.Default;
-            } else {
+            }
+            else
+            {
                 _notificationSystem = notificationSystem;
             }
         }
-        
-        public List<string> FilterCreator(params string[] extension){
+
+        public List<string> FilterCreator(params string[] extension)
+        {
             return FilterCreator(false, extension);
         }
 
-        public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension){
+        public List<string> FilterCreator(bool ignoreSystemFiles, params string[] extension)
+        {
             if (extension == null)
             {
                 throw new ArgumentException(nameof(extension));
@@ -40,16 +46,18 @@ namespace ToolBox.Files
             List<string> filter = new List<string>();
 
             string extensions = string.Join(
-                "|", 
+                "|",
                 Array.ConvertAll(
-                    extension, 
+                    extension,
                     ext => ext.ToString().Replace(".", "")
                 )
             );
-            if (!String.IsNullOrEmpty(extensions)){
+            if (!String.IsNullOrEmpty(extensions))
+            {
                 filter.Add($"([^\\s]+(\\.(?i)({extensions}))$)");
             }
-            if (ignoreSystemFiles){
+            if (ignoreSystemFiles)
+            {
                 filter.Add(@"^(?!\.).*");
             }
 
@@ -62,12 +70,14 @@ namespace ToolBox.Files
             {
                 throw new ArgumentException(nameof(file));
             }
-            
+
             bool valid = false;
             if (regexFilter == null || regexFilter.Count < 1)
             {
                 valid = true;
-            } else {
+            }
+            else
+            {
                 valid = regexFilter.All(
                     filter => Regex.IsMatch(_fileSystem.GetFileName(file), filter)
                 );
@@ -77,20 +87,22 @@ namespace ToolBox.Files
 
         public void CopyAll(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
-            if (!_fileSystem.DirectoryExists(sourcePath)){
+            if (!_fileSystem.DirectoryExists(sourcePath))
+            {
                 throw new DirectoryNotFoundException();
             }
-            
+
             CopyDirectories(sourcePath, destinationPath);
             CopyFiles(sourcePath, destinationPath, overWrite, regexFilter);
         }
 
         public void CopyDirectories(string sourcePath, string destinationPath)
         {
-            if (!_fileSystem.DirectoryExists(sourcePath)){
+            if (!_fileSystem.DirectoryExists(sourcePath))
+            {
                 throw new DirectoryNotFoundException();
             }
-            
+
             var directories = _fileSystem
                 .GetDirectories(sourcePath, null, SearchOption.AllDirectories);
             Parallel.ForEach(directories, dirPath =>
@@ -106,10 +118,11 @@ namespace ToolBox.Files
 
         public void CopyFiles(string sourcePath, string destinationPath, bool overWrite = false, List<string> regexFilter = null)
         {
-            if (!_fileSystem.DirectoryExists(sourcePath)){
+            if (!_fileSystem.DirectoryExists(sourcePath))
+            {
                 throw new DirectoryNotFoundException();
             }
-            
+
             var files = _fileSystem
                 .GetFiles(sourcePath, null, SearchOption.AllDirectories)
                 .Where(file => IsFiltered(regexFilter, file));
@@ -128,12 +141,11 @@ namespace ToolBox.Files
 
         public void DeleteAll(string path, bool recursive)
         {
-            if (!_fileSystem.DirectoryExists(path)){
-                throw new DirectoryNotFoundException();
+            if (_fileSystem.DirectoryExists(path))
+            {
+                _notificationSystem.ShowAction("DEL", path);
+                _fileSystem.DeleteDirectory(path, recursive);
             }
-
-            _notificationSystem.ShowAction("DEL", path);
-            _fileSystem.DeleteDirectory(path, recursive);
         }
     }
 }

@@ -429,23 +429,5 @@ namespace ToolBox.Files.Tests
             _fileSystemMock.VerifyAll();
             _notificationSystemMock.VerifyAll();
         }
-        
-        [Fact]
-        public void DeleteAll_WhenPathNotFound_ReturnsException()
-        {
-            //Arrange
-            DiskConfigurator creator = new DiskConfigurator(_fileSystem);
-
-            string path = Path.Combine(_userFolder, "NotExist");
-            _fileSystemMock
-                .Setup(fs => fs.DirectoryExists(It.Is<string>(s => s == path)))
-                .Returns(false);
-
-            //Act
-            Action result = () => creator.DeleteAll(path, true);
-            //Assert
-            Assert.Throws<DirectoryNotFoundException>(result);
-            _fileSystemMock.VerifyAll();
-        }
     }
 }
