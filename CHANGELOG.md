@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.1.4] - 2018-06-07
+
+**Fixed:**
+
+* Delete All function dont throw exception when folder file not found.
+
 ## [1.1.3] - 2018-02-19
 
 **Fixed:**
