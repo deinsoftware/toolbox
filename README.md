@@ -193,10 +193,10 @@ class Program
         switch (_conf.log.system)
         {
             case "csv":
-                _log = new FileLogCsv(FileSystem.Default);
+                _log = new FileLogCsv(FileSystem.Default, _path.Combine("~"), ".application.log");
                 break;
             case "txt":
-                _log = new FileLogTxt(FileSystem.Default);
+                _log = new FileLogTxt(FileSystem.Default, _path.Combine("~"), ".application.log");
                 break;
         }
         //Foo()
