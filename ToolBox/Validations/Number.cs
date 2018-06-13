@@ -10,7 +10,7 @@ namespace ToolBox.Validations
             bool isNumeric = int.TryParse(value, out number);
             return (isNumeric);
         }
-        
+
         public static bool IsOnRange(int min, int value, int max)
         {
             return (min <= value && value <= max);

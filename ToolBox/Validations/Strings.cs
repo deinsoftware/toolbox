@@ -2,12 +2,16 @@
 
 namespace ToolBox.Validations
 {
-    public static class Strings {
-        public static bool SomeNullOrEmpty(params string[] values){
-            try{
+    public static class Strings
+    {
+        public static bool SomeNullOrEmpty(params string[] values)
+        {
+            try
+            {
                 foreach (string value in values)
                 {
-                    if (String.IsNullOrEmpty(value)){
+                    if (String.IsNullOrEmpty(value))
+                    {
                         return true;
                     }
                 }

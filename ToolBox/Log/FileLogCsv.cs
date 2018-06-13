@@ -7,9 +7,9 @@ namespace ToolBox.Log
 {
     public class FileLogCsv : ILogSystem
     {
-        static IFileSystem _fileSystem {get; set;}
-        static string _logFile {get; set;}
-        static char _logDelimiter {get; set;}
+        static IFileSystem _fileSystem { get; set; }
+        static string _logFile { get; set; }
+        static char _logDelimiter { get; set; }
 
         public FileLogCsv(IFileSystem fileSystem, string path, string fileName, char delimiter = ',')
         {

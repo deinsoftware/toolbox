@@ -8,8 +8,8 @@ namespace ToolBox.Files
 {
     public sealed class PathsConfigurator
     {
-        static ICommandSystem _commandSystem {get; set;}
-        static IFileSystem _fileSystem {get; set;}
+        static ICommandSystem _commandSystem { get; set; }
+        static IFileSystem _fileSystem { get; set; }
 
         public PathsConfigurator(ICommandSystem commandSystem, IFileSystem fileSystem)
         {
@@ -34,9 +34,30 @@ namespace ToolBox.Files
             return path;
         }
 
+        public string Split(string fullPath, string mainPath)
+        {
+            if (String.IsNullOrEmpty(fullPath))
+            {
+                throw new ArgumentException(nameof(fullPath));
+            }
+
+            if (String.IsNullOrEmpty(mainPath))
+            {
+                throw new ArgumentException(nameof(mainPath));
+            }
+
+            string path = "";
+            if (fullPath != mainPath)
+            {
+                path = fullPath.Replace(mainPath, "").Substring(1);
+            }
+            return path;
+        }
+
         public string GetFileName(string filePath)
         {
-            if (String.IsNullOrEmpty(filePath)){
+            if (String.IsNullOrEmpty(filePath))
+            {
                 throw new ArgumentException(nameof(filePath));
             }
 
@@ -45,17 +66,30 @@ namespace ToolBox.Files
 
         public List<string> GetFiles(string path, string filter = null)
         {
-            if (!_fileSystem.DirectoryExists(path)){
+            if (!_fileSystem.DirectoryExists(path))
+            {
                 throw new DirectoryNotFoundException();
             }
-            
+
             List<string> files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
+            return files;
+        }
+
+        public List<string> GetFiles(string path, string filter = null, SearchOption search = SearchOption.TopDirectoryOnly)
+        {
+            if (!_fileSystem.DirectoryExists(path))
+            {
+                throw new DirectoryNotFoundException();
+            }
+
+            List<string> files = files = new List<string>(_fileSystem.GetFiles(path, filter, search).OrderBy(name => name));
             return files;
         }
 
         public string GetDirectoryName(string path)
         {
-            if (String.IsNullOrEmpty(path)){
+            if (String.IsNullOrEmpty(path))
+            {
                 throw new ArgumentException(nameof(path));
             }
 
@@ -64,7 +98,8 @@ namespace ToolBox.Files
 
         public List<string> GetDirectories(string path, string filter = null)
         {
-            if (!_fileSystem.DirectoryExists(path)){
+            if (!_fileSystem.DirectoryExists(path))
+            {
                 throw new DirectoryNotFoundException();
             }
 

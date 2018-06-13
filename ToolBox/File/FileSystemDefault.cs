@@ -32,8 +32,6 @@ namespace ToolBox.Files
             return Path.Combine(paths);
         }
 
-
-
         public string GetFileName(string filePath)
         {
             return Path.GetFileName(filePath);
@@ -53,7 +51,7 @@ namespace ToolBox.Files
         {
             return File.AppendText(text);
         }
-        
+
         public void CopyFile(string filePath, string newFilePath, bool overwrite = false)
         {
             File.Copy(filePath, newFilePath, overwrite);
@@ -91,18 +89,20 @@ namespace ToolBox.Files
             return Directory.Exists(path);
         }
 
-        public void DeleteDirectory(string path, bool recursive = true){
+        public void DeleteDirectory(string path, bool recursive = true)
+        {
             try
             {
                 Directory.Delete(path, recursive);
             }
-            catch (DirectoryNotFoundException) 
+            catch (DirectoryNotFoundException)
             {
                 //Avoid Exception when try delete files inside previous deleted folder.
             }
         }
 
-        public void CreateDirectory(string path){            
+        public void CreateDirectory(string path)
+        {
             Directory.CreateDirectory(path);
         }
 

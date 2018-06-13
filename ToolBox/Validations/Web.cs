@@ -8,8 +8,8 @@ namespace ToolBox.Validations
         {
             bool result = false;
             Uri uriResult;
-            result = 
-                Uri.TryCreate(uriName, UriKind.Absolute, out uriResult) 
+            result =
+                Uri.TryCreate(uriName, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
             return result;
         }

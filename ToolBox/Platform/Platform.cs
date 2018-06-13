@@ -14,11 +14,12 @@ namespace ToolBox.Platform
         public static bool IsGnu() =>
             RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
 
-        public static string GetCurrent() {
-            return 
+        public static string GetCurrent()
+        {
+            return
             (IsWin() ? "win" : null) ??
             (IsMac() ? "mac" : null) ??
-            (IsGnu() ? "gnu" : null) ;
+            (IsGnu() ? "gnu" : null);
         }
     }
 }

@@ -6,8 +6,8 @@ namespace ToolBox.Log
 {
     public class FileLogTxt : ILogSystem
     {
-        static IFileSystem _fileSystem {get; set;}
-        static string _logFile {get; set;}
+        static IFileSystem _fileSystem { get; set; }
+        static string _logFile { get; set; }
 
         public FileLogTxt(IFileSystem fileSystem, string path, string fileName)
         {

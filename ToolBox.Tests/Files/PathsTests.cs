@@ -75,6 +75,33 @@ namespace ToolBox.Files.Tests
             _commandSystemMock.VerifyAll();
         }
 
+        [Theory]
+        [InlineData(@"", "/User/foo/bar", "/User/foo/bar")]
+        [InlineData(@"bar" , "/User/foo/bar", "/User/foo")]
+        [InlineData(@"tic/tac/toe", "/User/foo/bar/tic/tac/toe", "/User/foo/bar")]
+        public void Split_WhenCalls_ReturnsTruncatedPath(string expected, string fullPath, string mainPath)
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+            //Act
+            var result = creator.Split(fullPath, mainPath);
+            //Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("/User/foo/bar", null)]
+        [InlineData(null, "/User/foo/bar")]
+        public void Split_WhenSomePathIsNull_ReturnsException(string fullPath, string mainPath)
+        {
+            //Arrange
+            PathsConfigurator creator = new PathsConfigurator(_commandSystem, _fileSystem);
+            //Act
+            Action result = () => creator.Split(fullPath, mainPath);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
+        }
+
         [Fact]
         public void GetFileName_WhenFilePathIsNull_ReturnsException()
         {
@@ -84,7 +111,6 @@ namespace ToolBox.Files.Tests
             Action result = () => creator.GetFileName(null);
             //Assert
             Assert.Throws<ArgumentException>(result);
-            _fileSystemMock.VerifyAll();
         }
 
         [Fact(Skip="It's System Functionality")]

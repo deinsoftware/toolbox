@@ -9,6 +9,13 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.2.0] - 2018-06-12
+
+**Added:**
+
+* Search option on Get Files.
+* Split function on Directories Path.
+
 ## [1.1.4] - 2018-06-07
 
 **Fixed:**

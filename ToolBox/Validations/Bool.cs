@@ -2,12 +2,16 @@
 
 namespace ToolBox.Validations
 {
-    public static class Bool {
-        public static bool SomeFalse(params bool[] values){
-            try{
+    public static class Bool
+    {
+        public static bool SomeFalse(params bool[] values)
+        {
+            try
+            {
                 foreach (bool value in values)
                 {
-                    if (!value){
+                    if (!value)
+                    {
                         return true;
                     }
                 }

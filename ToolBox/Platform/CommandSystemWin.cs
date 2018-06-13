@@ -20,12 +20,14 @@ namespace ToolBox.Platform
 
     public sealed class CommandSystemWin : ICommandSystem
     {
-        public string PathNormalizer(string path) {
-            return path.Replace(@"/",@"\");
+        public string PathNormalizer(string path)
+        {
+            return path.Replace(@"/", @"\");
         }
-        
-        public string GetHomeFolder(string path) {
-            return path.Replace("~",$"{Env.GetValue("USERPROFILE")}").Replace(@"/",@"\");
+
+        public string GetHomeFolder(string path)
+        {
+            return path.Replace("~", $"{Env.GetValue("USERPROFILE")}").Replace(@"/", @"\");
         }
     }
 }
