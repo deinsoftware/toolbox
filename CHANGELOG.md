@@ -9,6 +9,16 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.2.1] - 2018-06-14
+
+**Fixed:**
+
+* Code smells reported by SonarQube.
+
+**Changed:**
+
+* Update Newtonsoft.Json library to 11.0.2.
+
 ## [1.2.0] - 2018-06-12
 
 **Added:**

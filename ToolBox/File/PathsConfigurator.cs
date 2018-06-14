@@ -64,17 +64,6 @@ namespace ToolBox.Files
             return _fileSystem.GetFileName(filePath);
         }
 
-        public List<string> GetFiles(string path, string filter = null)
-        {
-            if (!_fileSystem.DirectoryExists(path))
-            {
-                throw new DirectoryNotFoundException();
-            }
-
-            List<string> files = new List<string>(_fileSystem.GetFiles(path, filter).OrderBy(name => name));
-            return files;
-        }
-
         public List<string> GetFiles(string path, string filter = null, SearchOption search = SearchOption.TopDirectoryOnly)
         {
             if (!_fileSystem.DirectoryExists(path))
@@ -82,7 +71,7 @@ namespace ToolBox.Files
                 throw new DirectoryNotFoundException();
             }
 
-            List<string> files = files = new List<string>(_fileSystem.GetFiles(path, filter, search).OrderBy(name => name));
+            List<string> files = new List<string>(_fileSystem.GetFiles(path, filter, search).OrderBy(name => name));
             return files;
         }
 

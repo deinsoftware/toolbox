@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.2.0</VersionPrefix>
+    <VersionPrefix>1.2.1</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
     
     <Authors>Camilo Martinez</Authors>
@@ -28,6 +28,6 @@
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
     <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>

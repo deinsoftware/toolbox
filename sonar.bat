@@ -1,7 +1,7 @@
 @echo off
 set /p token=<sonar.txt
 :: https://docs.sonarqube.org/display/SONAR/Analysis+Parameters
-SonarQube.Scanner.MSBuild.exe begin /k:"dein:toolbox" /n:"ToolBox" /v:"1.2.0" /o:"dein" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="%token%" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.coverage.exclusions="ToolBox.Tests/**,**/*Tests.cs" /d:sonar.cs.opencover.reportsPaths="%cd%\opencover.xml"
+SonarQube.Scanner.MSBuild.exe begin /k:"dein:toolbox" /n:"ToolBox" /v:"1.2.1" /o:"dein" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="%token%" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.coverage.exclusions="ToolBox.Tests/**,**/*Tests.cs" /d:sonar.cs.opencover.reportsPaths="%cd%\opencover.xml"
 dotnet restore
 dotnet build
 dotnet test ToolBox.Tests/ToolBox.Tests.csproj
