@@ -320,6 +320,7 @@ Web.IsUrl(value); //Return true if value is an http or https valid address
 
 ### Built With
 
+* [.Net Core](https://dotnet.github.io/) - ASP.NET Core is a free and open-source web framework, and the next generation of ASP.NET, developed by Microsoft and the community.
 * [VS Code](https://code.visualstudio.com/) - Code editing redefined.
 * [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
 
