@@ -153,7 +153,7 @@ namespace ToolBox.Files.Tests
                 )
                 .Returns(true);
             _fileSystemMock
-                .Setup(fs => fs.GetFiles(path, It.IsAny<string>()))
+                .Setup(fs => fs.GetFiles(path, It.IsAny<string>(), It.IsAny<SearchOption>()))
                 .Returns(expectedResult);
 
             //Act
@@ -198,13 +198,13 @@ namespace ToolBox.Files.Tests
             _fileSystemMock
                 .Setup(
                     fs => fs.GetFiles(
-                        It.Is<string>(s => s == path), It.IsAny<string>()
+                        It.Is<string>(s => s == path), It.IsAny<string>(), It.IsAny<SearchOption>()
                     )
                 )
                 .Returns(new List<string>());
 
             //Act
-            var result = creator.GetFiles(path, "FilterNotExists");
+            var result = creator.GetFiles(path, "FilterNotExists", SearchOption.TopDirectoryOnly);
             //Assert
             Assert.Empty(result);
             _fileSystemMock.VerifyAll();

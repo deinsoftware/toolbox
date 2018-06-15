@@ -16,7 +16,6 @@ namespace ToolBox.Files
         void CopyFile(string filePath, string newFilePath, bool overwrite = false);
         void MoveFile(string filePath, string newFilePath);
         void DeleteFile(string filePath);
-        IEnumerable<string> GetFiles(string path, string filter);
         IEnumerable<string> GetFiles(string path, string filter, SearchOption searchOption);
 
         string GetDirectoryName(string path);
