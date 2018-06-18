@@ -7,7 +7,6 @@
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
 
-
 **ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
 
 Contributions or Beer will be appreciated
@@ -139,6 +138,7 @@ If you want to use `_path` and/or `_disk` in other class, add an static using to
 ```csharp
 using static Namesapace.Program;
 ```
+
 replace Namespace with defined namespace in your project.
 
 #### Disk
