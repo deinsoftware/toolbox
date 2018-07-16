@@ -1,7 +1,6 @@
 {
     "version": "2.0.0",
-    "tasks": [
-        {
+    "tasks": [{
             "label": "build",
             "command": "dotnet",
             "type": "process",
@@ -36,7 +35,10 @@
             },
             "args": [
                 "test",
-                "${workspaceFolder}/ToolBox.Tests/ToolBox.Tests.csproj"
+                "${workspaceFolder}/ToolBox.Tests/ToolBox.Tests.csproj",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=\"opencover,lcov\"",
+                "/p:CoverletOutput=../lcov"
             ],
             "problemMatcher": "$msCompile"
         },
