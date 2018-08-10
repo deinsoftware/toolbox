@@ -3,8 +3,10 @@ mono: none
 dotnet: 2.1.4
 
 install:
-  - dotnet restore
+  - dotnet restore ToolBox/ToolBox.csproj
+  - dotnet restore ToolBox.Tests/ToolBox.Tests.csproj
 
 script:
-  - dotnet build
-  - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover,lcov" /p:CoverletOutput=../lcov
+  - dotnet build ToolBox/ToolBox.csproj
+  - dotnet build ToolBox.Tests/ToolBox.Tests.csproj
+  - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
