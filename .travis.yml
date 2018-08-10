@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.1.4
+
+install:
+  - dotnet restore
+
+script:
+  - dotnet build
+  - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover,lcov" /p:CoverletOutput=../lcov
