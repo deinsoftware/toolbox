@@ -10,3 +10,6 @@ script:
   - dotnet build ToolBox/ToolBox.csproj
   - dotnet build ToolBox.Tests/ToolBox.Tests.csproj
   - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV
