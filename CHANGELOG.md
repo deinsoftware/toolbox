@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.3.6] - 2018-08-24
+
+**Fixed:**
+
+* Path in contentFiles with code and project language.
+
 ## [1.3.5] - 2018-08-24
 
 **Fixed:**
