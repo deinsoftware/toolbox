@@ -6,6 +6,7 @@ using System.Linq;
 using ToolBox.Platform;
 using System.Reflection;
 using System.Collections.Generic;
+using ToolBox.Notification;
 
 namespace ToolBox.Files.Tests
 {
@@ -70,7 +71,7 @@ namespace ToolBox.Files.Tests
         }
 
         [Theory]
-        [InlineData(new string[] {}, false, "")]
+        [InlineData(new string[] { }, false, "")]
         [InlineData(new string[] { @"^(?!\.).*" }, true, "")]
         [InlineData(new string[] { @"([^\s]+(\.(?i)(css|js))$)", @"^(?!\.).*" }, true, ".css", ".js")]
         [InlineData(new string[] { @"([^\s]+(\.(?i)(css|js))$)", @"^(?!\.).*" }, true, "css", "js")]
@@ -93,7 +94,7 @@ namespace ToolBox.Files.Tests
             DiskConfigurator creator = new DiskConfigurator(_fileSystem);
             MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
             //Act
-            object[] parameters = {new List<string>(new string[] {}), null};
+            object[] parameters = { new List<string>(new string[] { }), null };
             Action result = () => method.Invoke(creator, parameters);
             //Assert
             Assert.Throws<TargetInvocationException>(result);
@@ -107,7 +108,7 @@ namespace ToolBox.Files.Tests
             DiskConfigurator creator = new DiskConfigurator(_fileSystem);
             MethodInfo method = typeof(DiskConfigurator).GetMethod("IsFiltered", BindingFlags.NonPublic | BindingFlags.Instance);
             //Act
-            object[] parameters = {null, "/Users/user/Source/Exist/File.txt"};
+            object[] parameters = { null, "/Users/user/Source/Exist/File.txt" };
             var result = method.Invoke(creator, parameters);
             //Assert
             Assert.Equal(true, result);
@@ -116,26 +117,26 @@ namespace ToolBox.Files.Tests
 
         [Theory]
         [InlineData(
-            true, 
-            new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, 
+            true,
+            new string[] { @"([^\s]+(\.(?i)(css|js))$)" },
             "/Users/user/Source/Exist/File.css",
             "File.css"
         )]
         [InlineData(
-            true, 
+            true,
             new string[] { @"([^\s]+(\.(?i)(css|js))$)" },
             "/Users/user/Source/Exist/File.js",
             "File.js"
         )]
         [InlineData(
-            false, 
-            new string[] { @"([^\s]+(\.(?i)(css|js))$)" }, 
+            false,
+            new string[] { @"([^\s]+(\.(?i)(css|js))$)" },
             "/Users/user/Source/Exist/File.txt",
             "File.txt"
         )]
         [InlineData(
-            false, 
-            new string[] { @"([^\s]+(\.(?i)(sys))$)", @"^(?!\.).*" }, 
+            false,
+            new string[] { @"([^\s]+(\.(?i)(sys))$)", @"^(?!\.).*" },
             "/Users/user/Source/Exist/.File.sys",
             ".File.sys"
         )]
@@ -149,7 +150,7 @@ namespace ToolBox.Files.Tests
                 .Setup(fs => fs.GetFileName(It.Is<string>(s => s == filePath)))
                 .Returns(file);
             //Act
-            object[] parameters = {(regexFilter == null ? null : new List<string>(regexFilter)), filePath};
+            object[] parameters = { (regexFilter == null ? null : new List<string>(regexFilter)), filePath };
             var result = method.Invoke(creator, parameters);
             //Assert
             Assert.Equal(expectedResult, result);

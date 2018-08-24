@@ -237,9 +237,11 @@ FNDA:0,System.String ToolBox.Platform.CommandSystemWin::GetHomeFolder(System.Str
 DA:29,0
 DA:30,0
 DA:31,0
+BRDA:30,18,0,0
+BRDA:30,18,1,0
 LF:9
 LH:0
-BRF:0
+BRF:2
 BRH:0
 FNF:3
 FNH:0
@@ -278,6 +280,43 @@ BRF:10
 BRH:0
 FNF:4
 FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Notification/NotificationSystemDefault.cs
+FN:11,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
+FNDA:24,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
+DA:12,24
+DA:13,24
+DA:14,24
+FN:20,System.Void ToolBox.Notification.DefaultNotificationSystem::ShowAction(System.String,System.String)
+FNDA:5,System.Void ToolBox.Notification.DefaultNotificationSystem::ShowAction(System.String,System.String)
+DA:21,5
+DA:23,5
+FN:25,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardOutput(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardOutput(System.String)
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardWarning(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardWarning(System.String)
+DA:31,0
+DA:32,0
+DA:33,0
+FN:35,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardError(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardError(System.String)
+DA:36,0
+DA:37,0
+DA:38,0
+FN:40,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardLine()
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardLine()
+DA:41,0
+DA:42,0
+DA:43,0
+LF:17
+LH:5
+BRF:0
+BRH:0
+FNF:6
+FNH:2
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Log/FileLogCsv.cs
 FN:9,ToolBox.Files.IFileSystem ToolBox.Log.FileLogCsv::get__fileSystem()
@@ -392,138 +431,138 @@ FNF:4
 FNH:0
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/DiskConfigurator.cs
-FN:12,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
+FN:13,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
 FNDA:68,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
-DA:13,68
-FN:13,ToolBox.Files.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
-FNDA:31,ToolBox.Files.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
-DA:14,31
-FN:34,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.String[])
+DA:14,68
+FN:14,ToolBox.Notification.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
+FNDA:31,ToolBox.Notification.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
+DA:15,31
+FN:35,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.String[])
 FNDA:1,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.String[])
-DA:35,1
 DA:36,1
 DA:37,1
-FN:39,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.Boolean,System.String[])
+DA:38,1
+FN:40,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.Boolean,System.String[])
 FNDA:7,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.Boolean,System.String[])
-DA:40,7
 DA:41,7
-DA:42,1
+DA:42,7
 DA:43,1
-DA:46,6
-DA:48,6
+DA:44,1
+DA:47,6
 DA:49,6
 DA:50,6
 DA:51,6
-DA:52,16
-DA:53,6
+DA:52,6
+DA:53,16
 DA:54,6
 DA:55,6
-DA:56,4
+DA:56,6
 DA:57,4
 DA:58,4
-DA:59,6
-DA:60,3
+DA:59,4
+DA:60,6
 DA:61,3
 DA:62,3
-DA:64,6
+DA:63,3
 DA:65,6
-BRDA:41,7,0,1
-BRDA:41,7,1,63
-BRDA:48,39,0,1
-BRDA:48,39,1,63
-BRDA:55,86,0,15
-BRDA:55,86,1,63
-BRDA:59,113,0,7
-BRDA:59,113,1,63
-FN:67,System.Boolean ToolBox.Files.DiskConfigurator::IsFiltered(System.Collections.Generic.List`1<System.String>,System.String)
+DA:66,6
+BRDA:42,7,0,1
+BRDA:42,7,1,63
+BRDA:49,39,0,1
+BRDA:49,39,1,63
+BRDA:56,86,0,15
+BRDA:56,86,1,63
+BRDA:60,118,0,7
+BRDA:60,118,1,63
+FN:68,System.Boolean ToolBox.Files.DiskConfigurator::IsFiltered(System.Collections.Generic.List`1<System.String>,System.String)
 FNDA:9,System.Boolean ToolBox.Files.DiskConfigurator::IsFiltered(System.Collections.Generic.List`1<System.String>,System.String)
-DA:68,9
 DA:69,9
-DA:70,1
+DA:70,9
 DA:71,1
-DA:74,8
+DA:72,1
 DA:75,8
-DA:76,4
+DA:76,8
 DA:77,4
 DA:78,4
-DA:80,4
+DA:79,4
 DA:81,4
-DA:82,9
-DA:83,4
+DA:82,4
+DA:83,9
 DA:84,4
-DA:85,8
+DA:85,4
 DA:86,8
-BRDA:69,25,0,1
-BRDA:69,25,1,255
-BRDA:75,42,0,15
-BRDA:75,42,1,15
-BRDA:75,58,0,15
-BRDA:75,58,1,15
-FN:88,System.Void ToolBox.Files.DiskConfigurator::CopyAll(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+DA:87,8
+BRDA:70,25,0,1
+BRDA:70,25,1,255
+BRDA:76,42,0,15
+BRDA:76,42,1,15
+BRDA:76,58,0,15
+BRDA:76,58,1,15
+FN:89,System.Void ToolBox.Files.DiskConfigurator::CopyAll(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
 FNDA:2,System.Void ToolBox.Files.DiskConfigurator::CopyAll(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
-DA:89,2
 DA:90,2
-DA:91,1
+DA:91,2
 DA:92,1
-DA:95,1
+DA:93,1
 DA:96,1
 DA:97,1
-BRDA:90,17,0,1
-BRDA:90,17,1,1
-FN:99,System.Void ToolBox.Files.DiskConfigurator::CopyDirectories(System.String,System.String)
+DA:98,1
+BRDA:91,17,0,1
+BRDA:91,17,1,1
+FN:100,System.Void ToolBox.Files.DiskConfigurator::CopyDirectories(System.String,System.String)
 FNDA:5,System.Void ToolBox.Files.DiskConfigurator::CopyDirectories(System.String,System.String)
-DA:100,5
 DA:101,5
-DA:102,1
+DA:102,5
 DA:103,1
-DA:106,4
+DA:104,1
 DA:107,4
 DA:108,4
-DA:109,7
+DA:109,4
 DA:110,7
 DA:111,7
-DA:112,5
+DA:112,7
 DA:113,5
 DA:114,5
 DA:115,5
-DA:116,7
-DA:117,4
-BRDA:101,42,0,1
-BRDA:101,42,1,15
-FN:119,System.Void ToolBox.Files.DiskConfigurator::CopyFiles(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+DA:116,5
+DA:117,7
+DA:118,4
+BRDA:102,42,0,1
+BRDA:102,42,1,15
+FN:120,System.Void ToolBox.Files.DiskConfigurator::CopyFiles(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
 FNDA:5,System.Void ToolBox.Files.DiskConfigurator::CopyFiles(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
-DA:120,5
 DA:121,5
-DA:122,1
+DA:122,5
 DA:123,1
-DA:126,4
+DA:124,1
 DA:127,4
-DA:128,7
-DA:129,4
-DA:130,7
+DA:128,4
+DA:129,7
+DA:130,4
 DA:131,7
 DA:132,7
 DA:133,7
-DA:134,5
+DA:134,7
 DA:135,5
 DA:136,5
-DA:137,7
+DA:137,5
 DA:138,7
 DA:139,7
-DA:140,4
-BRDA:121,64,0,1
-BRDA:121,64,1,15
-FN:142,System.Void ToolBox.Files.DiskConfigurator::DeleteAll(System.String,System.Boolean)
+DA:140,7
+DA:141,4
+BRDA:122,64,0,1
+BRDA:122,64,1,15
+FN:143,System.Void ToolBox.Files.DiskConfigurator::DeleteAll(System.String,System.Boolean)
 FNDA:2,System.Void ToolBox.Files.DiskConfigurator::DeleteAll(System.String,System.Boolean)
-DA:143,2
 DA:144,2
 DA:145,2
 DA:146,2
 DA:147,2
 DA:148,2
 DA:149,2
-BRDA:144,14,0,3
-BRDA:144,14,1,3
+DA:150,2
+BRDA:145,14,0,3
+BRDA:145,14,1,3
 LF:92
 LH:92
 BRF:26
@@ -647,23 +686,6 @@ BRH:0
 FNF:19
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/NotificationSystemDefault.cs
-FN:11,ToolBox.Files.INotificationSystem ToolBox.Files.NotificationSystem::get_Default()
-FNDA:24,ToolBox.Files.INotificationSystem ToolBox.Files.NotificationSystem::get_Default()
-DA:12,24
-DA:13,24
-DA:14,24
-FN:20,System.Void ToolBox.Files.DefaultNotificationSystem::ShowAction(System.String,System.String)
-FNDA:5,System.Void ToolBox.Files.DefaultNotificationSystem::ShowAction(System.String,System.String)
-DA:21,5
-DA:23,5
-LF:5
-LH:5
-BRF:0
-BRH:0
-FNF:2
-FNH:2
-end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/PathsConfigurator.cs
 FN:10,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
 FNDA:19,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
@@ -752,4 +774,262 @@ BRF:18
 BRH:16
 FNF:8
 FNH:8
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Bridge.cs
+FN:4,System.String ToolBox.Bridge.Bridge::get_fileName()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_fileName()
+DA:5,0
+FN:5,System.String ToolBox.Bridge.Bridge::get_command()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_command()
+DA:6,0
+FN:6,System.String ToolBox.Bridge.Bridge::get_stderr()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_stderr()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBash.cs
+FN:16,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
+DA:17,0
+DA:18,0
+DA:19,0
+FN:25,System.String ToolBox.Bridge.BridgeSystemBash::GetFileName()
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBash::GetFileName()
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.String ToolBox.Bridge.BridgeSystemBash::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBash::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+BRDA:32,12,0,0
+BRDA:32,12,1,0
+BRDA:36,58,0,0
+BRDA:36,58,1,0
+FN:44,System.Void ToolBox.Bridge.BridgeSystemBash::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.BridgeSystemBash::Browse(System.String)
+DA:45,0
+DA:46,0
+DA:47,0
+LF:21
+LH:0
+BRF:4
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBat.cs
+FN:16,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
+DA:17,0
+DA:18,0
+DA:19,0
+FN:25,System.String ToolBox.Bridge.BridgeSystemBat::GetFileName()
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBat::GetFileName()
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.String ToolBox.Bridge.BridgeSystemBat::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBat::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+BRDA:32,12,0,0
+BRDA:32,12,1,0
+BRDA:36,58,0,0
+BRDA:36,58,1,0
+FN:44,System.Void ToolBox.Bridge.BridgeSystemBat::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.BridgeSystemBat::Browse(System.String)
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+LF:22
+LH:0
+BRF:4
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Response.cs
+FN:4,System.Int32 ToolBox.Bridge.Response::get_code()
+FNDA:0,System.Int32 ToolBox.Bridge.Response::get_code()
+DA:5,0
+FN:5,System.String ToolBox.Bridge.Response::get_stdout()
+FNDA:0,System.String ToolBox.Bridge.Response::get_stdout()
+DA:6,0
+FN:6,System.String ToolBox.Bridge.Response::get_stderr()
+FNDA:0,System.String ToolBox.Bridge.Response::get_stderr()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/ShellConfigurator.cs
+FN:12,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
+DA:13,0
+FN:13,ToolBox.Notification.INotificationSystem ToolBox.Bridge.ShellConfigurator::get__notificationSystem()
+FNDA:0,ToolBox.Notification.INotificationSystem ToolBox.Bridge.ShellConfigurator::get__notificationSystem()
+DA:14,0
+FN:39,System.Void ToolBox.Bridge.ShellConfigurator::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Browse(System.String)
+DA:40,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+FN:51,ToolBox.Bridge.Response ToolBox.Bridge.ShellConfigurator::Term(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,ToolBox.Bridge.Response ToolBox.Bridge.ShellConfigurator::Term(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:75,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:103,0
+DA:104,0
+BRDA:65,189,0,0
+BRDA:65,189,1,0
+BRDA:65,226,0,0
+BRDA:65,226,1,0
+BRDA:72,261,0,0
+BRDA:72,277,0,0
+BRDA:72,287,1,0
+BRDA:72,277,1,0
+BRDA:72,261,1,0
+BRDA:72,287,0,0
+BRDA:77,364,1,0
+BRDA:77,364,0,0
+BRDA:84,425,1,0
+BRDA:84,425,0,0
+FN:106,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String)
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+BRDA:111,45,0,0
+BRDA:111,45,1,0
+FN:121,System.String ToolBox.Bridge.ShellConfigurator::GetWord(System.String,System.Int32)
+FNDA:0,System.String ToolBox.Bridge.ShellConfigurator::GetWord(System.String,System.Int32)
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:126,0
+DA:127,0
+DA:128,0
+DA:129,0
+DA:130,0
+DA:131,0
+BRDA:126,42,0,0
+BRDA:126,42,1,0
+FN:133,System.String[] ToolBox.Bridge.ShellConfigurator::SplitLines(System.String)
+FNDA:0,System.String[] ToolBox.Bridge.ShellConfigurator::SplitLines(System.String)
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+FN:141,System.String ToolBox.Bridge.ShellConfigurator::ExtractLine(System.String,System.String,System.String[])
+FNDA:0,System.String ToolBox.Bridge.ShellConfigurator::ExtractLine(System.String,System.String,System.String[])
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:146,0
+DA:147,0
+DA:148,0
+DA:149,0
+DA:150,0
+DA:151,0
+DA:153,0
+DA:154,0
+DA:155,0
+BRDA:146,92,1,0
+BRDA:146,92,0,0
+BRDA:148,66,0,0
+BRDA:148,66,1,0
+LF:95
+LH:0
+BRF:22
+BRH:0
+FNF:8
+FNH:0
 end_of_record

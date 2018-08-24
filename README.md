@@ -28,6 +28,7 @@ Contributions or Beer will be appreciated
   * [Files](#files)
   * [Log](#log)
   * [Platform](#platform)
+  * [Shell](#shell)
   * [System](#system)
   * [Transform](#transform)
   * [Validations](#validations)
@@ -236,6 +237,22 @@ OS.GetCurrent();
 //Return "mac" on MacOS
 //Return "gnu" on Linux
 ```
+
+### Shell
+
+Include operations relative to run commands on command-line.
+
+#### Browse
+
+#### Term
+
+#### Result
+
+#### GetWord
+
+#### SplitLines
+
+#### ExtractLine
 
 ### System
 

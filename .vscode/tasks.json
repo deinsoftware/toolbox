@@ -88,6 +88,18 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "permissions",
+            "type": "shell",
+            "osx": {
+                "command": "chmod +x ${workspaceRoot}/sonar.sh"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "sonar",
             "type": "shell",
             "windows": {
