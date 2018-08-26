@@ -9,42 +9,15 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
-## [1.3.6] - 2018-08-24
+## [1.4.0] - 2018-08-25
 
-**Fixed:**
+**Changed:**
 
-* Path in contentFiles with code and project language.
+* RemoveLastOctetIPv4 to GetOctetsIPv4 function.
 
-## [1.3.5] - 2018-08-24
+**Added:**
 
-**Fixed:**
-
-* Add files into contentFiles and content folder.
-
-## [1.3.4] - 2018-08-24
-
-**Fixed:**
-
-* ContentFiles fix folder division.
-
-## [1.3.3] - 2018-08-24
-
-**Fixed:**
-
-* ContentFiles on project path on NuGet package.
-
-## [1.3.2] - 2018-08-24
-
-**Fixed:**
-
-* ContentFiles path on NuGet package.
-
-
-## [1.3.1] - 2018-08-24
-
-**Fixed:**
-
-* Output scripts on NuGet package.
+* Bridge and Shell Documentation.
 
 ## [1.3.1] - 2018-08-24
 

@@ -103,55 +103,20 @@ namespace ToolBox.Bridge
             return result;
         }
 
-        public void Result(string response)
+        public void Result(string value, string warningMessage = "")
         {
-            response = response
-                .Replace("\r", "")
-                .Replace("\n", "");
-            if (!String.IsNullOrEmpty(response))
+            value = Strings.CleanSpecialCharacters(value);
+            if (!String.IsNullOrEmpty(value))
             {
-                _notificationSystem.StandardOutput(response);
+                _notificationSystem.StandardOutput(value);
             }
             else
             {
-                _notificationSystem.StandardWarning("is not installed");
-            }
-        }
-
-        public string GetWord(string request, int wordPosition)
-        {
-            string response = "";
-            string[] stringSeparators = new string[] { " " };
-            string[] words = request.Split(stringSeparators, StringSplitOptions.None);
-            if (wordPosition <= words.Length)
-            {
-                response = words[wordPosition];
-            }
-            return response;
-        }
-
-        public string[] SplitLines(string request)
-        {
-            string[] stringSeparators = new string[] { Environment.NewLine, "\n" };
-            string[] lines = request.Split(stringSeparators, StringSplitOptions.None);
-            string[] response = lines;
-            return response;
-        }
-
-        public string ExtractLine(string request, string search, params string[] remove)
-        {
-            string response = "";
-            string[] stringSeparators = new string[] { Environment.NewLine, "\n" };
-            string[] lines = request.Split(stringSeparators, StringSplitOptions.None);
-            foreach (string l in lines)
-            {
-                if (l.Contains(search))
+                if (!String.IsNullOrEmpty(warningMessage))
                 {
-                    response = Strings.RemoveWords(l, remove);
-                    break;
+                    _notificationSystem.StandardWarning(warningMessage);
                 }
             }
-            return response;
         }
     }
 }

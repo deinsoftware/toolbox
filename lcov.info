@@ -33,12 +33,12 @@ DA:10,6
 DA:11,6
 DA:12,6
 FN:14,System.Boolean ToolBox.Validations.Number::IsOnRange(System.Int32,System.Int32,System.Int32)
-FNDA:5,System.Boolean ToolBox.Validations.Number::IsOnRange(System.Int32,System.Int32,System.Int32)
-DA:15,5
-DA:16,5
-DA:17,5
-BRDA:16,3,0,15
-BRDA:16,3,1,1
+FNDA:11,System.Boolean ToolBox.Validations.Number::IsOnRange(System.Int32,System.Int32,System.Int32)
+DA:15,11
+DA:16,11
+DA:17,11
+BRDA:16,3,0,511
+BRDA:16,3,1,3
 LF:7
 LH:7
 BRF:2
@@ -95,31 +95,78 @@ FNF:1
 FNH:1
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Transform/Strings.cs
-FN:7,System.String ToolBox.Transform.Strings::RemoveWords(System.String,System.String[])
+FN:7,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
+FNDA:0,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+FN:13,System.String ToolBox.Transform.Strings::RemoveWords(System.String,System.String[])
 FNDA:12,System.String ToolBox.Transform.Strings::RemoveWords(System.String,System.String[])
-DA:8,12
-DA:9,12
-DA:10,12
-DA:11,56
-DA:12,11
-DA:13,11
-DA:14,2
-DA:15,2
-DA:17,9
-DA:18,9
-DA:19,9
-DA:20,9
-BRDA:11,88,1,2047
-BRDA:11,88,0,511
-BRDA:13,27,0,1023
-BRDA:13,27,1,1
-BRDA:13,47,0,3
-BRDA:13,47,1,511
-LF:12
+DA:14,12
+DA:15,12
+DA:16,12
+DA:17,56
+DA:18,11
+DA:19,11
+DA:20,2
+DA:21,2
+DA:23,9
+DA:24,9
+DA:25,9
+DA:26,9
+BRDA:17,88,1,2047
+BRDA:17,88,0,511
+BRDA:19,27,0,1023
+BRDA:19,27,1,1
+BRDA:19,47,0,3
+BRDA:19,47,1,511
+FN:28,System.String ToolBox.Transform.Strings::GetWord(System.String,System.Int32)
+FNDA:0,System.String ToolBox.Transform.Strings::GetWord(System.String,System.Int32)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+BRDA:33,42,0,0
+BRDA:33,42,1,0
+FN:40,System.String[] ToolBox.Transform.Strings::SplitLines(System.String)
+FNDA:0,System.String[] ToolBox.Transform.Strings::SplitLines(System.String)
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+FN:48,System.String ToolBox.Transform.Strings::ExtractLine(System.String,System.String,System.String[])
+FNDA:0,System.String ToolBox.Transform.Strings::ExtractLine(System.String,System.String,System.String[])
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:60,0
+DA:61,0
+DA:62,0
+BRDA:53,92,1,0
+BRDA:53,92,0,0
+BRDA:55,66,0,0
+BRDA:55,66,1,0
+LF:45
 LH:12
-BRF:6
+BRF:12
 BRH:6
-FNF:1
+FNF:5
 FNH:1
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Env.cs
@@ -147,27 +194,45 @@ FNF:3
 FNH:0
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Network.cs
-FN:10,System.String ToolBox.System.Network::GetLocalIPv4()
+FN:12,System.String ToolBox.System.Network::GetLocalIPv4()
 FNDA:0,System.String ToolBox.System.Network::GetLocalIPv4()
-DA:11,0
 DA:13,0
-DA:14,0
 DA:15,0
 DA:16,0
 DA:17,0
 DA:18,0
 DA:19,0
 DA:20,0
-FN:22,System.String ToolBox.System.Network::RemoveLastOctetIPv4(System.String)
-FNDA:1,System.String ToolBox.System.Network::RemoveLastOctetIPv4(System.String)
-DA:23,1
-DA:24,1
-DA:25,1
-DA:26,1
-LF:13
-LH:4
-BRF:0
-BRH:0
+DA:21,0
+DA:22,0
+FN:24,System.String ToolBox.System.Network::GetOctetsIPv4(System.String,System.Int32)
+FNDA:6,System.String ToolBox.System.Network::GetOctetsIPv4(System.String,System.Int32)
+DA:25,6
+DA:26,6
+DA:27,2
+DA:28,2
+DA:31,4
+DA:32,4
+DA:33,28
+DA:34,10
+DA:35,10
+DA:36,10
+DA:37,9
+DA:38,9
+DA:39,9
+DA:40,10
+DA:41,4
+DA:42,4
+BRDA:26,14,0,3
+BRDA:26,14,1,15
+BRDA:33,101,1,1023
+BRDA:33,101,0,15
+BRDA:36,72,0,511
+BRDA:36,72,1,1023
+LF:25
+LH:16
+BRF:6
+BRH:6
 FNF:2
 FNH:1
 end_of_record
@@ -969,67 +1034,29 @@ BRDA:77,364,1,0
 BRDA:77,364,0,0
 BRDA:84,425,1,0
 BRDA:84,425,0,0
-FN:106,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String)
-FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String)
+FN:106,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String,System.String)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String,System.String)
 DA:107,0
 DA:108,0
 DA:109,0
 DA:110,0
 DA:111,0
 DA:112,0
-DA:113,0
 DA:114,0
+DA:115,0
 DA:116,0
 DA:117,0
 DA:118,0
 DA:119,0
-BRDA:111,45,0,0
-BRDA:111,45,1,0
-FN:121,System.String ToolBox.Bridge.ShellConfigurator::GetWord(System.String,System.Int32)
-FNDA:0,System.String ToolBox.Bridge.ShellConfigurator::GetWord(System.String,System.Int32)
-DA:122,0
-DA:123,0
-DA:124,0
-DA:125,0
-DA:126,0
-DA:127,0
-DA:128,0
-DA:129,0
-DA:130,0
-DA:131,0
-BRDA:126,42,0,0
-BRDA:126,42,1,0
-FN:133,System.String[] ToolBox.Bridge.ShellConfigurator::SplitLines(System.String)
-FNDA:0,System.String[] ToolBox.Bridge.ShellConfigurator::SplitLines(System.String)
-DA:134,0
-DA:135,0
-DA:136,0
-DA:137,0
-DA:138,0
-DA:139,0
-FN:141,System.String ToolBox.Bridge.ShellConfigurator::ExtractLine(System.String,System.String,System.String[])
-FNDA:0,System.String ToolBox.Bridge.ShellConfigurator::ExtractLine(System.String,System.String,System.String[])
-DA:142,0
-DA:143,0
-DA:144,0
-DA:145,0
-DA:146,0
-DA:147,0
-DA:148,0
-DA:149,0
-DA:150,0
-DA:151,0
-DA:153,0
-DA:154,0
-DA:155,0
-BRDA:146,92,1,0
-BRDA:146,92,0,0
-BRDA:148,66,0,0
-BRDA:148,66,1,0
-LF:95
+DA:120,0
+BRDA:109,20,0,0
+BRDA:109,20,1,0
+BRDA:115,50,0,0
+BRDA:115,50,1,0
+LF:67
 LH:0
-BRF:22
+BRF:18
 BRH:0
-FNF:8
+FNF:5
 FNH:0
 end_of_record

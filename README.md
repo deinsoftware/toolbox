@@ -153,14 +153,14 @@ _disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from
 _disk.DeleteAll(source, recursive); //Delete all files and folders from source
 ```
 
-If you want get Notification about copy or delete process, need implement `INotificationSystem` interface.
+If you want get Notifications about copy or delete process, need implement `INotificationSystem` interface.
 
 ```csharp
 public sealed class ConsoleNotificationSystem : INotificationSystem
 {
     public void ShowAction(string action, string message)
     {
-        Console.WriteLine($" [{action}] {message}", txtPrimary);
+        _colorify.Wrap($" [{action}] {message}", txtPrimary);
     }
 }
 ```
@@ -240,19 +240,104 @@ OS.GetCurrent();
 
 ### Shell
 
-Include operations relative to run commands on command-line.
+On the main class Program, add static properties ShellConfigurator and inside Main method create an instance of the library according the Operative System.
+
+```csharp
+using ToolBox.Bridge;
+```
+
+#### Instantiate
+
+On the main class Program, add static properties ILogSystem and inside Main method create an instance of the class according a value (maybe in your config system).
+
+```csharp
+class Program
+{
+    public static INotificationSystem _notificationSystem { get; set; }
+    public static IBridgeSystem _bridgeSystem { get; set; }
+    public static ShellConfigurator _shell { get; set; }
+
+    static void Main(string[] args)
+    {
+        _notificationSystem = new ConsoleNotificationSystem();
+        switch (OS.GetCurrent())
+        {
+            case "win":
+                _bridgeSystem = BridgeSystem.Bat;
+                break;
+            case "mac":
+            case "gnu":
+                _bridgeSystem = BridgeSystem.Bash;
+                break;
+        }
+        _shell = new ShellConfigurator(_bridgeSystem, _notificationSystem);
+        //Foo()
+        //Bar()
+    }
+}
+```
+
+If you want to use `_shell` in other class, add an static using to `Program` class:
+
+```csharp
+using static Namesapace.Program;
+```
+
+replace Namespace with defined namespace in your project.
+
+#### Notification
+
+If you want customize shell output need implement `INotificationSystem` interface or can use default implementation with `NotificationSystem.Default` static class.
+
+```csharp
+public sealed class ConsoleNotificationSystem : INotificationSystem
+{
+    public void StandardOutput(string message)
+    {
+        _colorify.Wrap($" {message}", txtPrimary);
+    }
+
+    public void StandardWarning(string message)
+    {
+        _colorify.Wrap($" {message}", txtWarning);
+    }
+
+    public void StandardError(string message)
+    {
+        _colorify.Wrap($" {message}", txtDanger);
+    }
+
+    public void StandardLine()
+    {
+        _colorify.BlankLines();
+    }
+}
+```
 
 #### Browse
 
+```csharp
+_shell.Browse(url); //Open and URL in default browser
+```
+
 #### Term
+
+Run a command in a shell terminal and return a Response result with: code, stdout and stderr.
+
+```csharp
+_shell.Term(command);                           //Run a command in hidden mode
+_shell.Term(command, Output.Hidden);            //Run a command in hidden mode
+_shell.Term(command, Output.Internal);          //Run a command in internal mode, showing his results in same terminal with INotificationSystem implementation
+_shell.Term(command, Output.External);          //Run a command in a new terminal window
+_shell.Term(command, Output.Internal, path);    //Path parameter define a path when the command needs to be executed
+```
 
 #### Result
 
-#### GetWord
-
-#### SplitLines
-
-#### ExtractLine
+```csharp
+_shell.Result(value);                   //Clean special characters from value and print in terminal.
+_shell.Result(value, warningMessage);   //Clean special characters from value and print in terminal or it's empty show the warningMessage.
+```
 
 ### System
 
@@ -262,7 +347,7 @@ Include operations relative to System.
 using ToolBox.System;
 ```
 
-#### Environment
+#### Environment Variables
 
 ```csharp
 Env.GetValue(key);        //Return value from key
@@ -273,8 +358,8 @@ Env.IsNullOrEmpty(key);   //Return true when value from key is defined
 #### Network
 
 ```csharp
-Network.GetLocalIPv4();           //Return current ip address
-Network.RemoveLastOctetIPv4(ip);  //Return ip address with 3 first octets
+Network.GetLocalIPv4();             //Return current ip address
+Network.GetOctetsIPv4(ip, number);  //Return ip address with octets defined on number
 ```
 
 #### User
@@ -296,7 +381,12 @@ using ToolBox.Transform;
 #### Strings
 
 ```csharp
-Strings.RemoveWords(oldValue, wordToRemove[]);  //Return oldValue without removed words
+Strings.CleanSpecialCharacters(value); //Receive an string and clean \r (carriage return) and \n (new line) characters.
+Strings.RemoveWords(value, wordsToRemove[]);  //Return value without removed words
+Strings.GetWord(value, wordPosition); //Search in value the wordPosition and return the word.
+Strings.SplitLines[](value, wordPosition); //Receive a value string and split on array when found \n (New Line) character and return an array with all lines.
+Strings.ExtractLine(value, search); //Receive a value string and split on array when found \n (New Line) character and return first line with search value.
+Strings.ExtractLine(value, search, wordsToRemove[]); //Receive a value string and split on array when found \n (New Line) character and return first line with search value and removeWords defined.
 ```
 
 ### Validations

@@ -14,6 +14,6 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t $CODECOV
   - dotnet pack ToolBox/ToolBox.csproj /p:NuspecFile=ToolBox/ToolBox.nuspec -o Package/ -c release
-  - dotnet nuget push Package/dein.ToolBox.1.3.6.nupkg -k $NUGET_KEY -s $NUGET_URL
+  - dotnet nuget push Package/dein.ToolBox.1.4.0.nupkg -k $NUGET_KEY -s $NUGET_URL
   on:
     branch: master

@@ -5,21 +5,36 @@ namespace ToolBox.System.Tests
 {
     public class NetworkTests
     {
-        [Fact(Skip="It's System Functionality")]
+        [Fact(Skip = "It's System Functionality")]
         public void GetLocalIPv4_WhenCalls_NotImplemented()
         {
             throw new NotImplementedException();
         }
 
-        [Fact]
-        public void RemoveLastOctetIPv4_WhenCalls_ReturnsIPWithoutLastOctet()
+        [Theory]
+        [InlineData("192.", "192.168.21.0", 1)]
+        [InlineData("192.168.", "192.168.21.0", 2)]
+        [InlineData("192.168.21.", "192.168.21.0", 3)]
+        [InlineData("192.168.21.0", "192.168.21.0", 4)]
+        public void GetOctetsIPv4_WhenCalls_ReturnsOctetsDefined(string expectedResult, string ip, int amount)
         {
             //Arrange
-            string ip = "192.168.21.0";
             //Act
-            var result = Network.RemoveLastOctetIPv4(ip);
+            var result = Network.GetOctetsIPv4(ip, amount);
             //Assert
-            Assert.Equal("192.168.21.", result);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData("192.168.21.0", 0)]
+        [InlineData("192.168.21.0", 5)]
+        public void GetOctetsIPv4_WhenAmountIsOutOfRange_ReturnsException(string ip, int amount)
+        {
+            //Arrange
+            //Act
+            Action result = () => Network.GetOctetsIPv4(ip, amount);
+            //Assert
+            Assert.Throws<ArgumentException>(result);
         }
     }
 }

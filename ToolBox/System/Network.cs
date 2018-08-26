@@ -2,6 +2,8 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Linq;
+using System.Text;
+using ToolBox.Validations;
 
 namespace ToolBox.System
 {
@@ -19,10 +21,24 @@ namespace ToolBox.System
             return localIP;
         }
 
-        public static string RemoveLastOctetIPv4(string ip)
+        public static string GetOctetsIPv4(string ip, int amount)
         {
-            ip = ip.Replace($".{ip.Split('.').Last()}", "");
-            return $"{ip}.";
+            if (!Number.IsOnRange(1, amount, 4))
+            {
+                throw new ArgumentException("Must be a number beteween 1 and 4.", nameof(amount));
+            }
+
+            string[] octets = ip.Split('.');
+            var result = new StringBuilder();
+            for (var i = 0; i < amount; i++)
+            {
+                result.Append(octets[i]);
+                if (i < 3)
+                {
+                    result.Append(".");
+                }
+            }
+            return result.ToString();
         }
     }
 }
