@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
         "Configurator",
+        "Newtonsoft",
         "Xunit",
-        "chmod"
+        "chmod",
+        "dein"
     ],
     "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov"
 }
