@@ -1,11 +1,11 @@
 language: csharp
 mono: none
-dotnet: 2.1.4
+dotnet: 2.1.401
 
 install:
   - dotnet restore ToolBox/ToolBox.csproj
   - dotnet restore ToolBox.Tests/ToolBox.Tests.csproj
-  - dotnet tool install dotnet-sonarscanner
+  - dotnet tool install --global dotnet-sonarscanner
 
 script:
   - dotnet sonarscanner begin /k:"dein:toolbox" /n:"ToolBox" /v:"1.4.1" /o:"dein" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="$SONAR_KEY" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="$TRAVIS_BUILD_DIR/lcov.opencover.xml"
