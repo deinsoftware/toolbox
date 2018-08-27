@@ -99,6 +99,15 @@ Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/
 
 Keep calm, you are almost done. Review this usage steps and enjoy the life.
 
+To understand how this library works, take a look inside [Sample](https://github.com/deinsoftware/toolbox/tree/master/Sample) folder. Better easy to use guide than words.
+
+Just go to `Sample` project folder and run this command on terminal:
+
+```terminal
+cd Sample
+dotnet run
+```
+
 ### Files
 
 Include operations relative to File System and implements `IFileSystem` and `ICommandSystem` with specific actions and commands per Operative System.
@@ -251,6 +260,10 @@ using ToolBox.Bridge;
 On the main class Program, add static properties ILogSystem and inside Main method create an instance of the class according a value (maybe in your config system).
 
 ```csharp
+using static ToolBox.Notification;
+```
+
+```csharp
 class Program
 {
     public static INotificationSystem _notificationSystem { get; set; }
@@ -259,7 +272,7 @@ class Program
 
     static void Main(string[] args)
     {
-        _notificationSystem = new ConsoleNotificationSystem();
+        _notificationSystem = new ConsoleNotificationSystem(); //Or _notificationSystem = NotificationSystem.Default;
         switch (OS.GetCurrent())
         {
             case "win":
@@ -288,6 +301,10 @@ replace Namespace with defined namespace in your project.
 #### Notification
 
 If you want customize shell output need implement `INotificationSystem` interface or can use default implementation with `NotificationSystem.Default` static class.
+
+```csharp
+using ToolBox.Notification;
+```
 
 ```csharp
 public sealed class ConsoleNotificationSystem : INotificationSystem
@@ -322,7 +339,7 @@ _shell.Browse(url); //Open and URL in default browser
 
 #### Term
 
-Run a command in a shell terminal and return a Response result with: code, stdout and stderr.
+Run a command in a shell terminal.
 
 ```csharp
 _shell.Term(command);                           //Run a command in hidden mode
@@ -330,6 +347,19 @@ _shell.Term(command, Output.Hidden);            //Run a command in hidden mode
 _shell.Term(command, Output.Internal);          //Run a command in internal mode, showing his results in same terminal with INotificationSystem implementation
 _shell.Term(command, Output.External);          //Run a command in a new terminal window
 _shell.Term(command, Output.Internal, path);    //Path parameter define a path when the command needs to be executed
+```
+
+Using Response to receive command result with: code, stdout and stderr
+
+```csharp
+Response result = _shell.Term("dotnet --version", Output.Hidden);
+_shell.Result(result.stdout, "Not Installed");
+_colorify.WriteLine(result.code.ToString(), txtInfo);
+if (result.code == 0){
+    _colorify.WriteLine($"Command Works :D", txtSuccess);
+} else {
+    _colorify.WriteLine(result.stderr, txtDanger);
+}
 ```
 
 #### Result
