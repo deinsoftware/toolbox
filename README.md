@@ -89,6 +89,27 @@ In your project folder, where is located .csproj file run this command on termin
 | win | `dotnet add reference "D:\Developer\DEIN\Projects\_devCC\ToolBox\ToolBox.csproj"` |
 | mac | `dotnet add reference ~/Developer/DEIN/Projects/_devCC/ToolBox/ToolBox.csproj` |
 
+Copy Command Bridge files on path:
+
+* [Bat](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.bat) (Windows)
+* [Bash](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.sh) (MacOS / Linux)
+
+Inside your .csproj add Command Bridge files on build:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        <!-- Command Bridge -->
+        <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
+        <!-- Packages -->
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+        <!-- Projects -->
+        <ProjectReference Include="..\..\_devTB\ToolBox\ToolBox.csproj" />
+    </ItemGroup>
+</Project>
+```
+
 Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference)
 
 ⇧ [Back to menu](#menu)
