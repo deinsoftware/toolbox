@@ -3,22 +3,15 @@ mono: none
 dotnet: 2.1.401
 
 install:
-  - dotnet tool install --global dotnet-sonarscanner
   - dotnet restore ToolBox/ToolBox.csproj
   - dotnet restore ToolBox.Tests/ToolBox.Tests.csproj
 
 script:
-  - dotnet sonarscanner begin /k:"dein:toolbox" /n:"ToolBox" /v:"1.4.1" /o:"dein" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="$SONAR_KEY" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="$TRAVIS_BUILD_DIR/lcov.opencover.xml"
   - dotnet build ToolBox/ToolBox.csproj
-  - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=\"opencover,lcov\" /p:CoverletOutput=../lcov
-  - dotnet sonarscanner end /d:sonar.login="$SONAR_KEY"
+  - dotnet build ToolBox.Tests/ToolBox.Tests.csproj
+  - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
 
 after_success:
-  - dotnet pack ToolBox/ToolBox.csproj /p:NuspecFile=/ToolBox/ToolBox.nuspec -o Package/ -c release
-  
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: dotnet nuget push Package/dein.ToolBox.*.nupkg -k $NUGET_KEY -s $NUGET_URL
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV
   on:
     branch: master
