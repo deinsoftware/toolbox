@@ -30,7 +30,11 @@ namespace ToolBox.Transform
             string response = "";
             string[] stringSeparators = new string[] { " " };
             string[] words = value.Split(stringSeparators, StringSplitOptions.None);
-            if (wordPosition <= words.Length)
+            if (wordPosition < 0)
+            {
+                throw new ArgumentException("Can't be less than zero.", nameof(wordPosition));
+            }
+            if (wordPosition < words.Length)
             {
                 response = words[wordPosition];
             }
@@ -48,11 +52,10 @@ namespace ToolBox.Transform
         public static string ExtractLine(string value, string search, params string[] remove)
         {
             string response = "";
-            string[] stringSeparators = new string[] { Environment.NewLine, "\n" };
-            string[] lines = value.Split(stringSeparators, StringSplitOptions.None);
+            string[] lines = SplitLines(value);
             foreach (string l in lines)
             {
-                if (l.Contains(search))
+                if (l.Contains(search) && !String.IsNullOrEmpty(search))
                 {
                     response = Strings.RemoveWords(l, remove);
                     break;

@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.4.1] - 2018-08-26
+
+**Fixed:**
+
+* ExtractLine on empty search.
+
 ## [1.4.0] - 2018-08-25
 
 **Changed:**
