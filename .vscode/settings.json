@@ -1,10 +1,6 @@
 {
-    "cSpell.words": [
-        "Configurator",
-        "Newtonsoft",
-        "Xunit",
-        "chmod",
-        "dein"
-    ],
-    "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov"
+  "editor.letterSpacing": 1,
+  "editor.tabSize": 4,
+  "cSpell.words": ["Configurator", "Newtonsoft", "Xunit", "chmod", "dein"],
+  "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov"
 }
