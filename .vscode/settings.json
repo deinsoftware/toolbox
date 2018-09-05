@@ -1,6 +1,33 @@
 {
-  "editor.letterSpacing": 1,
+  "cSpell.words": [
+    "Colorify",
+    "Configurator",
+    "Equiman",
+    "Loaiza",
+    "Sigcheck",
+    "aapt",
+    "apksigner",
+    "chmod",
+    "dein",
+    "egrep",
+    "findstr",
+    "javapath",
+    "keystore",
+    "libexec",
+    "macos",
+    "pbcopy",
+    "qube",
+    "sbin",
+    "shasum",
+    "thumbsup",
+    "trac",
+    "unversioned",
+    "xclip",
+    "xcopy"
+  ],
+  "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov",
   "editor.tabSize": 4,
-  "cSpell.words": ["Configurator", "Newtonsoft", "Xunit", "chmod", "dein"],
-  "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov"
+  "[markdown]": {
+    "editor.tabSize": 2,
+  }
 }
