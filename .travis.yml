@@ -1,8 +1,12 @@
-os: osx
+sudo: required
+dist: trusty
 
 language: csharp
 mono: none
 dotnet: 2.1.401
+
+git:
+  depth: false
 
 addons:
   sonarcloud:
@@ -23,3 +27,9 @@ script:
   - dotnet build ToolBox/ToolBox.csproj
   - dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=\"opencover,lcov\" /p:CoverletOutput=../lcov
   - dotnet sonarscanner end /d:sonar.login="$SONAR_KEY" || true
+
+cache:
+  directories:
+    - '~/.nuget/packages'
+    - '~/.local/share/NuGet/Cache'
+    - '~/.sonar/cache'
