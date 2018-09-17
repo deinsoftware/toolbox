@@ -6,7 +6,7 @@ set dir=%2
 if defined dir (
     cd /d %dir%\
 )
-start cmd /K %cmd%
+start cmd.exe /K %cmd%
 cls
 
 exit 0
