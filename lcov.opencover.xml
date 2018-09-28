@@ -3,7 +3,7 @@
   <Summary numSequencePoints="554" visitedSequencePoints="243" numBranchPoints="554" visitedBranchPoints="243" sequenceCoverage="0.439" branchCoverage="0.439" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="10" numClasses="30" visitedMethods="30" numMethods="99" />
   <Modules>
     <Module hash="53913786-2A9E-4DF7-B866-649A17208BFF">
-      <ModulePath>/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox.Tests/bin/Debug/netcoreapp2.0/ToolBox.dll</ModulePath>
+      <ModulePath>/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox.Tests/bin/Debug/netcoreapp2.1/ToolBox.dll</ModulePath>
       <ModuleTime>2018-08-27T03:25:22</ModuleTime>
       <ModuleName>ToolBox</ModuleName>
       <Files>

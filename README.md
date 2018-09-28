@@ -98,7 +98,7 @@ Inside your .csproj add Command Bridge files on build:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
         <!-- Command Bridge -->
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />

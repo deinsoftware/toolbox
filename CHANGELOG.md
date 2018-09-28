@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.4.3] - 2018-09-28
+
+**Updated:**
+
+- To .Net Core version 2.1.0.
+
 ## [1.4.2] - 2018-09-17
 
 **Fixed:**

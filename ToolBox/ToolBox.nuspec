@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -25,9 +25,9 @@
     </contentFiles>
   </metadata>
   <files>
-    <file src="bin\release\netcoreapp2.0\T*.dll" target="lib\netcoreapp2.0" />
-    <file src="bin\release\netcoreapp2.0\T*.pdb" target="lib\netcoreapp2.0" />
-    <file src="bin\release\netcoreapp2.0\cmd.*" target="contentFiles\any\any" />
-    <file src="bin\release\netcoreapp2.0\cmd.*" target="content\any\any" />
+    <file src="bin\release\netcoreapp2.1\T*.dll" target="lib\netcoreapp2.1" />
+    <file src="bin\release\netcoreapp2.1\T*.pdb" target="lib\netcoreapp2.1" />
+    <file src="bin\release\netcoreapp2.1\cmd.*" target="contentFiles\any\any" />
+    <file src="bin\release\netcoreapp2.1\cmd.*" target="content\any\any" />
   </files>
 </package>
