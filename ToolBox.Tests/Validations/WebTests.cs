@@ -37,7 +37,6 @@ namespace ToolBox.Validations.Tests
         [InlineData("ftp://www.dein.com.co")]
         [InlineData("sftp://www.dein.com.co")]
         [InlineData("ftps://www.dein.com.co")]
-        [InlineData("ftps://www.dein.com.co")]
         public void IsUrl_WhenHaveAnoherProtocol_ReturnsFalse(string value)
         {
             //Act
