@@ -330,6 +330,8 @@ using ToolBox.Notification;
 ```csharp
 public sealed class ConsoleNotificationSystem : INotificationSystem
 {
+    private string _pastMessage { get; set; } = "";
+
     public void StandardOutput(string message)
     {
         var diff = message.Except(_pastMessage).ToArray();
