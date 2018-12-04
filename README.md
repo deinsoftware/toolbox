@@ -12,33 +12,33 @@
 
 Contributions or Beer will be appreciated
 
-> The Code is Dark and Full of Errors!  
+> The Code is Dark and Full of Errors!
 > Console is your friend ... don't be afraid!
 
 ## Menu
 
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Install](#install)
-    * [Dependencies](#dependencies)
-    * [Add As Package](#add-as-package)
-    * [Add As Reference](#add-as-reference)
-  * [Instantiate Library](#instantiate-library)
-* [Usage](#usage)
-  * [Files](#files)
-  * [Log](#log)
-  * [Platform](#platform)
-  * [Shell](#shell)
-  * [System](#system)
-  * [Transform](#transform)
-  * [Validations](#validations)
-* [About](#about)
-  * [Built With](#built-with)
-  * [Contributing](#contributing)
-  * [Versioning](#versioning)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+    - [Dependencies](#dependencies)
+    - [Add As Package](#add-as-package)
+    - [Add As Reference](#add-as-reference)
+  - [Instantiate Library](#instantiate-library)
+- [Usage](#usage)
+  - [Files](#files)
+  - [Log](#log)
+  - [Platform](#platform)
+  - [Shell](#shell)
+  - [System](#system)
+  - [Transform](#transform)
+  - [Validations](#validations)
+- [About](#about)
+  - [Built With](#built-with)
+  - [Contributing](#contributing)
+  - [Versioning](#versioning)
+  - [Authors](#authors)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -50,7 +50,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install?
 
-* [NET Core SDK](https://www.microsoft.com/net/download)
+- [NET Core SDK](https://www.microsoft.com/net/download)
 
 ### Installing
 
@@ -60,7 +60,7 @@ Follow this instructions to add **ToolBox** in your project.
 
 #### Dependencies
 
-* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/11.0.2) Library
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/11.0.2) Library
 
 #### Add As Package
 
@@ -75,24 +75,24 @@ Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/do
 
 #### Add As Reference
 
-Clone **ToolBox** from GitHub on *recommended* path. Using this command on terminal:
+Clone **ToolBox** from GitHub on _recommended_ path. Using this command on terminal:
 
-| OS | Command |
-| --- | --- |
+| OS  | Command                                                                                     |
+| --- | ------------------------------------------------------------------------------------------- |
 | win | `git clone https://github.com/deinsoftware/toolbox.git "D:\Developer\DEIN\Projects\_devTB"` |
-| mac | `git clone https://github.com/deinsoftware/toolbox.git ~/Developer/DEIN/Projects/_devTB` |
+| mac | `git clone https://github.com/deinsoftware/toolbox.git ~/Developer/DEIN/Projects/_devTB`    |
 
 In your project folder, where is located .csproj file run this command on terminal:
 
-| OS | Command |
-| --- | --- |
+| OS  | Command                                                                           |
+| --- | --------------------------------------------------------------------------------- |
 | win | `dotnet add reference "D:\Developer\DEIN\Projects\_devCC\ToolBox\ToolBox.csproj"` |
-| mac | `dotnet add reference ~/Developer/DEIN/Projects/_devCC/ToolBox/ToolBox.csproj` |
+| mac | `dotnet add reference ~/Developer/DEIN/Projects/_devCC/ToolBox/ToolBox.csproj`    |
 
 Copy Command Bridge files on path:
 
-* [Bat](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.bat) (Windows)
-* [Bash](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.sh) (MacOS / Linux)
+- [Bat](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.bat) (Windows)
+- [Bash](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.sh) (MacOS / Linux)
 
 Inside your .csproj add Command Bridge files on build:
 
@@ -332,7 +332,13 @@ public sealed class ConsoleNotificationSystem : INotificationSystem
 {
     public void StandardOutput(string message)
     {
-        _colorify.Wrap($" {message}", txtPrimary);
+        var diff = message.Except(_pastMessage).ToArray();
+            if (diff.Length <= 2 && message.Contains("%")) //Control Progress Messages
+            {
+                Console.SetCursorPosition(0, Console.CursorTop - 1);
+            }
+            _colorify.Wrap($" {message}", txtPrimary);
+            _pastMessage = message;
     }
 
     public void StandardWarning(string message)
@@ -481,9 +487,9 @@ Web.IsUrl(value); //Return true if value is an http or https valid address
 
 ### Built With
 
-* [.Net Core](https://dotnet.github.io/) - ASP.NET Core is a free and open-source web framework, and the next generation of ASP.NET, developed by Microsoft and the community.
-* [VS Code](https://code.visualstudio.com/) - Code editing redefined.
-* [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
+- [.Net Core](https://dotnet.github.io/) - ASP.NET Core is a free and open-source web framework, and the next generation of ASP.NET, developed by Microsoft and the community.
+- [VS Code](https://code.visualstudio.com/) - Code editing redefined.
+- [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
 
 ### Contributing
 
@@ -495,7 +501,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ### Authors
 
-* **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
+- **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
 
 See also the list of [contributors](https://github.com/deinsoftware/toolbox/contributors) who participated in this project.
 
@@ -505,7 +511,7 @@ This project is licensed under the GNU GPLv3 License - see the [LICENSE](LICENSE
 
 ### Acknowledgments
 
-* [StackOverflow](http://stackoverflow.com): The largest online community for programmers.
-* [Dot Net Perls](https://www.dotnetperls.com/console-color): C# Console Color, Text and BackgroundColor.
+- [StackOverflow](http://stackoverflow.com): The largest online community for programmers.
+- [Dot Net Perls](https://www.dotnetperls.com/console-color): C# Console Color, Text and BackgroundColor.
 
 ⇧ [Back to menu](#menu)
