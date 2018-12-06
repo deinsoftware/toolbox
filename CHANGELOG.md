@@ -15,6 +15,10 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 - Support for .Net Core version 2.0.
 
+**Changed:**
+
+- Update Newtonsoft.Json library to 12.0.1.
+
 ## [1.4.3] - 2018-09-28
 
 **Updated:**
