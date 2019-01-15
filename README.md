@@ -514,6 +514,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Acknowledgments
 
 - [StackOverflow](http://stackoverflow.com): The largest online community for programmers.
-- [Dot Net Perls](https://www.dotnetperls.com/console-color): C# Console Color, Text and BackgroundColor.
 
 ⇧ [Back to menu](#menu)
