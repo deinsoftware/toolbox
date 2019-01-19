@@ -18,26 +18,19 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/equiman/toolbox</RepositoryUrl>
 
-    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
     <RuntimeIdentifiers>win10-x64;osx.10.12-x64</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
     <!-- Packages -->
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
-    <!-- Resources -->
-    <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
-    <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 </Project>
