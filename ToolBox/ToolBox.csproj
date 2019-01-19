@@ -3,8 +3,6 @@
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
     <VersionPrefix>1.4.4</VersionPrefix>
-    <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
-
     <Authors>Camilo Martinez</Authors>
     <Company>dein Software</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -25,6 +23,7 @@
 
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
     <!-- Resources -->
