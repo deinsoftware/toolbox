@@ -32,7 +32,7 @@ namespace ToolBox.Bridge
 
             if (!OS.IsWin())
             {
-                Term("chmod +x cmd.sh");
+                Term($"chmod +x {Path.Combine(Utility.GetExecutionAssemblyPath(), "cmd.sh")}");
             }
         }
 
