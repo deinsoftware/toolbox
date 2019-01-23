@@ -1,5 +1,7 @@
 language: csharp
 mono: none
+sudo: required
+dist: xenial
 dotnet: 2.2.103
 
 solution: ToolBox/ToolBox.csproj
@@ -19,7 +21,7 @@ script:
   - dotnet sonarscanner end /d:sonar.login="$SONAR_KEY" || true
 
 global:
-  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
   - DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 cache:
