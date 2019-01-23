@@ -9,6 +9,18 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.4.5] - 2019-01-23
+
+**Updated:**
+
+- Framework To .Net Core version 2.2
+- Moq to 4.10.1
+- Coverlet to 4.5.1
+
+**Fixed:**
+
+- Add extra double quotes on external command when path contains spaces on folder names.
+
 ## [1.4.4] - 2018-12-06
 
 **Added:**
@@ -23,7 +35,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- To .Net Core version 2.1.0.
+- Framework to .Net Core version 2.1.0.
 
 ## [1.4.2] - 2018-09-17
 
@@ -65,9 +77,9 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 - Code smells reported by SonarQube.
 
-**Changed:**
+**Updated:**
 
-- Update Newtonsoft.Json library to 11.0.2.
+- Newtonsoft.Json library to 11.0.2.
 
 ## [1.2.0] - 2018-06-12
 

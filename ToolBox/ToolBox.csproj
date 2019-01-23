@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.4.4</VersionPrefix>
+    <VersionPrefix>1.4.5</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
 
     <Authors>Camilo Martinez</Authors>
@@ -20,7 +20,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/equiman/toolbox</RepositoryUrl>
 
-    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
     <RuntimeIdentifiers>win10-x64;osx.10.12-x64</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
@@ -34,6 +34,13 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
+    <!-- Resources -->
+    <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Packages -->
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
