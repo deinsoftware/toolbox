@@ -13,7 +13,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- Framework To .Net Core version 2.2
+- Framework to .Net Core version 2.2
 - Moq to 4.10.1
 - Coverlet to 4.5.1
 
@@ -25,17 +25,17 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Added:**
 
-- Support for .Net Core version 2.0.
+- Support for .Net Core version 2.0
 
 **Changed:**
 
-- Update Newtonsoft.Json library to 12.0.1.
+- Update Newtonsoft.Json library to 12.0.1
 
 ## [1.4.3] - 2018-09-28
 
 **Updated:**
 
-- Framework to .Net Core version 2.1.0.
+- Framework to .Net Core version 2.1
 
 ## [1.4.2] - 2018-09-17
 
@@ -79,7 +79,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- Newtonsoft.Json library to 11.0.2.
+- Newtonsoft.Json library to 11.0.2
 
 ## [1.2.0] - 2018-06-12
 
