@@ -35,7 +35,7 @@ namespace ToolBox.Bridge
             }
             if (output == Output.External)
             {
-                command = $"{Directory.GetCurrentDirectory()}/cmd.bat \"{command}\"{dir}";
+                command = $"\"{Directory.GetCurrentDirectory()}/cmd.bat\" \"{command}\"{dir}";
             }
             command = $"/c \"{command}\"";
             return command;

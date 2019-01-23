@@ -35,7 +35,7 @@ namespace ToolBox.Bridge
             }
             if (output == Output.External)
             {
-                command = $"sh {Directory.GetCurrentDirectory()}/cmd.sh '{command}'{dir}";
+                command = $"sh \"{Directory.GetCurrentDirectory()}/cmd.sh\" '{command}'{dir}";
             }
             command = $"-c \"{command}\"";
             return command;
