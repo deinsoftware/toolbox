@@ -6,13 +6,14 @@
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
-    <licenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</licenseUrl>
+    <license type="file">..\LICENSE</license>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectUrl>https://github.com/equiman/toolbox</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/equiman/toolbox/master/icon.png</iconUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>C# NETCore ToolBox Library [for Win and Mac]</description>
+    <description>C# NETCore ToolBox Library [for Win, Mac and Linux]</description>
     <summary>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</summary>
-    <releaseNotes>This is where it all begins...</releaseNotes>
+    <releaseNotes>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</releaseNotes>
     <copyright>dein Software © 2017</copyright>
     <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection command-line</tags>
     <language>en-US</language>
@@ -33,5 +34,7 @@
     <file src="bin\release\netcoreapp2.2\T*.pdb" target="lib\netcoreapp2.2" />
     <file src="bin\release\netcoreapp2.2\cmd.*" target="contentFiles\any\any" />
     <file src="bin\release\netcoreapp2.2\cmd.*" target="content\any\any" />
+    <file src="..\LICENSE" target="contentFiles\any\any" />
+    <file src="..\LICENSE" target="content\any\any" />
   </files>
 </package>
