@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.5.0] - 2019-07-18
+
+**Add:**
+
+- Path GetFileNameWithoutExtension method
+
 ## [1.4.5] - 2019-01-23
 
 **Updated:**

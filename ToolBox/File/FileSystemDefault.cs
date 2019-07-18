@@ -32,6 +32,11 @@ namespace ToolBox.Files
             return Path.Combine(paths);
         }
 
+        public string GetFileNameWithoutExtension(string fileName)
+        {
+            return Path.GetFileNameWithoutExtension(fileName);
+        }
+
         public string GetFileName(string filePath)
         {
             return Path.GetFileName(filePath);

@@ -375,7 +375,7 @@ _shell.Term(command);                           //Run a command in hidden mode
 _shell.Term(command, Output.Hidden);            //Run a command in hidden mode
 _shell.Term(command, Output.Internal);          //Run a command in internal mode, showing his results in same terminal with INotificationSystem implementation
 _shell.Term(command, Output.External);          //Run a command in a new terminal window
-_shell.Term(command, Output.Internal, path);    //Path parameter define a path when the command needs to be executed
+_shell.Term(command, Output.Internal, path);    //Path parameter define a path where the command needs to be executed
 ```
 
 Using Response to receive command result with: code, stdout and stderr
