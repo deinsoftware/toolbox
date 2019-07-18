@@ -6704,8 +6704,8 @@ DA:704,6
 DA:705,1
 DA:707,362
 DA:711,180
-DA:712,22722
-DA:715,21021
+DA:712,22724
+DA:715,21022
 DA:719,12
 DA:720,6
 DA:722,0
@@ -6728,23 +6728,23 @@ BRDA:700,250,1,1
 BRDA:700,286,0,1
 BRDA:700,286,1,1
 BRDA:707,650,1,180
-BRDA:712,620,1,11181
-BRDA:715,386,0,11181
-BRDA:715,398,0,9074
-BRDA:715,420,0,9073
-BRDA:715,442,0,9072
+BRDA:712,620,1,11182
+BRDA:715,386,0,11182
+BRDA:715,398,0,9075
+BRDA:715,420,0,9074
+BRDA:715,442,0,9073
 BRDA:715,460,0,1
-BRDA:715,460,1,9072
+BRDA:715,460,1,9073
 BRDA:715,490,0,6
 BRDA:719,505,0,1
 BRDA:719,505,1,6
 BRDA:720,539,0,0
 BRDA:720,539,1,6
-BRDA:715,386,1,11361
-BRDA:715,398,1,11361
-BRDA:715,420,1,11361
-BRDA:715,442,1,11361
-BRDA:715,490,1,11361
+BRDA:715,386,1,11362
+BRDA:715,398,1,11362
+BRDA:715,420,1,11362
+BRDA:715,442,1,11362
+BRDA:715,490,1,11362
 BRDA:712,620,0,180
 BRDA:707,650,0,1
 FN:793,System.Collections.Generic.IList`1<Xunit.Runner.VisualStudio.VsTestRunner/DiscoveredTestCase> Xunit.Runner.VisualStudio.VsTestRunner::GetVsTestCases(System.String,Xunit.Abstractions.ITestFrameworkDiscoverer,Xunit.Runner.VisualStudio.VsExecutionDiscoverySink,LoggerHelper,Xunit.Runner.VisualStudio.TestPlatformContext)
@@ -15702,99 +15702,104 @@ FNDA:0,System.String ToolBox.Files.DefaultFileSystem::PathCombine(System.String[
 DA:31,0
 DA:32,0
 DA:33,0
-FN:35,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
-FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+FN:35,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
 DA:36,0
 DA:37,0
 DA:38,0
-FN:40,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
-FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
+FN:40,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
 DA:41,0
 DA:42,0
 DA:43,0
-FN:45,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
-FNDA:0,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
+FN:45,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
+FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
 DA:46,0
 DA:47,0
 DA:48,0
-FN:50,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
-FNDA:0,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
+FN:50,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
+FNDA:0,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
 DA:51,0
 DA:52,0
 DA:53,0
-FN:55,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
-FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
+FN:55,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
+FNDA:0,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
 DA:56,0
 DA:57,0
 DA:58,0
-FN:60,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
-FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
+FN:60,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
 DA:61,0
 DA:62,0
 DA:63,0
-FN:65,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
-FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
+FN:65,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
 DA:66,0
 DA:67,0
 DA:68,0
-FN:70,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
-FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
+FN:70,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
 DA:71,0
 DA:72,0
 DA:73,0
-BRDA:72,4,0,0
-BRDA:72,4,1,0
-FN:75,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
-FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
+FN:75,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
 DA:76,0
 DA:77,0
 DA:78,0
 BRDA:77,4,0,0
 BRDA:77,4,1,0
-FN:82,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
-FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
+FN:80,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
+DA:81,0
+DA:82,0
 DA:83,0
-DA:84,0
-DA:85,0
-FN:87,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
-FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
+BRDA:82,4,0,0
+BRDA:82,4,1,0
+FN:87,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
 DA:88,0
 DA:89,0
 DA:90,0
-FN:92,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
-FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
+FN:92,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
+FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
 DA:93,0
+DA:94,0
 DA:95,0
-DA:96,0
-DA:97,0
+FN:97,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
 DA:98,0
-DA:99,0
+DA:100,0
 DA:101,0
 DA:102,0
-FN:104,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
-FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
-DA:105,0
+DA:103,0
+DA:104,0
 DA:106,0
 DA:107,0
-FN:109,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
-FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
+FN:109,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
 DA:110,0
 DA:111,0
 DA:112,0
-BRDA:111,4,0,0
-BRDA:111,4,1,0
-FN:114,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
-FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
+FN:114,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
 DA:115,0
 DA:116,0
 DA:117,0
 BRDA:116,4,0,0
 BRDA:116,4,1,0
-LF:62
+FN:119,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
+DA:120,0
+DA:121,0
+DA:122,0
+BRDA:121,4,0,0
+BRDA:121,4,1,0
+LF:65
 LH:0
 BRF:8
 BRH:0
-FNF:19
+FNF:20
 FNH:0
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/PathsConfigurator.cs

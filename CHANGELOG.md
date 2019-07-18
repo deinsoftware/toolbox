@@ -9,6 +9,16 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.5.1] - 2019-01-23
+
+**Updated:**
+
+- Moq to 4.12.0
+- Coverlet to 2.6.3
+- NET.Test and CodeCoverage to 16.2.0
+- NewtonSoft to 12.0.2
+
+
 ## [1.5.0] - 2019-07-18
 
 **Add:**
