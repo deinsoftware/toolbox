@@ -10,6 +10,7 @@ namespace ToolBox.Files
         string PathCombine(params string[] paths);
 
         string GetFileName(string filePath);
+        string GetFileNameWithoutExtension(string filePath);
         bool FileExists(string path);
         FileStream FileCreate(string path);
         StreamWriter FileAppendText(string text);

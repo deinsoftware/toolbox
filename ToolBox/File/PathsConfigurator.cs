@@ -64,6 +64,16 @@ namespace ToolBox.Files
             return _fileSystem.GetFileName(filePath);
         }
 
+        public string GetFileNameWithoutExtension(string filePath)
+        {
+            if (String.IsNullOrEmpty(filePath))
+            {
+                throw new ArgumentException(nameof(filePath));
+            }
+
+            return _fileSystem.GetFileNameWithoutExtension(filePath);
+        }
+
         public List<string> GetFiles(string path, string filter = null, SearchOption search = SearchOption.TopDirectoryOnly)
         {
             if (!_fileSystem.DirectoryExists(path))
