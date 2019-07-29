@@ -9,7 +9,7 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
-## [1.5.1] - 2019-01-23
+## [1.5.2] - 2019-01-23
 
 **Updated:**
 

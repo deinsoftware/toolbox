@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.5.1</version>
+    <version>1.5.2</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -32,9 +32,6 @@
     <file src="bin\release\netcoreapp2.1\T*.pdb" target="lib\netcoreapp2.1" />
     <file src="bin\release\netcoreapp2.2\T*.dll" target="lib\netcoreapp2.2" />
     <file src="bin\release\netcoreapp2.2\T*.pdb" target="lib\netcoreapp2.2" />
-    <file src="bin\release\netcoreapp2.2\cmd.*" target="contentFiles\any\any" />
-    <file src="bin\release\netcoreapp2.2\cmd.*" target="content\any\any" />
-    <file src="..\LICENSE" target="contentFiles\any\any" />
-    <file src="..\LICENSE" target="content\any\any" />
+    <file src="bin\release\netcoreapp2.2\cmd.*" target="contentFiles\any\any\" />
   </files>
 </package>
