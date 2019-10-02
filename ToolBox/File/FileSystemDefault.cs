@@ -37,9 +37,9 @@ namespace ToolBox.Files
             return Path.GetFileName(filePath);
         }
 
-        public string GetFileNameWithoutExtension(string fileName)
+        public string GetFileNameWithoutExtension(string filePath)
         {
-            return Path.GetFileNameWithoutExtension(fileName);
+            return Path.GetFileNameWithoutExtension(filePath);
         }
 
         public bool FileExists(string path)
