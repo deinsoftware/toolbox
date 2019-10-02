@@ -729,13 +729,13 @@ FNDA:0,System.String ToolBox.Files.DefaultFileSystem::PathCombine(System.String[
 DA:31,0
 DA:32,0
 DA:33,0
-FN:35,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
-FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
+FN:35,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
 DA:36,0
 DA:37,0
 DA:38,0
-FN:40,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
-FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+FN:40,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
 DA:41,0
 DA:42,0
 DA:43,0
@@ -875,42 +875,52 @@ DA:64,0
 DA:65,0
 BRDA:59,9,0,0
 BRDA:59,9,1,0
-FN:67,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
-FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
+FN:67,System.String ToolBox.Files.PathsConfigurator::GetFileNameWithoutExtension(System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetFileNameWithoutExtension(System.String)
 DA:68,0
 DA:69,0
 DA:70,0
 DA:71,0
 DA:74,0
 DA:75,0
-DA:76,0
-BRDA:69,17,0,0
-BRDA:69,17,1,0
-BRDA:74,45,0,0
-BRDA:74,45,1,0
-FN:78,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
-FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
+BRDA:69,9,0,0
+BRDA:69,9,1,0
+FN:77,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
+DA:78,0
 DA:79,0
 DA:80,0
 DA:81,0
-DA:82,0
+DA:84,0
 DA:85,0
 DA:86,0
-BRDA:80,9,0,0
-BRDA:80,9,1,0
-FN:88,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
-FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
+BRDA:79,17,0,0
+BRDA:79,17,1,0
+BRDA:84,45,0,0
+BRDA:84,45,1,0
+FN:88,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
 DA:89,0
 DA:90,0
 DA:91,0
 DA:92,0
 DA:95,0
 DA:96,0
-DA:97,0
-BRDA:90,17,0,0
-BRDA:90,17,1,0
-BRDA:95,44,0,0
-BRDA:95,44,1,0
+BRDA:90,9,0,0
+BRDA:90,9,1,0
+FN:98,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:105,0
+DA:106,0
+DA:107,0
+BRDA:100,17,0,0
+BRDA:100,17,1,0
+BRDA:105,44,0,0
+BRDA:105,44,1,0
 FN:13,System.Void ToolBox.Files.PathsConfigurator::.ctor(ToolBox.Platform.ICommandSystem,ToolBox.Files.IFileSystem)
 FNDA:0,System.Void ToolBox.Files.PathsConfigurator::.ctor(ToolBox.Platform.ICommandSystem,ToolBox.Files.IFileSystem)
 DA:14,0
@@ -928,11 +938,11 @@ BRDA:16,14,0,0
 BRDA:16,14,1,0
 BRDA:21,34,0,0
 BRDA:21,34,1,0
-LF:58
+LF:64
 LH:0
-BRF:22
+BRF:24
 BRH:0
-FNF:9
+FNF:10
 FNH:0
 end_of_record
 SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Bridge.cs

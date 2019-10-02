@@ -60,7 +60,7 @@ Follow this instructions to add **ToolBox** in your project.
 
 #### Dependencies
 
-- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/12.0.1) Library
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/12.0.2) Library
 
 #### Add As Package
 
@@ -98,7 +98,7 @@ Inside your .csproj add Command Bridge files on build:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
         <!-- Command Bridge -->
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />

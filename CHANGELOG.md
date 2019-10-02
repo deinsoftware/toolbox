@@ -9,12 +9,24 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.5.4] - 2019-10-02
+
+**Updated:**
+
+- Framework to .Net Core version 3.0
+
+**Changed:**
+
+- NuGet support only for .Net Core 2.2 and 3.0
+
 ## [1.5.3] - 2019-07-29
 
 **Added:**
+
 - Path GetFileNameWithoutExtension method
 
 **Updated:**
+
 - Moq to 4.12.0
 - Coverlet to 2.6.3
 - NET.Test and CodeCoverage to 16.2.0
@@ -103,7 +115,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- Delete All function dont throw exception when folder file not found.
+- Delete All function don't throw exception when folder file not found.
 
 ## [1.1.3] - 2018-02-19
 
