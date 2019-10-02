@@ -68,7 +68,7 @@ In your project folder, where is located .csproj file run this command on termin
 
 ```terminal
 dotnet add package dein.ToolBox
-dotnet add package Newtonsoft.Json --version 12.0.1
+dotnet add package Newtonsoft.Json --version 12.0.2
 ```
 
 Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package)
@@ -103,7 +103,7 @@ Inside your .csproj add Command Bridge files on build:
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
         <!-- Packages -->
-        <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
         <!-- Projects -->
         <ProjectReference Include="..\..\_devTB\ToolBox\ToolBox.csproj" />
     </ItemGroup>

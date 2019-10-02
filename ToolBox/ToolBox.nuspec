@@ -20,10 +20,10 @@
     <developmentDependency>true</developmentDependency>
     <dependencies>
       <group targetFramework="netcoreapp2.2">
-        <dependency id="Newtonsoft.Json" version="12.0.1" />
+        <dependency id="Newtonsoft.Json" version="12.0.2" />
       </group>
       <group targetFramework="netcoreapp3.0">
-        <dependency id="Newtonsoft.Json" version="12.0.1" />
+        <dependency id="Newtonsoft.Json" version="12.0.2" />
       </group>
     </dependencies>
     <contentFiles>
