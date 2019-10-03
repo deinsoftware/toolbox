@@ -28,6 +28,7 @@
     </dependencies>
     <contentFiles>
       <files include="any/**/cmd.*" buildAction="None" copyToOutput="true" flatten="true" />
+      <files include="any/**/LICENSE" buildAction="None" copyToOutput="true" flatten="true" />
     </contentFiles>
   </metadata>
   <files>
@@ -37,5 +38,6 @@
     <file src="bin\release\netcoreapp3.0\T*.dll" target="lib\netcoreapp3.0" />
     <file src="bin\release\netcoreapp3.0\T*.pdb" target="lib\netcoreapp3.0" />
     <file src="bin\release\netcoreapp3.0\cmd.*" target="contentFiles\any\any\" />
+    <file src="..\LICENSE" target="contentFiles\any\any" />
   </files>
 </package>
