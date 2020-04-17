@@ -37,6 +37,7 @@ Contributions or Beer will be appreciated
   - [Contributing](#contributing)
   - [Versioning](#versioning)
   - [Authors](#authors)
+  - [Sponsors](#sponsors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
@@ -505,11 +506,17 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 - **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
 
+See also the list of [contributors](https://github.com/deinsoftware/toolbox/contributors) who participated in this project.
+
+### Sponsors
+
 If this project help you reduce time to develop, you can give me a cup of coffee.
 
-[![Donation](buy-me-a-coffee.png "Buy me a coffee")](http://buymeacoff.ee/equiman)
+<span class="badge-paypal"><a href="https://paypal.me/equiman/3" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+<span class="badge-patreon"><a href="https://patreon.com/equiman" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+<span class="badge-buymeacoffee"><a href="buymeacoff.ee/equiman" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
 
-See also the list of [contributors](https://github.com/deinsoftware/toolbox/contributors) who participated in this project.
+No sponsors yet! Will you be the first?
 
 ### License
 
