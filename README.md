@@ -505,6 +505,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 - **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
 
+If this project help you reduce time to develop, you can give me a cup of coffee.
+
+[![Donation](buy-me-a-coffee.png "Buy me a coffee")](http://buymeacoff.ee/equiman)
+
 See also the list of [contributors](https://github.com/deinsoftware/toolbox/contributors) who participated in this project.
 
 ### License
