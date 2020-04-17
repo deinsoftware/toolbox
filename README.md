@@ -19,7 +19,7 @@ Contributions or Beer will be appreciated
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
+  - [Install](#installing)
     - [Dependencies](#dependencies)
     - [Add As Package](#add-as-package)
     - [Add As Reference](#add-as-reference)
