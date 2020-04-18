@@ -9,7 +9,7 @@
     <license type="file">..\LICENSE</license>
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <projectUrl>https://github.com/equiman/toolbox</projectUrl>
+    <projectUrl>https://github.com/deinsoftware/toolbox</projectUrl>
     <icon>icon.png</icon>
     <description>C# NETCore ToolBox Library [for Win, Mac and Linux]</description>
     <summary>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</summary>
@@ -20,24 +20,25 @@
     <developmentDependency>true</developmentDependency>
     <dependencies>
       <group targetFramework="netcoreapp2.2">
-        <dependency id="Newtonsoft.Json" version="12.0.2" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
       </group>
-      <group targetFramework="netcoreapp3.0">
-        <dependency id="Newtonsoft.Json" version="12.0.2" />
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
       </group>
     </dependencies>
     <contentFiles>
       <files include="any/**/cmd.*" buildAction="None" copyToOutput="true" flatten="true" />
       <files include="any/**/LICENSE" buildAction="None" copyToOutput="true" flatten="true" />
     </contentFiles>
+    <repository type="git" url="https://github.com/deinsoftware/toolbox" />
   </metadata>
   <files>
     <file src="..\icon.png" target="\" />
     <file src="bin\release\netcoreapp2.2\T*.dll" target="lib\netcoreapp2.2" />
     <file src="bin\release\netcoreapp2.2\T*.pdb" target="lib\netcoreapp2.2" />
-    <file src="bin\release\netcoreapp3.0\T*.dll" target="lib\netcoreapp3.0" />
-    <file src="bin\release\netcoreapp3.0\T*.pdb" target="lib\netcoreapp3.0" />
-    <file src="bin\release\netcoreapp3.0\cmd.*" target="contentFiles\any\any\" />
+    <file src="bin\release\netcoreapp3.1\T*.dll" target="lib\netcoreapp3.1" />
+    <file src="bin\release\netcoreapp3.1\T*.pdb" target="lib\netcoreapp3.1" />
+    <file src="bin\release\netcoreapp3.1\cmd.*" target="contentFiles\any\any\" />
     <file src="..\LICENSE" target="contentFiles\any\any" />
   </files>
 </package>

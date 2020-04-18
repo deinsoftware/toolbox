@@ -13,14 +13,14 @@
     <Copyright>dein Software © 2017</Copyright>
 
     <PackageTags>dotnet;core;win10-x64;osx.10.12-x64</PackageTags>
-    <PackageIconUrl>https://github.com/equiman/toolbox/blob/master/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/equiman/toolbox</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/equiman/toolbox/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/deinsoftware/toolbox/blob/master/icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/deinsoftware/toolbox</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/deinsoftware/toolbox/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/equiman/toolbox</RepositoryUrl>
+    <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
 
-    <TargetFrameworks>netcoreapp2.2;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;osx-x64;linux-x64;</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
@@ -31,16 +31,16 @@
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
     <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <!-- License -->
     <None Include="..\LICENSE" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
     <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <!-- License -->
     <None Include="..\LICENSE" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

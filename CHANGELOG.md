@@ -13,7 +13,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- Framework to .Net Core version 3.0
+- The Framework to .Net Core version 3.0
 
 **Changed:**
 
@@ -36,7 +36,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- Framework to .Net Core version 2.2
+- The Framework to .Net Core version 2.2
 - Moq to 4.10.1
 - Coverlet to 4.5.1
 
@@ -145,7 +145,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- Update [ToolBox](https://github.com/equiman/toolbox) and [Colorify](https://github.com/equiman/colorify) library, that solves bug with text on resize window.
+- Update [ToolBox](https://github.com/deinsoftware/toolbox) and [Colorify](https://github.com/equiman/colorify) library, that solves bug with text on resize window.
 
 ## [1.0.0] - 2017-12-26
 
