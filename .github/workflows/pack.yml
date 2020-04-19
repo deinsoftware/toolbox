@@ -10,7 +10,7 @@ env:
   version: 1.6.0
   key: dein:toolbox
   organization: dein
-  name: Toolbox
+  name: ToolBox
 
 jobs:
   pack:
@@ -27,8 +27,8 @@ jobs:
       - name: setup nuget config
         run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' "${{ env.workspace }}/Package/nuget.config" > nuget.config
       - name: create file
-        run: dotnet pack Toolbox/Toolbox.csproj /p:NuspecFile=${{ env.workspace }}/Toolbox/Toolbox.nuspec -o ${{ env.workspace }}/Package/ -c release
+        run: dotnet pack ToolBox/ToolBox.csproj /p:NuspecFile=${{ env.workspace }}/ToolBox/ToolBox.nuspec -o ${{ env.workspace }}/Package/ -c release
       - name: publish nuget on microsoft
-        run: dotnet nuget push "${{ env.workspace }}/Package/dein.Toolbox.${{ env.version }}.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s "nuget" --skip-duplicate --no-symbols true
+        run: dotnet nuget push "${{ env.workspace }}/Package/dein.ToolBox.${{ env.version }}.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s "nuget" --skip-duplicate --no-symbols true
       - name: publish nuget on github
-        run: dotnet nuget push "${{ env.workspace }}/Package/dein.Toolbox.${{ env.version }}.nupkg" -s "github" --skip-duplicate --no-symbols true
+        run: dotnet nuget push "${{ env.workspace }}/Package/dein.ToolBox.${{ env.version }}.nupkg" -s "github" --skip-duplicate --no-symbols true

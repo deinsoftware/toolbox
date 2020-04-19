@@ -11,7 +11,7 @@ env:
   version: 1.6.0
   key: dein:toolbox
   organization: dein
-  name: Toolbox
+  name: ToolBox
 
 jobs:
   build:
@@ -27,9 +27,9 @@ jobs:
         with:
           dotnet-version: ${{ env.dotnet }}
       - name: restore
-        run: dotnet restore Toolbox/Toolbox.csproj
+        run: dotnet restore ToolBox/ToolBox.csproj
       - name: build
-        run: dotnet build Toolbox/Toolbox.csproj --no-restore
+        run: dotnet build ToolBox/ToolBox.csproj --no-restore
   test:
     runs-on: ubuntu-latest
     name: test
@@ -42,19 +42,19 @@ jobs:
       - name: install sonar-scanner
         run: dotnet tool install --global dotnet-sonarscanner
       - name: restore
-        run: dotnet restore Toolbox/Toolbox.csproj
+        run: dotnet restore ToolBox/ToolBox.csproj
       - name: build
-        run: dotnet build Toolbox/Toolbox.csproj --no-restore
+        run: dotnet build ToolBox/ToolBox.csproj --no-restore
       - name: restore test
-        run: dotnet restore Toolbox.Tests/Toolbox.Tests.csproj
+        run: dotnet restore ToolBox.Tests/ToolBox.Tests.csproj
       - name: build test
-        run: dotnet build Toolbox.Tests/Toolbox.Tests.csproj --no-restore
+        run: dotnet build ToolBox.Tests/ToolBox.Tests.csproj --no-restore
       - name: scanner begin
         run: dotnet sonarscanner begin /k:"${{ env.key }}" /n:"${{ env.name }}" /v:"${{ env.version }}" /o:"${{ env.organization }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="lcov.opencover.xml"
       - name: scanner build
-        run: dotnet build Toolbox/Toolbox.csproj
+        run: dotnet build ToolBox/ToolBox.csproj
       - name: scanner test
-        run: dotnet test Toolbox.Tests/Toolbox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
+        run: dotnet test ToolBox.Tests/ToolBox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
       - name: scanner end
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
         env:

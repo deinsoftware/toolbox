@@ -9,7 +9,7 @@
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
 [![License](https://img.shields.io/github/license/deinsoftware/toolbox)](LICENSE)
 
-![Toolbox](.github/social/preview.png "Toolbox")
+![ToolBox](.github/social/preview.png "ToolBox")
 
 **ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as a library and can be used by other console applications.
 
