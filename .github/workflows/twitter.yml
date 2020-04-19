@@ -1,0 +1,29 @@
+name: tweet
+
+on:
+  push:
+    tags:
+      - "*"
+
+env:
+  dotnet: 3.1.201
+  version: 1.6.0
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: packing
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup Twitter
+        uses: ethomson/send-tweet-action@v1
+        with:
+          status: "$ dotnet add package dein.Colorify\n
+          👆${{ env.version }} 🐛🛠\n
+          \n
+          Colorify - C# NETCore Console Library with Text Format: colors, alignment and lot more  [ for Win, Mac & Linux ]\n
+          https://github.com/deinsoftware/toolbox"
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
