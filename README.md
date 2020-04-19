@@ -7,8 +7,11 @@
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
+[![License](https://img.shields.io/github/license/deinsoftware/toolbox)](LICENSE)
 
-**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
+![Toolbox](.github/social/preview.png "Toolbox")
+
+**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as a library and can be used by other console applications.
 
 Contributions or Beer will be appreciated
 
@@ -23,7 +26,6 @@ Contributions or Beer will be appreciated
     - [Dependencies](#dependencies)
     - [Add As Package](#add-as-package)
     - [Add As Reference](#add-as-reference)
-  - [Instantiate Library](#instantiate-library)
 - [Usage](#usage)
   - [Files](#files)
   - [Log](#log)
@@ -55,13 +57,13 @@ What things you need to install?
 
 ### Installing
 
-**ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on source code library.
+**ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on the source code library.
 
-Follow this instructions to add **ToolBox** in your project.
+Follow these instructions to add **ToolBox** in your project.
 
 #### Dependencies
 
-- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/12.0.3) Library
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) Library
 
 #### Add As Package
 
@@ -90,7 +92,7 @@ In your project folder, where is located .csproj file run this command on termin
 | win | `dotnet add reference "D:\Developer\DEIN\Projects\_devCC\ToolBox\ToolBox.csproj"` |
 | mac | `dotnet add reference ~/Developer/DEIN/Projects/_devCC/ToolBox/ToolBox.csproj`    |
 
-Copy Command Bridge files on path:
+Copy Command Bridge files on the path:
 
 - [Bat](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.bat) (Windows)
 - [Bash](https://github.com/deinsoftware/toolbox/blob/master/ToolBox/cmd.sh) (MacOS / Linux)
@@ -119,9 +121,9 @@ Official documentation: [dotnet add reference](https://docs.microsoft.com/en-us/
 
 ## Usage
 
-Keep calm, you are almost done. Review this usage steps and enjoy the life.
+Keep calm, you are almost done. Review this usage steps and enjoy life.
 
-To understand how this library works, take a look inside [Sample](https://github.com/deinsoftware/toolbox/tree/master/Sample) folder. Better easy to use guide than words.
+To understand how this library works, take a look inside [Sample](https://github.com/deinsoftware/toolbox/tree/master/Sample) folder. Better easy to use a  guide than words.
 
 Just go to `Sample` project folder and run this command on terminal:
 
@@ -138,9 +140,7 @@ Include operations relative to File System and implements `IFileSystem` and `ICo
 using ToolBox.Files;
 ```
 
-#### Instantiate
-
-On the main class Program, add static properties DiskConfigurator and PathsConfigurator and inside Main method create an instance of the library according the Operative System.
+On the main class Program, add static properties DiskConfigurator and PathsConfigurator and inside the `Main` method create an instance of the library according the Operative System.
 
 ```csharp
 class Program
@@ -166,13 +166,13 @@ class Program
 }
 ```
 
-If you want to use `_path` and/or `_disk` in other class, add an static using to `Program` class:
+If you want to use `_path` and/or `_disk` in other class, add a static using to `Program` class:
 
 ```csharp
 using static Namesapace.Program;
 ```
 
-replace Namespace with defined namespace in your project.
+replace Namespace with a defined namespace in your project.
 
 #### Disk
 
@@ -184,7 +184,7 @@ _disk.CopyFiles(source, destination, overwrite, filter[]); //Copy all files from
 _disk.DeleteAll(source, recursive); //Delete all files and folders from source
 ```
 
-If you want get Notifications about copy or delete process, need implement `INotificationSystem` interface.
+If you want get Notifications about copy or delete process, need implement the `INotificationSystem` interface.
 
 ```csharp
 public sealed class ConsoleNotificationSystem : INotificationSystem
@@ -196,7 +196,7 @@ public sealed class ConsoleNotificationSystem : INotificationSystem
 }
 ```
 
-And send it as parameter on `DiskConfiguration` definition.
+And send it as a parameter on `DiskConfiguration` definition.
 
 ```csharp
 _disk = new DiskConfigurator(FileSystem.Default, new ConsoleNotificationSystem());
@@ -212,15 +212,13 @@ _path.GetFiles(path, filter); //Return Files inside path
 
 ### Log
 
-Include operations relative to Logs and implements `IFileSystem` with specific actions and commands per Operative System.
+Include operations relative to Logs and implements the `IFileSystem` with specific actions and commands per Operative System.
 
 ```csharp
 using ToolBox.Log;
 ```
 
-#### Instantiate
-
-On the main class Program, add static properties ILogSystem and inside Main method create an instance of the class according a value (maybe in your config system).
+On the main class Program, add static properties ILogSystem and inside the `Main` method create an instance of the class according a value (maybe in your config system).
 
 ```csharp
 class Program
@@ -271,15 +269,13 @@ OS.GetCurrent();
 
 ### Shell
 
-On the main class Program, add static properties ShellConfigurator and inside Main method create an instance of the library according the Operative System.
+On the main class Program, add static properties ShellConfigurator and inside the `Main` method create an instance of the library according the Operative System.
 
 ```csharp
 using ToolBox.Bridge;
 ```
 
-#### Instantiate
-
-On the main class Program, add static properties ILogSystem and inside Main method create an instance of the class according a value (maybe in your config system).
+On the main class Program, add static properties ILogSystem and inside the `Main` method create an instance of the class according a value (maybe in your config system).
 
 ```csharp
 using static ToolBox.Notification;
@@ -312,17 +308,17 @@ class Program
 }
 ```
 
-If you want to use `_shell` in other class, add an static using to `Program` class:
+If you want to use `_shell` in other class, add a static using to `Program` class:
 
 ```csharp
 using static Namesapace.Program;
 ```
 
-replace Namespace with defined namespace in your project.
+replace Namespace with a defined namespace in your project.
 
 #### Notification
 
-If you want customize shell output need implement `INotificationSystem` interface or can use default implementation with `NotificationSystem.Default` static class.
+If you want customize shell output need implement the `INotificationSystem` interface or can use default implementation with `NotificationSystem.Default` static class.
 
 ```csharp
 using ToolBox.Notification;
