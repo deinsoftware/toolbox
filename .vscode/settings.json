@@ -1,5 +1,5 @@
 {
-  "cSpell.words": [
+  "cSpell.userWords": [
     "Colorify",
     "Configurator",
     "Equiman",
@@ -16,6 +16,7 @@
     "keystore",
     "libexec",
     "macos",
+    "netcoreapp",
     "pbcopy",
     "qube",
     "sbin",
@@ -24,11 +25,23 @@
     "trac",
     "unversioned",
     "xclip",
-    "xcopy"
+    "xcopy",
+    "netcoreapp"
   ],
   "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov",
   "editor.tabSize": 4,
   "[markdown]": {
     "editor.tabSize": 2,
-  }
+  },
+  "grammarly.userWords": [
+    "NotificationSystem"
+  ],
+  "cSpell.words": [
+    "Namesapace",
+    "lcov",
+    "nuget",
+    "nupkg",
+    "opencover",
+    "sonarscanner"
+  ]
 }

@@ -1,0 +1,61 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  dotnet: 3.1.201
+  version: 1.6.0
+  key: dein:toolbox
+  organization: dein
+  name: Toolbox
+
+jobs:
+  build:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    name: build on ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup .Net Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.dotnet }}
+      - name: restore
+        run: dotnet restore Toolbox/Toolbox.csproj
+      - name: build
+        run: dotnet build Toolbox/Toolbox.csproj --no-restore
+  test:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup .Net Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.dotnet }}
+      - name: install sonar-scanner
+        run: dotnet tool install --global dotnet-sonarscanner
+      - name: restore
+        run: dotnet restore Toolbox/Toolbox.csproj
+      - name: build
+        run: dotnet build Toolbox/Toolbox.csproj --no-restore
+      - name: restore test
+        run: dotnet restore Toolbox.Tests/Toolbox.Tests.csproj
+      - name: build test
+        run: dotnet build Toolbox.Tests/Toolbox.Tests.csproj --no-restore
+      - name: scanner begin
+        run: dotnet sonarscanner begin /k:"${{ env.key }}" /n:"${{ env.name }}" /v:"${{ env.version }}" /o:"${{ env.organization }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="lcov.opencover.xml"
+      - name: scanner build
+        run: dotnet build Toolbox/Toolbox.csproj
+      - name: scanner test
+        run: dotnet test Toolbox.Tests/Toolbox.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../lcov
+      - name: scanner end
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

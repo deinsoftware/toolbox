@@ -1,6 +1,6 @@
 # dein ToolBox [ for Win & Mac ]
 
-**ToolBox** was created to simplify and automate tasks related to NET Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as library and can be used by other console applications.
+**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as a library and can be used by other console applications.
 
 Contributions or Beer will be appreciated
 
@@ -19,13 +19,13 @@ What things you need to install?
 
 ### Installing
 
-**ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on source code library.
+**ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on the source code library.
 
-Follow this instructions to add **ToolBox** in your project.
+Follow these instructions to add **ToolBox** in your project.
 
 #### Dependencies
 
-- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/12.0.3) Library
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) Library
 
 #### Add As Package
 
@@ -42,7 +42,7 @@ Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/do
 
 Refer to [README](https://github.com/deinsoftware/toolbox/blob/master/README.md) file on GItHub.
 
-To understand how this library works, take a look inside [Sample](https://github.com/deinsoftware/toolbox/tree/master/Sample) folder. Better easy to use guide than words.
+To understand how this library works, take a look inside [Sample](https://github.com/deinsoftware/toolbox/tree/master/Sample) folder. Better easy to use a guide than words.
 
 Just go to `Sample` project folder and run this command on terminal:
 

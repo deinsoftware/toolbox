@@ -9,6 +9,16 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.6.0] - 2020-04-19
+
+**Updated:**
+
+- The framework to .Net Core version 3.1
+
+**Changed:**
+
+- NuGet support only for .Net Core 2.2 and 3.1
+
 ## [1.5.4] - 2019-10-02
 
 **Updated:**
@@ -58,7 +68,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Updated:**
 
-- Framework to .Net Core version 2.1
+- The Framework to .Net Core version 2.1
 
 ## [1.4.2] - 2018-09-17
 
@@ -70,7 +80,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- ExtractLine on empty search.
+- The `ExtractLine` method on empty search.
 
 ## [1.4.0] - 2018-08-25
 
@@ -86,13 +96,13 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- Output scripts on NuGet package.
+- Output scripts on the NuGet package.
 
 ## [1.3.0] - 2018-08-24
 
 **Added:**
 
-- Bridge class to run commands in external terminal.
+- Bridge class to run commands in an external terminal.
 
 ## [1.2.1] - 2018-06-14
 
@@ -115,7 +125,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- Delete All function don't throw exception when folder file not found.
+- Delete All function don't throw an exception when folder file not found.
 
 ## [1.1.3] - 2018-02-19
 
@@ -133,7 +143,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 **Fixed:**
 
-- FilterCreator function when extension is null.
+- `FilterCreator` function when the extension is null.
 
 ## [1.1.0] - 2018-01-05
 

@@ -1,0 +1,34 @@
+name: pack
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  dotnet: 3.1.201
+  version: 1.6.0
+  key: dein:toolbox
+  organization: dein
+  name: Toolbox
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    name: packing
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup .Net Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.dotnet }}
+      - name: set environment
+        run: echo ::set-env name=workspace::$GITHUB_WORKSPACE
+      - name: setup nuget config
+        run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' "${{ env.workspace }}/Package/nuget.config" > nuget.config
+      - name: create file
+        run: dotnet pack Toolbox/Toolbox.csproj /p:NuspecFile=${{ env.workspace }}/Toolbox/Toolbox.nuspec -o ${{ env.workspace }}/Package/ -c release
+      - name: publish nuget on microsoft
+        run: dotnet nuget push "${{ env.workspace }}/Package/dein.Toolbox.${{ env.version }}.nupkg" -k ${{ secrets.NUGET_TOKEN }} -s "nuget" --skip-duplicate --no-symbols true
+      - name: publish nuget on github
+        run: dotnet nuget push "${{ env.workspace }}/Package/dein.Toolbox.${{ env.version }}.nupkg" -s "github" --skip-duplicate --no-symbols true
