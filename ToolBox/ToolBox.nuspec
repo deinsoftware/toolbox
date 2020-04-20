@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -11,9 +11,9 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectUrl>https://github.com/deinsoftware/toolbox</projectUrl>
     <icon>icon.png</icon>
-    <description>C# NETCore ToolBox Library [for Win, Mac and Linux]</description>
-    <summary>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</summary>
-    <releaseNotes>C# NETCore Library with utilities like: files, log, platform, system, transform and validation.</releaseNotes>
+    <description>C# .Net Core ToolBox Library for Console [ Win & Mac ]</description>
+    <summary>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation.</summary>
+    <releaseNotes>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation.</releaseNotes>
     <copyright>dein Software © 2017</copyright>
     <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection command-line</tags>
     <language>en-US</language>
