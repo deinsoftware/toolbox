@@ -1,5 +1,3 @@
-using System;
-
 namespace ToolBox.Platform
 {
     public interface ICommandSystem

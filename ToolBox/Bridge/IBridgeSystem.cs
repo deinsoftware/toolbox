@@ -1,5 +1,3 @@
-using System;
-
 namespace ToolBox.Bridge
 {
     public interface IBridgeSystem

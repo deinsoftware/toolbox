@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
-
 namespace ToolBox.Notification
 {
     public interface INotificationSystem
