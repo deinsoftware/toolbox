@@ -1,0 +1,1191 @@
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Bool.cs
+FN:7,System.Boolean ToolBox.Validations.Bool::SomeFalse(System.Boolean[])
+FNDA:0,System.Boolean ToolBox.Validations.Bool::SomeFalse(System.Boolean[])
+DA:8,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:24,0
+BRDA:11,37,1,0
+BRDA:13,20,0,0
+BRDA:13,20,1,0
+BRDA:11,37,0,0
+LF:13
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Number.cs
+FN:7,System.Boolean ToolBox.Validations.Number::IsNumber(System.String)
+FNDA:0,System.Boolean ToolBox.Validations.Number::IsNumber(System.String)
+DA:8,0
+DA:10,0
+DA:11,0
+DA:12,0
+FN:14,System.Boolean ToolBox.Validations.Number::IsOnRange(System.Int32,System.Int32,System.Int32)
+FNDA:0,System.Boolean ToolBox.Validations.Number::IsOnRange(System.Int32,System.Int32,System.Int32)
+DA:15,0
+DA:16,0
+DA:17,0
+BRDA:16,3,0,0
+BRDA:16,3,1,0
+LF:7
+LH:0
+BRF:2
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Strings.cs
+FN:7,System.Boolean ToolBox.Validations.Strings::SomeNullOrEmpty(System.String[])
+FNDA:0,System.Boolean ToolBox.Validations.Strings::SomeNullOrEmpty(System.String[])
+DA:8,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:24,0
+BRDA:11,39,1,0
+BRDA:13,22,0,0
+BRDA:13,22,1,0
+BRDA:11,39,0,0
+LF:13
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Web.cs
+FN:7,System.Boolean ToolBox.Validations.Web::IsUrl(System.String)
+FNDA:0,System.Boolean ToolBox.Validations.Web::IsUrl(System.String)
+DA:8,0
+DA:9,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+BRDA:11,12,0,0
+BRDA:11,30,0,0
+BRDA:11,30,1,0
+BRDA:11,12,1,0
+LF:7
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Transform/Strings.cs
+FN:7,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
+FNDA:0,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+FN:13,System.String ToolBox.Transform.Strings::RemoveWords(System.String,System.String[])
+FNDA:0,System.String ToolBox.Transform.Strings::RemoveWords(System.String,System.String[])
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+BRDA:17,88,1,0
+BRDA:19,27,0,0
+BRDA:19,27,1,0
+BRDA:19,47,0,0
+BRDA:19,47,1,0
+BRDA:17,88,0,0
+FN:28,System.String ToolBox.Transform.Strings::GetWord(System.String,System.Int32)
+FNDA:0,System.String ToolBox.Transform.Strings::GetWord(System.String,System.Int32)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+BRDA:33,37,0,0
+BRDA:33,37,1,0
+BRDA:37,66,0,0
+BRDA:37,66,1,0
+FN:44,System.String[] ToolBox.Transform.Strings::SplitLines(System.String)
+FNDA:0,System.String[] ToolBox.Transform.Strings::SplitLines(System.String)
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+FN:52,System.String ToolBox.Transform.Strings::ExtractLine(System.String,System.String,System.String[])
+FNDA:0,System.String ToolBox.Transform.Strings::ExtractLine(System.String,System.String,System.String[])
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:63,0
+DA:64,0
+DA:65,0
+BRDA:56,76,1,0
+BRDA:58,35,0,0
+BRDA:58,35,1,0
+BRDA:58,53,0,0
+BRDA:58,53,1,0
+BRDA:56,76,0,0
+LF:47
+LH:0
+BRF:16
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Env.cs
+FN:7,System.String ToolBox.System.Env::GetValue(System.String)
+FNDA:0,System.String ToolBox.System.Env::GetValue(System.String)
+DA:8,0
+DA:9,0
+DA:10,0
+FN:12,System.Void ToolBox.System.Env::SetValue(System.String,System.String)
+FNDA:0,System.Void ToolBox.System.Env::SetValue(System.String,System.String)
+DA:13,0
+DA:14,0
+DA:15,0
+FN:17,System.Boolean ToolBox.System.Env::IsNullOrEmpty(System.String)
+FNDA:0,System.Boolean ToolBox.System.Env::IsNullOrEmpty(System.String)
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Network.cs
+FN:11,System.String ToolBox.System.Network::GetLocalIPv4()
+FNDA:0,System.String ToolBox.System.Network::GetLocalIPv4()
+DA:12,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+FN:23,System.String ToolBox.System.Network::GetOctetsIPv4(System.String,System.Int32)
+FNDA:0,System.String ToolBox.System.Network::GetOctetsIPv4(System.String,System.Int32)
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+BRDA:25,14,0,0
+BRDA:25,14,1,0
+BRDA:32,101,1,0
+BRDA:35,72,0,0
+BRDA:35,72,1,0
+BRDA:32,101,0,0
+LF:25
+LH:0
+BRF:6
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/User.cs
+FN:8,System.String ToolBox.System.User::GetUserName()
+FNDA:0,System.String ToolBox.System.User::GetUserName()
+DA:9,0
+DA:10,0
+DA:11,0
+BRDA:10,12,0,0
+BRDA:10,12,1,0
+FN:13,System.String ToolBox.System.User::GetMachine()
+FNDA:0,System.String ToolBox.System.User::GetMachine()
+DA:14,0
+DA:15,0
+DA:16,0
+FN:18,System.String ToolBox.System.User::GetDomain()
+FNDA:0,System.String ToolBox.System.User::GetDomain()
+DA:19,0
+DA:20,0
+DA:21,0
+BRDA:20,12,0,0
+BRDA:20,12,1,0
+LF:9
+LH:0
+BRF:4
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/CommandSystemMac.cs
+FN:9,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Mac()
+FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Mac()
+DA:10,0
+DA:11,0
+DA:12,0
+FN:18,System.String ToolBox.Platform.CommandSystemMac::PathNormalizer(System.String)
+FNDA:0,System.String ToolBox.Platform.CommandSystemMac::PathNormalizer(System.String)
+DA:19,0
+DA:20,0
+DA:21,0
+FN:23,System.String ToolBox.Platform.CommandSystemMac::GetHomeFolder(System.String)
+FNDA:0,System.String ToolBox.Platform.CommandSystemMac::GetHomeFolder(System.String)
+DA:24,0
+DA:25,0
+DA:26,0
+LF:9
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/CommandSystemWin.cs
+FN:9,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Win()
+FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Win()
+DA:10,0
+DA:11,0
+DA:12,0
+FN:18,System.String ToolBox.Platform.CommandSystemWin::PathNormalizer(System.String)
+FNDA:0,System.String ToolBox.Platform.CommandSystemWin::PathNormalizer(System.String)
+DA:19,0
+DA:20,0
+DA:21,0
+FN:23,System.String ToolBox.Platform.CommandSystemWin::GetHomeFolder(System.String)
+FNDA:0,System.String ToolBox.Platform.CommandSystemWin::GetHomeFolder(System.String)
+DA:24,0
+DA:25,0
+DA:26,0
+BRDA:25,18,0,0
+BRDA:25,18,1,0
+LF:9
+LH:0
+BRF:2
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/Platform.cs
+FN:7,System.Boolean ToolBox.Platform.OS::IsWin()
+FNDA:0,System.Boolean ToolBox.Platform.OS::IsWin()
+DA:8,0
+FN:10,System.Boolean ToolBox.Platform.OS::IsMac()
+FNDA:0,System.Boolean ToolBox.Platform.OS::IsMac()
+DA:11,0
+FN:13,System.Boolean ToolBox.Platform.OS::IsGnu()
+FNDA:0,System.Boolean ToolBox.Platform.OS::IsGnu()
+DA:14,0
+FN:16,System.String ToolBox.Platform.OS::GetCurrent()
+FNDA:0,System.String ToolBox.Platform.OS::GetCurrent()
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+BRDA:18,6,0,0
+BRDA:18,6,1,0
+BRDA:18,17,0,0
+BRDA:18,25,0,0
+BRDA:18,25,1,0
+BRDA:18,36,0,0
+BRDA:18,44,0,0
+BRDA:18,44,1,0
+BRDA:18,17,1,0
+BRDA:18,36,1,0
+LF:9
+LH:0
+BRF:10
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Notification/NotificationSystemDefault.cs
+FN:9,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
+FNDA:0,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
+DA:10,0
+DA:11,0
+DA:12,0
+FN:18,System.Void ToolBox.Notification.DefaultNotificationSystem::ShowAction(System.String,System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::ShowAction(System.String,System.String)
+DA:19,0
+DA:21,0
+FN:23,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardOutput(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardOutput(System.String)
+DA:24,0
+DA:25,0
+DA:26,0
+FN:28,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardWarning(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardWarning(System.String)
+DA:29,0
+DA:30,0
+DA:31,0
+FN:33,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardError(System.String)
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardError(System.String)
+DA:34,0
+DA:35,0
+DA:36,0
+FN:38,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardLine()
+FNDA:0,System.Void ToolBox.Notification.DefaultNotificationSystem::StandardLine()
+DA:39,0
+DA:40,0
+DA:41,0
+LF:17
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Log/FileLogCsv.cs
+FN:9,ToolBox.Files.IFileSystem ToolBox.Log.FileLogCsv::get__fileSystem()
+FNDA:0,ToolBox.Files.IFileSystem ToolBox.Log.FileLogCsv::get__fileSystem()
+DA:10,0
+FN:10,System.String ToolBox.Log.FileLogCsv::get__logFile()
+FNDA:0,System.String ToolBox.Log.FileLogCsv::get__logFile()
+DA:11,0
+FN:11,System.Char ToolBox.Log.FileLogCsv::get__logDelimiter()
+FNDA:0,System.Char ToolBox.Log.FileLogCsv::get__logDelimiter()
+DA:12,0
+FN:38,System.Void ToolBox.Log.FileLogCsv::AccessValidation()
+FNDA:0,System.Void ToolBox.Log.FileLogCsv::AccessValidation()
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+BRDA:40,21,0,0
+BRDA:40,21,1,0
+FN:47,System.Void ToolBox.Log.FileLogCsv::AddHeaders()
+FNDA:0,System.Void ToolBox.Log.FileLogCsv::AddHeaders()
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+FN:62,System.Void ToolBox.Log.FileLogCsv::Save(System.Exception,ToolBox.Log.LogLevel)
+FNDA:0,System.Void ToolBox.Log.FileLogCsv::Save(System.Exception,ToolBox.Log.LogLevel)
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+BRDA:69,163,0,0
+BRDA:69,163,1,0
+BRDA:69,175,0,0
+BRDA:69,175,1,0
+BRDA:70,217,0,0
+BRDA:70,217,1,0
+BRDA:70,229,0,0
+BRDA:70,229,1,0
+FN:13,System.Void ToolBox.Log.FileLogCsv::.ctor(ToolBox.Files.IFileSystem,System.String,System.String,System.Char)
+FNDA:0,System.Void ToolBox.Log.FileLogCsv::.ctor(ToolBox.Files.IFileSystem,System.String,System.String,System.Char)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:35,0
+DA:36,0
+BRDA:16,14,0,0
+BRDA:16,14,1,0
+BRDA:21,34,0,0
+BRDA:21,34,1,0
+BRDA:26,54,0,0
+BRDA:26,54,1,0
+LF:52
+LH:0
+BRF:16
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Log/FileLogTxt.cs
+FN:8,ToolBox.Files.IFileSystem ToolBox.Log.FileLogTxt::get__fileSystem()
+FNDA:0,ToolBox.Files.IFileSystem ToolBox.Log.FileLogTxt::get__fileSystem()
+DA:9,0
+FN:9,System.String ToolBox.Log.FileLogTxt::get__logFile()
+FNDA:0,System.String ToolBox.Log.FileLogTxt::get__logFile()
+DA:10,0
+FN:34,System.Void ToolBox.Log.FileLogTxt::AccessValidation()
+FNDA:0,System.Void ToolBox.Log.FileLogTxt::AccessValidation()
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+BRDA:36,21,0,0
+BRDA:36,21,1,0
+FN:42,System.Void ToolBox.Log.FileLogTxt::Save(System.Exception,ToolBox.Log.LogLevel)
+FNDA:0,System.Void ToolBox.Log.FileLogTxt::Save(System.Exception,ToolBox.Log.LogLevel)
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+BRDA:52,151,0,0
+BRDA:52,151,1,0
+FN:11,System.Void ToolBox.Log.FileLogTxt::.ctor(ToolBox.Files.IFileSystem,System.String,System.String)
+FNDA:0,System.Void ToolBox.Log.FileLogTxt::.ctor(ToolBox.Files.IFileSystem,System.String,System.String)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+BRDA:14,14,0,0
+BRDA:14,14,1,0
+BRDA:19,34,0,0
+BRDA:19,34,1,0
+BRDA:24,54,0,0
+BRDA:24,54,1,0
+LF:41
+LH:0
+BRF:10
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/DiskConfigurator.cs
+FN:13,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
+FNDA:0,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
+DA:14,0
+FN:14,ToolBox.Notification.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
+FNDA:0,ToolBox.Notification.INotificationSystem ToolBox.Files.DiskConfigurator::get__notificationSystem()
+DA:15,0
+FN:35,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.String[])
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.String[])
+DA:36,0
+DA:37,0
+DA:38,0
+FN:40,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.Boolean,System.String[])
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.DiskConfigurator::FilterCreator(System.Boolean,System.String[])
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:47,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:65,0
+DA:66,0
+BRDA:42,7,0,0
+BRDA:42,7,1,0
+BRDA:56,86,0,0
+BRDA:56,86,1,0
+BRDA:60,118,0,0
+BRDA:60,118,1,0
+FN:68,System.Boolean ToolBox.Files.DiskConfigurator::IsFiltered(System.Collections.Generic.List`1<System.String>,System.String)
+FNDA:0,System.Boolean ToolBox.Files.DiskConfigurator::IsFiltered(System.Collections.Generic.List`1<System.String>,System.String)
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+BRDA:70,25,0,0
+BRDA:70,25,1,0
+BRDA:76,42,0,0
+BRDA:76,42,1,0
+BRDA:76,58,0,0
+BRDA:76,58,1,0
+FN:89,System.Void ToolBox.Files.DiskConfigurator::CopyAll(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+FNDA:0,System.Void ToolBox.Files.DiskConfigurator::CopyAll(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:96,0
+DA:97,0
+DA:98,0
+BRDA:91,17,0,0
+BRDA:91,17,1,0
+FN:100,System.Void ToolBox.Files.DiskConfigurator::CopyDirectories(System.String,System.String)
+FNDA:0,System.Void ToolBox.Files.DiskConfigurator::CopyDirectories(System.String,System.String)
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+BRDA:102,42,0,0
+BRDA:102,42,1,0
+BRDA:112,36,0,0
+BRDA:112,36,1,0
+FN:120,System.Void ToolBox.Files.DiskConfigurator::CopyFiles(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+FNDA:0,System.Void ToolBox.Files.DiskConfigurator::CopyFiles(System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>)
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:127,0
+DA:128,0
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+BRDA:122,64,0,0
+BRDA:122,64,1,0
+BRDA:134,48,0,0
+BRDA:134,48,1,0
+FN:143,System.Void ToolBox.Files.DiskConfigurator::DeleteAll(System.String,System.Boolean)
+FNDA:0,System.Void ToolBox.Files.DiskConfigurator::DeleteAll(System.String,System.Boolean)
+DA:144,0
+DA:145,0
+DA:146,0
+DA:147,0
+DA:148,0
+DA:149,0
+DA:150,0
+BRDA:145,14,0,0
+BRDA:145,14,1,0
+FN:16,System.Void ToolBox.Files.DiskConfigurator::.ctor(ToolBox.Files.IFileSystem,ToolBox.Notification.INotificationSystem)
+FNDA:0,System.Void ToolBox.Files.DiskConfigurator::.ctor(ToolBox.Files.IFileSystem,ToolBox.Notification.INotificationSystem)
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+BRDA:19,14,0,0
+BRDA:19,14,1,0
+BRDA:25,41,0,0
+BRDA:25,41,1,0
+LF:106
+LH:0
+BRF:28
+BRH:0
+FNF:10
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/FileSystemDefault.cs
+FN:10,ToolBox.Files.IFileSystem ToolBox.Files.FileSystem::get_Default()
+FNDA:0,ToolBox.Files.IFileSystem ToolBox.Files.FileSystem::get_Default()
+DA:11,0
+DA:12,0
+DA:13,0
+FN:19,System.String ToolBox.Files.DefaultFileSystem::GetPathRoot(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetPathRoot(System.String)
+DA:20,0
+DA:21,0
+DA:22,0
+FN:24,System.String ToolBox.Files.DefaultFileSystem::GetFullPath(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFullPath(System.String)
+DA:25,0
+DA:26,0
+DA:27,0
+FN:29,System.String ToolBox.Files.DefaultFileSystem::PathCombine(System.String[])
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::PathCombine(System.String[])
+DA:30,0
+DA:31,0
+DA:32,0
+FN:34,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileName(System.String)
+DA:35,0
+DA:36,0
+DA:37,0
+FN:39,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetFileNameWithoutExtension(System.String)
+DA:40,0
+DA:41,0
+DA:42,0
+FN:44,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
+FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::FileExists(System.String)
+DA:45,0
+DA:46,0
+DA:47,0
+FN:49,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
+FNDA:0,System.IO.FileStream ToolBox.Files.DefaultFileSystem::FileCreate(System.String)
+DA:50,0
+DA:51,0
+DA:52,0
+FN:54,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
+FNDA:0,System.IO.StreamWriter ToolBox.Files.DefaultFileSystem::FileAppendText(System.String)
+DA:55,0
+DA:56,0
+DA:57,0
+FN:59,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CopyFile(System.String,System.String,System.Boolean)
+DA:60,0
+DA:61,0
+DA:62,0
+FN:64,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::MoveFile(System.String,System.String)
+DA:65,0
+DA:66,0
+DA:67,0
+FN:69,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteFile(System.String)
+DA:70,0
+DA:71,0
+DA:72,0
+FN:74,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String)
+DA:75,0
+DA:76,0
+DA:77,0
+BRDA:76,4,0,0
+BRDA:76,4,1,0
+FN:79,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetFiles(System.String,System.String,System.IO.SearchOption)
+DA:80,0
+DA:81,0
+DA:82,0
+BRDA:81,4,0,0
+BRDA:81,4,1,0
+FN:86,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
+FNDA:0,System.String ToolBox.Files.DefaultFileSystem::GetDirectoryName(System.String)
+DA:87,0
+DA:88,0
+DA:89,0
+FN:91,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
+FNDA:0,System.Boolean ToolBox.Files.DefaultFileSystem::DirectoryExists(System.String)
+DA:92,0
+DA:93,0
+DA:94,0
+FN:96,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::DeleteDirectory(System.String,System.Boolean)
+DA:97,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:103,0
+DA:105,0
+DA:106,0
+FN:108,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
+FNDA:0,System.Void ToolBox.Files.DefaultFileSystem::CreateDirectory(System.String)
+DA:109,0
+DA:110,0
+DA:111,0
+FN:113,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String)
+DA:114,0
+DA:115,0
+DA:116,0
+BRDA:115,4,0,0
+BRDA:115,4,1,0
+FN:118,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.IEnumerable`1<System.String> ToolBox.Files.DefaultFileSystem::GetDirectories(System.String,System.String,System.IO.SearchOption)
+DA:119,0
+DA:120,0
+DA:121,0
+BRDA:120,4,0,0
+BRDA:120,4,1,0
+LF:65
+LH:0
+BRF:8
+BRH:0
+FNF:20
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/PathsConfigurator.cs
+FN:10,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
+FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
+DA:11,0
+FN:11,ToolBox.Files.IFileSystem ToolBox.Files.PathsConfigurator::get__fileSystem()
+FNDA:0,ToolBox.Files.IFileSystem ToolBox.Files.PathsConfigurator::get__fileSystem()
+DA:12,0
+FN:30,System.String ToolBox.Files.PathsConfigurator::Combine(System.String[])
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::Combine(System.String[])
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+FN:37,System.String ToolBox.Files.PathsConfigurator::Split(System.String,System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::Split(System.String,System.String)
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+BRDA:39,9,0,0
+BRDA:39,9,1,0
+BRDA:44,31,0,0
+BRDA:44,31,1,0
+BRDA:50,60,0,0
+BRDA:50,60,1,0
+FN:57,System.String ToolBox.Files.PathsConfigurator::GetFileName(System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetFileName(System.String)
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:64,0
+DA:65,0
+BRDA:59,9,0,0
+BRDA:59,9,1,0
+FN:67,System.String ToolBox.Files.PathsConfigurator::GetFileNameWithoutExtension(System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetFileNameWithoutExtension(System.String)
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:74,0
+DA:75,0
+BRDA:69,9,0,0
+BRDA:69,9,1,0
+FN:77,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetFiles(System.String,System.String,System.IO.SearchOption)
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:84,0
+DA:85,0
+DA:86,0
+BRDA:79,17,0,0
+BRDA:79,17,1,0
+FN:88,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
+FNDA:0,System.String ToolBox.Files.PathsConfigurator::GetDirectoryName(System.String)
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:95,0
+DA:96,0
+BRDA:90,9,0,0
+BRDA:90,9,1,0
+FN:98,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
+FNDA:0,System.Collections.Generic.List`1<System.String> ToolBox.Files.PathsConfigurator::GetDirectories(System.String,System.String)
+DA:99,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:105,0
+DA:106,0
+DA:107,0
+BRDA:100,17,0,0
+BRDA:100,17,1,0
+FN:13,System.Void ToolBox.Files.PathsConfigurator::.ctor(ToolBox.Platform.ICommandSystem,ToolBox.Files.IFileSystem)
+FNDA:0,System.Void ToolBox.Files.PathsConfigurator::.ctor(ToolBox.Platform.ICommandSystem,ToolBox.Files.IFileSystem)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:27,0
+DA:28,0
+BRDA:16,14,0,0
+BRDA:16,14,1,0
+BRDA:21,34,0,0
+BRDA:21,34,1,0
+LF:64
+LH:0
+BRF:20
+BRH:0
+FNF:10
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Bridge.cs
+FN:4,System.String ToolBox.Bridge.Bridge::get_fileName()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_fileName()
+DA:5,0
+FN:5,System.String ToolBox.Bridge.Bridge::get_command()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_command()
+DA:6,0
+FN:6,System.String ToolBox.Bridge.Bridge::get_stderr()
+FNDA:0,System.String ToolBox.Bridge.Bridge::get_stderr()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBash.cs
+FN:11,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
+DA:12,0
+DA:13,0
+DA:14,0
+FN:20,System.String ToolBox.Bridge.BridgeSystemBash::GetFileName()
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBash::GetFileName()
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.String ToolBox.Bridge.BridgeSystemBash::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBash::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+BRDA:27,12,0,0
+BRDA:27,12,1,0
+BRDA:31,58,0,0
+BRDA:31,58,1,0
+FN:39,System.Void ToolBox.Bridge.BridgeSystemBash::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.BridgeSystemBash::Browse(System.String)
+DA:40,0
+DA:41,0
+DA:42,0
+LF:21
+LH:0
+BRF:4
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBat.cs
+FN:11,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
+DA:12,0
+DA:13,0
+DA:14,0
+FN:20,System.String ToolBox.Bridge.BridgeSystemBat::GetFileName()
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBat::GetFileName()
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.String ToolBox.Bridge.BridgeSystemBat::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,System.String ToolBox.Bridge.BridgeSystemBat::CommandConstructor(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+BRDA:27,12,0,0
+BRDA:27,12,1,0
+BRDA:31,58,0,0
+BRDA:31,58,1,0
+FN:39,System.Void ToolBox.Bridge.BridgeSystemBat::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.BridgeSystemBat::Browse(System.String)
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+LF:22
+LH:0
+BRF:4
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Response.cs
+FN:4,System.Int32 ToolBox.Bridge.Response::get_code()
+FNDA:0,System.Int32 ToolBox.Bridge.Response::get_code()
+DA:5,0
+FN:5,System.String ToolBox.Bridge.Response::get_stdout()
+FNDA:0,System.String ToolBox.Bridge.Response::get_stdout()
+DA:6,0
+FN:6,System.String ToolBox.Bridge.Response::get_stderr()
+FNDA:0,System.String ToolBox.Bridge.Response::get_stderr()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/ShellConfigurator.cs
+FN:12,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
+FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
+DA:13,0
+FN:13,ToolBox.Notification.INotificationSystem ToolBox.Bridge.ShellConfigurator::get__notificationSystem()
+FNDA:0,ToolBox.Notification.INotificationSystem ToolBox.Bridge.ShellConfigurator::get__notificationSystem()
+DA:14,0
+FN:39,System.Void ToolBox.Bridge.ShellConfigurator::Browse(System.String)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Browse(System.String)
+DA:40,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+FN:51,ToolBox.Bridge.Response ToolBox.Bridge.ShellConfigurator::Term(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+FNDA:0,ToolBox.Bridge.Response ToolBox.Bridge.ShellConfigurator::Term(System.String,System.Nullable`1<ToolBox.Bridge.Output>,System.String)
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:75,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:97,0
+DA:98,0
+DA:99,0
+DA:100,0
+DA:101,0
+DA:103,0
+DA:104,0
+BRDA:65,189,0,0
+BRDA:65,189,1,0
+BRDA:65,226,0,0
+BRDA:65,226,1,0
+BRDA:72,261,0,0
+BRDA:72,277,0,0
+BRDA:72,287,1,0
+BRDA:77,364,1,0
+BRDA:84,425,1,0
+BRDA:77,364,0,0
+BRDA:72,277,1,0
+BRDA:72,261,1,0
+BRDA:72,287,0,0
+BRDA:84,425,0,0
+FN:106,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String,System.String)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::Result(System.String,System.String)
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+BRDA:109,20,0,0
+BRDA:109,20,1,0
+BRDA:115,50,0,0
+BRDA:115,50,1,0
+FN:15,System.Void ToolBox.Bridge.ShellConfigurator::.ctor(ToolBox.Bridge.IBridgeSystem,ToolBox.Notification.INotificationSystem)
+FNDA:0,System.Void ToolBox.Bridge.ShellConfigurator::.ctor(ToolBox.Bridge.IBridgeSystem,ToolBox.Notification.INotificationSystem)
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:22,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+BRDA:18,14,0,0
+BRDA:18,14,1,0
+BRDA:24,41,0,0
+BRDA:24,41,1,0
+BRDA:33,77,0,0
+BRDA:33,77,1,0
+LF:85
+LH:0
+BRF:24
+BRH:0
+FNF:6
+FNH:0
+end_of_record
