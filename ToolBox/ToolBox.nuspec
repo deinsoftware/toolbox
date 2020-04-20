@@ -12,7 +12,7 @@
     <projectUrl>https://github.com/deinsoftware/toolbox</projectUrl>
     <repository type="git" url="https://github.com/deinsoftware/toolbox" />
     <icon>icon.png</icon>
-    <description>C# .Net Core ToolBox Library for Console [ Win & Mac ]</description>
+    <description>C# .Net Core ToolBox Library for Console [ Win+Mac ]</description>
     <summary>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation.</summary>
     <releaseNotes>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation.</releaseNotes>
     <copyright>dein Software © 2017</copyright>
