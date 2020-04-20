@@ -1,6 +1,7 @@
 # dein ToolBox [ for Win & Mac ]
 
-[![Build Status](https://travis-ci.org/deinsoftware/toolbox.svg?branch=master)](https://travis-ci.org/deinsoftware/toolbox)
+[![build](https://github.com/deinsoftware/toolbox/workflows/build/badge.svg?branch=master)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Abuild)
+[![pack](https://github.com/deinsoftware/toolbox/workflows/pack/badge.svg)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Apack)
 [![NuGet](https://img.shields.io/nuget/v/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
 [![NuGet](https://img.shields.io/nuget/dt/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
