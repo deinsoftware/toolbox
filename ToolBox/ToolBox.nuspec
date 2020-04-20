@@ -10,6 +10,7 @@
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectUrl>https://github.com/deinsoftware/toolbox</projectUrl>
+    <repository type="git" url="https://github.com/deinsoftware/toolbox" />
     <icon>icon.png</icon>
     <description>C# .Net Core ToolBox Library for Console [ Win & Mac ]</description>
     <summary>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation.</summary>
@@ -30,7 +31,6 @@
       <files include="any/**/cmd.*" buildAction="None" copyToOutput="true" flatten="true" />
       <files include="any/**/LICENSE" buildAction="None" copyToOutput="true" flatten="true" />
     </contentFiles>
-    <repository type="git" url="https://github.com/deinsoftware/toolbox" />
   </metadata>
   <files>
     <file src="..\icon.png" target="\" />

@@ -17,8 +17,8 @@
     <PackageProjectUrl>https://github.com/deinsoftware/toolbox</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/deinsoftware/toolbox/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
 
     <TargetFrameworks>netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;osx-x64;linux-x64;</RuntimeIdentifiers>
