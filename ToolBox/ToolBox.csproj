@@ -12,15 +12,16 @@
     <Description>C# NETCore ToolBox Library</Description>
     <Copyright>dein Software © 2017</Copyright>
 
-    <PackageTags>dotnet;core;win10-x64;osx.10.12-x64</PackageTags>
+    <PackageTags>dotnet;core;win-x64;osx-x64</PackageTags>
     <PackageIconUrl>https://github.com/deinsoftware/toolbox/blob/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/deinsoftware/toolbox</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/deinsoftware/toolbox/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
-    <TargetFrameworks>netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2;netcoreapp3.1;</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;osx-x64;linux-x64;</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
