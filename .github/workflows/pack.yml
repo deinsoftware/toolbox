@@ -38,10 +38,10 @@ jobs:
       - name: setup Twitter
         uses: ethomson/send-tweet-action@v1
         with:
-          status: "$ dotnet add package dein.toolbox\n
-          👆${{ env.version }} 🐛🛠\n
+          status: "ToolBox - C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]\n
+          ${{ env.version }} 🐛🛠 version available as NuGet package\n
+          $ dotnet add package dein.toolbox\n
           \n
-          ToolBox - C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ for Win+Mac ]\n
           https://github.com/deinsoftware/toolbox"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
