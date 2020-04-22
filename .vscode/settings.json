@@ -26,7 +26,14 @@
     "unversioned",
     "xclip",
     "xcopy",
-    "netcoreapp"
+    "netcoreapp",
+    "Namesapace",
+    "ethomson",
+    "lcov",
+    "nuget",
+    "nupkg",
+    "opencover",
+    "sonarscanner"
   ],
   "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov",
   "editor.tabSize": 4,
@@ -35,14 +42,5 @@
   },
   "grammarly.userWords": [
     "NotificationSystem"
-  ],
-  "cSpell.words": [
-    "Namesapace",
-    "ethomson",
-    "lcov",
-    "nuget",
-    "nupkg",
-    "opencover",
-    "sonarscanner"
   ]
 }
