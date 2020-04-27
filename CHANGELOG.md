@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.6.4] - 2020-04-27
+
+**Fixed:**
+
+- NuGet development dependency.
+
 ## [1.6.3] - 2020-04-22
 
 **Fixed:**

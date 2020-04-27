@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.6.3</version>
+    <version>1.6.4</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -16,10 +16,10 @@
     <summary>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]</summary>
     <documentation src="README.md" />
     <releaseNotes>Refer to https://github.com/deinsoftware/colorify/blob/master/CHANGELOG.md on GitHub.</releaseNotes>
-    <copyright>dein Software © 2017</copyright>
+    <copyright>dein Software © since 2017</copyright>
     <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection command-line</tags>
     <language>en-US</language>
-    <developmentDependency>true</developmentDependency>
+    <developmentDependency>false</developmentDependency>
     <dependencies>
       <group targetFramework="netcoreapp2.2">
         <dependency id="Newtonsoft.Json" version="12.0.3" />

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.6.3</VersionPrefix>
+    <VersionPrefix>1.6.4</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
 
     <Authors>Camilo Martinez</Authors>
@@ -10,7 +10,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyTitle>ToolBox</AssemblyTitle>
     <Description>C# NETCore ToolBox Library</Description>
-    <Copyright>dein Software © 2017</Copyright>
+    <Copyright>dein Software © since 2017</Copyright>
 
     <PackageTags>dotnet;core;win-x64;osx-x64</PackageTags>
     <PackageIconUrl>https://github.com/deinsoftware/toolbox/blob/master/icon.png</PackageIconUrl>
