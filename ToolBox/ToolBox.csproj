@@ -15,8 +15,8 @@
     <PackageTags>dotnet;core;win-x64;osx-x64</PackageTags>
     <PackageIconUrl>https://github.com/deinsoftware/toolbox/blob/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/deinsoftware/toolbox</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/deinsoftware/toolbox/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
+    <PackageLicenseUrl>https://github.com/deinsoftware/toolbox/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseFile>..\LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -34,7 +34,7 @@
     <!-- Packages -->
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <!-- License -->
-    <None Include="..\LICENSE" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <!-- Resources -->
@@ -43,6 +43,6 @@
     <!-- Packages -->
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <!-- License -->
-    <None Include="..\LICENSE" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
