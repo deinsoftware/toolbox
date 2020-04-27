@@ -1,4 +1,4 @@
-# dein ToolBox [ for Win & Mac ]
+# dein ToolBox [ Win+Mac+Linux ]
 
 [![build](https://github.com/deinsoftware/toolbox/workflows/build/badge.svg?branch=master)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Abuild)
 [![pack](https://github.com/deinsoftware/toolbox/workflows/pack/badge.svg)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Apack)
