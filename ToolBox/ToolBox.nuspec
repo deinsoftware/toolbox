@@ -17,7 +17,7 @@
     <documentation src="README.md" />
     <releaseNotes>Refer to https://github.com/deinsoftware/colorify/blob/master/CHANGELOG.md on GitHub.</releaseNotes>
     <copyright>dein Software © since 2017</copyright>
-    <tags>toolboxes dotnet-core macos windows library csharp toolbox validation-library osdetection command-line</tags>
+    <tags>toolboxes dotnet-core macos windows linux library csharp toolbox validation-library osdetection command-line</tags>
     <language>en-US</language>
     <developmentDependency>false</developmentDependency>
     <dependencies>
