@@ -12,7 +12,7 @@
 
 ![ToolBox](.github/social/preview.png "ToolBox")
 
-**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grew up as a library and can be used by other console applications.
+**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grown up as a library and can be used by other console applications.
 
 > The Code is Dark and Full of Errors!
 > Console is your friend ... don't be afraid!
