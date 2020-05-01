@@ -42,5 +42,13 @@
   },
   "grammarly.userWords": [
     "NotificationSystem"
-  ]
+  ],
+  "grammarly.diagnostics": {
+    "[markdown]": {
+      "ignore": [
+        "inlineCode",
+        "code"
+      ]
+    }
+  }
 }
