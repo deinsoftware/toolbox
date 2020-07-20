@@ -1,14 +1,14 @@
 # dein ToolBox [ Win+Mac+Linux ]
 
-[![build](https://github.com/deinsoftware/toolbox/workflows/build/badge.svg?branch=master)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Abuild)
-[![pack](https://github.com/deinsoftware/toolbox/workflows/pack/badge.svg)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Apack)
-[![NuGet](https://img.shields.io/nuget/v/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
-[![NuGet](https://img.shields.io/nuget/dt/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
-[![License](https://img.shields.io/github/license/deinsoftware/toolbox)](LICENSE.md)
+[![github-actions-build](https://github.com/deinsoftware/toolbox/workflows/build/badge.svg?branch=master)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Abuild)
+[![github-actions-pack](https://github.com/deinsoftware/toolbox/workflows/pack/badge.svg)](https://github.com/deinsoftware/toolbox/actions?query=workflow%3Apack)
+[![nuget-version](https://img.shields.io/nuget/v/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
+[![nuget-downloads](https://img.shields.io/nuget/dt/dein.ToolBox.svg)](https://www.nuget.org/packages/dein.ToolBox/)
+[![sonar-reliability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
+[![sonar-security](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
+[![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
+[![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein%3Atoolbox&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Atoolbox)
+[![license](https://img.shields.io/github/license/deinsoftware/toolbox)](LICENSE.md)
 
 ![ToolBox](.github/social/preview.png "ToolBox")
 
@@ -507,9 +507,9 @@ See also the list of [contributors](https://github.com/deinsoftware/toolbox/cont
 
 If this project help you reduce time to develop, you can give me a cup of coffee.
 
-[![Donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/equiman/3)
-[![Donate](https://img.shields.io/badge/patreon-donate-red)](https://patreon.com/equiman)
-[![Donate](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-orange)](https://buymeacoff.ee/equiman)
+[![paypal](https://img.shields.io/badge/-PayPal-gray?style=flat&labelColor=00457C&logo=paypal&logoColor=white&link=https://paypal.me/equiman/3)](https://paypal.me/equiman/3)
+[![patreon](https://img.shields.io/badge/-Patreon-gray?style=flat&labelColor=052d49&logo=patreon&logoColor=F96854&link=https://patreon.com/equiman)](https://patreon.com/equiman)
+[![buymeacoffe](https://img.shields.io/badge/-Buy%20Me%20A%20Coffee-gray?style=flat&labelColor=FF813F&logo=buy-me-a-coffee&logoColor=white&link=https://buymeacoff.ee/equiman)](https://buymeacoff.ee/equiman)
 
 No sponsors yet! Will you be the first?
 
