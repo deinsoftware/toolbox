@@ -54,6 +54,8 @@ What things you need to install?
 
 - [.Net SDK](https://www.microsoft.com/net/download)
 
+**ToolBox** supports `netcoreapp3.1` and `net5.0` target frameworks.
+
 ### Installing
 
 **ToolBox** is available as [project](https://github.com/deinsoftware/toolbox/) or [package](https://www.nuget.org/packages/dein.ToolBox). We strong recommend add as a NuGet package if don't need make modifications directly on the source code library.
