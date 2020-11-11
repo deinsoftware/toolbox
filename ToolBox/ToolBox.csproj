@@ -2,14 +2,14 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.6.4</VersionPrefix>
+    <VersionPrefix>1.7.0</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
 
     <Authors>Camilo Martinez</Authors>
     <Company>dein Software</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyTitle>ToolBox</AssemblyTitle>
-    <Description>C# NETCore ToolBox Library</Description>
+    <Description>C# .Net ToolBox Library</Description>
     <Copyright>dein Software © since 2017</Copyright>
 
     <PackageTags>dotnet;core;win-x64;osx-x64</PackageTags>
@@ -21,13 +21,13 @@
     <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
-    <TargetFrameworks>netcoreapp2.2;netcoreapp3.1;</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;osx-x64;linux-x64;</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
@@ -36,7 +36,7 @@
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />

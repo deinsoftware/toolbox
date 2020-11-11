@@ -12,7 +12,7 @@
 
 ![ToolBox](.github/social/preview.png "ToolBox")
 
-**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grown up as a library and can be used by other console applications.
+**ToolBox** was created to simplify and automate tasks related to the .Net console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grown up as a library and can be used by other console applications.
 
 > The Code is Dark and Full of Errors!
 > Console is your friend ... don't be afraid!
@@ -52,7 +52,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install?
 
-- [NET Core SDK](https://www.microsoft.com/net/download)
+- [.Net SDK](https://www.microsoft.com/net/download)
 
 ### Installing
 
@@ -100,7 +100,7 @@ Inside your .csproj add Command Bridge files on build:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
         <!-- Command Bridge -->
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
@@ -485,7 +485,7 @@ Web.IsUrl(value); //Return true if value is an http or https valid address
 
 ### Built With
 
-- [.Net Core](https://dotnet.github.io/) - ASP.NET Core is a free and open-source web framework, and the next generation of ASP.NET, developed by Microsoft and the community.
+- [.Net](https://dotnet.github.io/) - .Net is a free and open-source web framework, developed by Microsoft and the community.
 - [VS Code](https://code.visualstudio.com/) - Code editing redefined.
 - [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
 

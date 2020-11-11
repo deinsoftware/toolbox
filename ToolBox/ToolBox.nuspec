@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.6.4</version>
+    <version>1.7.0</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -12,19 +12,19 @@
     <projectUrl>https://github.com/deinsoftware/toolbox</projectUrl>
     <repository type="git" url="https://github.com/deinsoftware/toolbox" />
     <icon>icon.png</icon>
-    <description>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]</description>
-    <summary>C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]</summary>
+    <description>C# .Net Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]</description>
+    <summary>C# .Net Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]</summary>
     <documentation src="README.md" />
     <releaseNotes>Refer to https://github.com/deinsoftware/colorify/blob/master/CHANGELOG.md on GitHub.</releaseNotes>
     <copyright>dein Software © since 2017</copyright>
-    <tags>toolboxes dotnet-core macos windows linux library csharp toolbox validation-library osdetection command-line</tags>
+    <tags>toolboxes dotnet macos windows linux library csharp toolbox validation-library osdetection command-line</tags>
     <language>en-US</language>
     <developmentDependency>false</developmentDependency>
     <dependencies>
-      <group targetFramework="netcoreapp2.2">
+      <group targetFramework="netcoreapp3.1">
         <dependency id="Newtonsoft.Json" version="12.0.3" />
       </group>
-      <group targetFramework="netcoreapp3.1">
+      <group targetFramework="net5.0">
         <dependency id="Newtonsoft.Json" version="12.0.3" />
       </group>
     </dependencies>
@@ -36,10 +36,10 @@
     <file src="..\icon.png" target="\" />
     <file src="..\LICENSE.md" target="LICENSE.md" />
     <file src="..\Package\README.md" target="README.md" />
-    <file src="bin\release\netcoreapp2.2\T*.dll" target="lib\netcoreapp2.2" />
-    <file src="bin\release\netcoreapp2.2\T*.pdb" target="lib\netcoreapp2.2" />
     <file src="bin\release\netcoreapp3.1\T*.dll" target="lib\netcoreapp3.1" />
     <file src="bin\release\netcoreapp3.1\T*.pdb" target="lib\netcoreapp3.1" />
+    <file src="bin\release\net5.0\T*.dll" target="lib\net5.0" />
+    <file src="bin\release\net5.0\T*.pdb" target="lib\net5.0" />
     <file src="cmd.*" target="contentFiles\any\any\" />
   </files>
 </package>

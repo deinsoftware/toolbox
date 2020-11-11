@@ -6,8 +6,8 @@ on:
       - "v*"
 
 env:
-  dotnet: 3.1.201
-  version: 1.6.4
+  dotnet: 5.0.100
+  version: 1.7.0
 
 jobs:
   pack:
@@ -15,7 +15,7 @@ jobs:
     name: packing
     steps:
       - uses: actions/checkout@v2
-      - name: setup .Net Core
+      - name: setup .Net
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.dotnet }}
@@ -38,7 +38,7 @@ jobs:
       - name: setup Twitter
         uses: ethomson/send-tweet-action@v1
         with:
-          status: "ToolBox - C# .Net Core Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]\n
+          status: "ToolBox - C# .Net Library with utilities like: command line, files, log, platform, shell, system, transform and validation [ Win+Mac+Linux ]\n
           ${{ env.version }} 🐛🛠 version available as NuGet package\n
           $ dotnet add package dein.toolbox\n
           \n

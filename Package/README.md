@@ -1,6 +1,6 @@
 # dein ToolBox [ Win+Mac+Linux ]
 
-**ToolBox** was created to simplify and automate tasks related to the .Net Core console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grown up as a library and can be used by other console applications.
+**ToolBox** was created to simplify and automate tasks related to the .Net console. Was born in [HardHat](https://github.com/deinsoftware/hardhat/) project as a Class. Now grown up as a library and can be used by other console applications.
 
 Contributions or Beer will be appreciated
 
@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things do you need to install?
 
-- [NET Core SDK](https://www.microsoft.com/net/download)
+- [.Net SDK](https://www.microsoft.com/net/download)
 
 ### Installing
 

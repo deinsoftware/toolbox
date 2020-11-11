@@ -9,6 +9,16 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.7.0] - 2020-11-11
+
+**Removed:**
+
+- Drop support for .Net Core version 2.2, because is out of support and will not receive security updates in the future.
+
+**Added:**
+
+- Support for .Net version 5.0
+
 ## [1.6.4] - 2020-04-27
 
 **Fixed:**
