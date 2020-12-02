@@ -170,7 +170,7 @@ namespace Sample
         {
             try
             {
-                _shell.Term("java -showversion 2>&1", Output.Internal);
+                _shell.Term("dotnet --help", Output.Internal);
 
                 Back();
             }
@@ -184,7 +184,7 @@ namespace Sample
         {
             try
             {
-                Response result = _shell.Term("node -v", Output.External);
+                Response result = _shell.Term("dotnet --version", Output.External);
 
                 Back();
             }
@@ -198,9 +198,8 @@ namespace Sample
         {
             try
             {
-                string id = "99999999";
-                string name = "App Test iOS";
-                string command = $"ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID='{id}' --variable APP_NAME='{name}'";
+                string id = "42";
+                string command = $"dotnet --diagnostics APP_ID='{id}'";
 
                 string path = _path.Combine("~", "Folder with Spaces");
 
