@@ -36,9 +36,6 @@
   ],
   "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov",
   "editor.tabSize": 4,
-  "[markdown]": {
-    "editor.tabSize": 2
-  },
   "grammarly.userWords": [
     "NotificationSystem"
   ],
@@ -49,5 +46,6 @@
         "code"
       ]
     }
-  }
+  },
+  "omnisharp.useEditorFormattingSettings": true
 }

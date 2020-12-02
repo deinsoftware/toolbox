@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.7.1] - 2020-12-01
+
+**Fixed:**
+
+- Commands with single quotes and paths with spaces.
+
 ## [1.7.0] - 2020-11-11
 
 **Removed:**
