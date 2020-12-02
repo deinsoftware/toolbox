@@ -3,8 +3,10 @@ using Colorify;
 using static Colorify.Colors;
 using Colorify.UI;
 using ToolBox.Bridge;
+using ToolBox.Files;
 using ToolBox.Notification;
 using ToolBox.Platform;
+using System.Collections.Generic;
 
 namespace Sample
 {
@@ -15,10 +17,24 @@ namespace Sample
         public static IBridgeSystem _bridgeSystem { get; set; }
         public static ShellConfigurator _shell { get; set; }
 
+        public static DiskConfigurator _disk {get; set;}
+        public static PathsConfigurator _path {get; set;}
+
         static void Main(string[] args)
         {
             try
             {
+                _disk = new DiskConfigurator(FileSystem.Default);
+                switch (OS.GetCurrent())
+                {
+                    case "win":
+                        _path = new PathsConfigurator(CommandSystem.Win, FileSystem.Default);
+                        break;
+                    case "mac":
+                        _path = new PathsConfigurator(CommandSystem.Mac, FileSystem.Default);
+                        break;
+                }
+
                 _notificationSystem = NotificationSystem.Default;
                 switch (OS.GetCurrent())
                 {
@@ -53,30 +69,32 @@ namespace Sample
         static void Menu()
         {
             _colorify.Clear();
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.AlignCenter("SHELL", Colorify.Colors.bgInfo);
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.BlankLines();
-                _colorify.Write($"{" 1]",-4}"); _colorify.WriteLine("Browse");
-                _colorify.Write($"{" 2]",-4}"); _colorify.WriteLine("Hidden");
-                _colorify.Write($"{" 3]",-4}"); _colorify.WriteLine("Internal");
-                _colorify.Write($"{" 4]",-4}"); _colorify.WriteLine("External");
-                _colorify.BlankLines();
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.BlankLines();
-                _colorify.Write($"{" Make your choice:",-25}");
-                string opt = Console.ReadLine();
-                opt = opt.ToLower();
+            _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
+            _colorify.AlignCenter("SHELL", Colorify.Colors.bgInfo);
+            _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
+            _colorify.BlankLines();
+            _colorify.Write($"{" 1]",-4}"); _colorify.WriteLine("Browse");
+            _colorify.Write($"{" 2]",-4}"); _colorify.WriteLine("Hidden");
+            _colorify.Write($"{" 3]",-4}"); _colorify.WriteLine("Internal");
+            _colorify.Write($"{" 4]",-4}"); _colorify.WriteLine("External");
+            _colorify.Write($"{" 5]",-4}"); _colorify.WriteLine("Special");
+            _colorify.BlankLines();
+            _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
+            _colorify.BlankLines();
+            _colorify.Write($"{" Make your choice:",-25}");
+            string opt = Console.ReadLine();
+            opt = opt.ToLower();
 
-                _colorify.Clear();
-                switch (opt)
-                {
-                    case "1": Browse(); break;
-                    case "2": ShellHidden(); break;
-                    case "3": ShellInternal(); break;
-                    case "4": ShellExternal(); break;
-                    default: Menu(); break;
-                }
+            _colorify.Clear();
+            switch (opt)
+            {
+                case "1": Browse(); break;
+                case "2": ShellHidden(); break;
+                case "3": ShellInternal(); break;
+                case "4": ShellExternal(); break;
+                case "5": Special(); break;
+                default: Menu(); break;
+            }
         }
 
         static void Back()
@@ -98,31 +116,7 @@ namespace Sample
         {
             try
             {
-                _colorify.Clear();
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.AlignCenter("SHELL", Colorify.Colors.bgInfo);
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.BlankLines();
-                _colorify.Write($"{" 1]",-4}"); _colorify.WriteLine("Browse");
-                _colorify.Write($"{" 2]",-4}"); _colorify.WriteLine("Hidden");
-                _colorify.Write($"{" 3]",-4}"); _colorify.WriteLine("Internal");
-                _colorify.Write($"{" 4]",-4}"); _colorify.WriteLine("External");
-                _colorify.BlankLines();
-                _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
-                _colorify.BlankLines();
-                _colorify.Write($"{" Make your choice:",-25}");
-                string opt = Console.ReadLine();
-                opt = opt.ToLower();
-
-                _colorify.Clear();
-                switch (opt)
-                {
-                    case "1": Browse(); break;
-                    case "2": ShellHidden(); break;
-                    case "3": ShellInternal(); break;
-                    case "4": ShellExternal(); break;
-                    default: Menu(); break;
-                }
+                Menu();
             }
             catch (Exception ex)
             {
@@ -172,7 +166,7 @@ namespace Sample
         {
             try
             {
-                _shell.Term("java -version 2>&1", Output.Internal);
+                _shell.Term("java -showversion 2>&1", Output.Internal);
 
                 Back();
             }
@@ -187,6 +181,29 @@ namespace Sample
             try
             {
                 Response result = _shell.Term("node -v", Output.External);
+
+                Back();
+            }
+            catch (Exception ex)
+            {
+                MessageException(ex.ToString());
+            }
+        }
+
+        static void Special()
+        {
+            try
+            {
+                _colorify.WriteLine("Path with spaces");
+                _colorify.WriteLine("Command with single 'quotes'");
+
+                string id = "99999999";
+                string name = "App Test iOS";
+                string command = $"ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID='{id}' --variable APP_NAME='{name}'";
+
+                string path = _path.Combine("~", "Folder with Spaces");
+
+                Response result = _shell.Term(command, Output.External, path);
 
                 Back();
             }
