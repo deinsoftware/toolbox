@@ -17,8 +17,8 @@ namespace Sample
         public static IBridgeSystem _bridgeSystem { get; set; }
         public static ShellConfigurator _shell { get; set; }
 
-        public static DiskConfigurator _disk {get; set;}
-        public static PathsConfigurator _path {get; set;}
+        public static DiskConfigurator _disk { get; set; }
+        public static PathsConfigurator _path { get; set; }
 
         static void Main(string[] args)
         {
@@ -79,6 +79,8 @@ namespace Sample
             _colorify.Write($"{" 4]",-4}"); _colorify.WriteLine("External");
             _colorify.Write($"{" 5]",-4}"); _colorify.WriteLine("Special");
             _colorify.BlankLines();
+            _colorify.WriteLine($"{" X] Exit",-17}", txtDanger);
+            _colorify.BlankLines();
             _colorify.DivisionLine('=', Colorify.Colors.bgInfo);
             _colorify.BlankLines();
             _colorify.Write($"{" Make your choice:",-25}");
@@ -93,6 +95,8 @@ namespace Sample
                 case "3": ShellInternal(); break;
                 case "4": ShellExternal(); break;
                 case "5": Special(); break;
+                case "X": Exit(); break;
+                case "x": Exit(); break;
                 default: Menu(); break;
             }
         }
@@ -194,9 +198,6 @@ namespace Sample
         {
             try
             {
-                _colorify.WriteLine("Path with spaces");
-                _colorify.WriteLine("Command with single 'quotes'");
-
                 string id = "99999999";
                 string name = "App Test iOS";
                 string command = $"ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID='{id}' --variable APP_NAME='{name}'";
@@ -211,6 +212,12 @@ namespace Sample
             {
                 MessageException(ex.ToString());
             }
+        }
+
+        static void Exit()
+        {
+            _colorify.ResetColor();
+            _colorify.Clear();
         }
     }
 }
