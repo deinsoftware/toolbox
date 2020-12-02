@@ -54,9 +54,14 @@ namespace ToolBox.Bridge
             var stderr = new StringBuilder();
             var stdout = new StringBuilder();
 
+            var cmd = _bridgeSystem.CommandConstructor(command, output, dir);
+
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = _bridgeSystem.GetFileName();
-            startInfo.Arguments = _bridgeSystem.CommandConstructor(command, output, dir);
+            for (int i = 0; i < cmd.Length; i++)
+            {
+                startInfo.ArgumentList.Add(cmd[i]);
+            }
             startInfo.RedirectStandardInput = false;
             startInfo.RedirectStandardOutput = (output != Output.External);
             startInfo.RedirectStandardError = (output != Output.External);

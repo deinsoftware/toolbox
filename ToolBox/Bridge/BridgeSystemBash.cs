@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace ToolBox.Bridge
 {
@@ -22,18 +23,25 @@ namespace ToolBox.Bridge
             return "/bin/bash";
         }
 
-        public string CommandConstructor(string command, Output? output = Output.Hidden, string dir = "")
+        public string[] CommandConstructor(string command, Output? output = Output.Hidden, string dir = "")
         {
-            if (!String.IsNullOrEmpty(dir))
-            {
-                dir = $" '{dir}'";
-            }
+            List<string> list = new List<string>();
+
             if (output == Output.External)
             {
-                command = $"sh \"{Directory.GetCurrentDirectory()}/cmd.sh\" '{command}'{dir}";
+                list.Add($"{@Directory.GetCurrentDirectory()}/cmd.sh");
+                list.Add($"{command}");
+                if (!String.IsNullOrEmpty(dir))
+                {
+                    list.Add($"{@dir}");
+                }
             }
-            command = $"-c \"{command}\"";
-            return command;
+            else
+            {
+                list.Add($"-c");
+                list.Add($"{command}");
+            }
+            return list.ToArray();
         }
 
         public void Browse(string url)
