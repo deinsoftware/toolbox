@@ -5,7 +5,7 @@ dir="$2";
 if [ -n "$dir" ]; then
 
 osascript <<EOF
-    tell application "Terminal" to do script "cd $dir; $cmd"
+    tell application "Terminal" to do script "cd \"$dir\"; $cmd"
 EOF
 
 else
