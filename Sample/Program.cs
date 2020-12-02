@@ -198,7 +198,7 @@ namespace Sample
         {
             try
             {
-                string id = "42";
+                string id = "42 A";
                 string command = $"dotnet --diagnostics APP_ID='{id}'";
 
                 string path = _path.Combine("~", "Folder with Spaces");
