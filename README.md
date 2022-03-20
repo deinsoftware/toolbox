@@ -54,7 +54,7 @@ What things you need to install?
 
 - [.Net SDK](https://www.microsoft.com/net/download)
 
-**ToolBox** supports `netcoreapp3.1` and `net5.0` target frameworks.
+**ToolBox** supports `netstandard2.1`, `netcoreapp3.1`, `net5.0` and `net6.0` target frameworks.
 
 ### Installing
 
@@ -102,12 +102,12 @@ Inside your .csproj add Command Bridge files on build:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-    <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
         <!-- Command Bridge -->
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
         <!-- Packages -->
-        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <!-- Projects -->
         <ProjectReference Include="..\..\_devTB\ToolBox\ToolBox.csproj" />
     </ItemGroup>

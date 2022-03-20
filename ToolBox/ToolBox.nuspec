@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.7.1</version>
+    <version>1.8.0</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -21,11 +21,17 @@
     <language>en-US</language>
     <developmentDependency>false</developmentDependency>
     <dependencies>
+      <group targetFramework="netstandard2.1">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+      </group>
       <group targetFramework="netcoreapp3.1">
-        <dependency id="Newtonsoft.Json" version="12.0.3" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
       </group>
       <group targetFramework="net5.0">
-        <dependency id="Newtonsoft.Json" version="12.0.3" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
       </group>
     </dependencies>
     <contentFiles>
@@ -36,10 +42,14 @@
     <file src="..\icon.png" target="\" />
     <file src="..\LICENSE.md" target="LICENSE.md" />
     <file src="..\Package\README.md" target="README.md" />
+    <file src="bin\release\netstandard2.1\T*.dll" target="lib\netstandard2.1" />
+    <file src="bin\release\netstandard2.1\T*.pdb" target="lib\netstandard2.1" />
     <file src="bin\release\netcoreapp3.1\T*.dll" target="lib\netcoreapp3.1" />
     <file src="bin\release\netcoreapp3.1\T*.pdb" target="lib\netcoreapp3.1" />
     <file src="bin\release\net5.0\T*.dll" target="lib\net5.0" />
     <file src="bin\release\net5.0\T*.pdb" target="lib\net5.0" />
+    <file src="bin\release\net6.0\T*.dll" target="lib\net6.0" />
+    <file src="bin\release\net6.0\T*.pdb" target="lib\net6.0" />
     <file src="cmd.*" target="contentFiles\any\any\" />
   </files>
 </package>

@@ -6,8 +6,8 @@ on:
       - "v*"
 
 env:
-  dotnet: 5.0.100
-  version: 1.7.1
+  dotnet: 6.0.201
+  version: 1.8.0
 
 jobs:
   pack:

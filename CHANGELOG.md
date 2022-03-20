@@ -9,6 +9,13 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.8.0] - 2022-03-20
+
+**Added:**
+
+- Support for .Net version 6.0
+- Support for netstandard version 2.1
+
 ## [1.7.1] - 2020-12-01
 
 **Fixed:**

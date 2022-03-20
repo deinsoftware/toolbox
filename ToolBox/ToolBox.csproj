@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.7.1</VersionPrefix>
+    <VersionPrefix>1.8.0</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
 
     <Authors>Camilo Martinez</Authors>
@@ -21,18 +21,28 @@
     <RepositoryUrl>https://github.com/deinsoftware/toolbox</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
-    <TargetFrameworks>netcoreapp3.1;net5.0;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1;net5.0;net6.0;</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;osx-x64;linux-x64;</RuntimeIdentifiers>
 
     <DebugType>full</DebugType>
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <!-- Resources -->
+    <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Packages -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <!-- License -->
+    <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
     <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
@@ -41,7 +51,16 @@
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
     <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <!-- License -->
+    <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <!-- Resources -->
+    <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Packages -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
