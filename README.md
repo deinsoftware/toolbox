@@ -62,17 +62,12 @@ What things you need to install?
 
 Follow these instructions to add **ToolBox** in your project.
 
-#### Dependencies
-
-- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) Library
-
 #### Add As Package
 
 In your project folder, where is located .csproj file run this command on terminal:
 
 ```terminal
 dotnet add package dein.ToolBox
-dotnet add package Newtonsoft.Json
 ```
 
 Official documentation: [dotnet add package](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package)
@@ -106,8 +101,6 @@ Inside your .csproj add Command Bridge files on build:
         <!-- Command Bridge -->
         <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
         <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
-        <!-- Packages -->
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <!-- Projects -->
         <ProjectReference Include="..\..\_devTB\ToolBox\ToolBox.csproj" />
     </ItemGroup>

@@ -9,6 +9,12 @@ Fixed       for any bug fixes.
 Security    to invite users to upgrade in case of vulnerabilities.
 -->
 
+## [1.9.0] - 2022-03-20
+
+**Removed:**
+
+- NewtonSoft library dependency
+
 ## [1.8.0] - 2022-03-20
 
 **Added:**

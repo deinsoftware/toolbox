@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ToolBox</AssemblyName>
     <PackageId>ToolBox</PackageId>
-    <VersionPrefix>1.8.0</VersionPrefix>
+    <VersionPrefix>1.9.0</VersionPrefix>
     <ProjectGuid>{cc239282-2799-4be9-a88f-aa8b744b533d}</ProjectGuid>
 
     <Authors>Camilo Martinez</Authors>
@@ -31,8 +31,6 @@
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
-    <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
@@ -41,8 +39,6 @@
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
-    <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
@@ -50,8 +46,6 @@
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
-    <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
@@ -59,8 +53,6 @@
     <!-- Resources -->
     <None Update="cmd.bat" CopyToOutputDirectory="PreserveNewest" />
     <None Update="cmd.sh" CopyToOutputDirectory="PreserveNewest" />
-    <!-- Packages -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <!-- License -->
     <None Include="..\LICENSE.md" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

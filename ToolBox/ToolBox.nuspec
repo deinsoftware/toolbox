@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -21,18 +21,10 @@
     <language>en-US</language>
     <developmentDependency>false</developmentDependency>
     <dependencies>
-      <group targetFramework="netstandard2.1">
-        <dependency id="Newtonsoft.Json" version="13.0.1" />
-      </group>
-      <group targetFramework="netcoreapp3.1">
-        <dependency id="Newtonsoft.Json" version="13.0.1" />
-      </group>
-      <group targetFramework="net5.0">
-        <dependency id="Newtonsoft.Json" version="13.0.1" />
-      </group>
-      <group targetFramework="net6.0">
-        <dependency id="Newtonsoft.Json" version="13.0.1" />
-      </group>
+      <group targetFramework="netstandard2.1" />
+      <group targetFramework="netcoreapp3.1" />
+      <group targetFramework="net5.0" />
+      <group targetFramework="net6.0" />
     </dependencies>
     <contentFiles>
       <files include="any/**/cmd.*" buildAction="None" copyToOutput="true" flatten="true" />
