@@ -482,7 +482,7 @@ Web.IsUrl(value); //Return true if value is an http or https valid address
 
 - [.Net](https://dotnet.github.io/) - .Net is a free and open-source web framework, developed by Microsoft and the community.
 - [VS Code](https://code.visualstudio.com/) - Code editing redefined.
-- [SonarQube](https://sonarcloud.io/dashboard/index/dein:toolbox) - Continuous code quality.
+- [SonarQube](https://sonarcloud.io) - Continuous code quality.
 
 ### Contributing
 
