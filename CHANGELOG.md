@@ -15,7 +15,7 @@ Security    to invite users to upgrade in case of vulnerabilities.
 
 - Support with dotnet 6 publish NuGet commands
 
-## [1.9.2] - 2022-05-19
+## [1.9.1] - 2022-05-19
 
 **Changed:**
 
