@@ -8,7 +8,7 @@ on:
 
 env:
   dotnet: 6.0.201
-  version: 1.9.1
+  version: 1.9.2
   key: dein:toolbox
   organization: dein
   name: ToolBox
