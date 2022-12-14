@@ -1,4 +1,4 @@
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Bool.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Validations\Bool.cs
 FN:7,System.Boolean ToolBox.Validations.Bool::SomeFalse(System.Boolean[])
 FNDA:0,System.Boolean ToolBox.Validations.Bool::SomeFalse(System.Boolean[])
 DA:8,0
@@ -25,7 +25,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Number.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Validations\Number.cs
 FN:7,System.Boolean ToolBox.Validations.Number::IsNumber(System.String)
 FNDA:0,System.Boolean ToolBox.Validations.Number::IsNumber(System.String)
 DA:8,0
@@ -46,7 +46,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Strings.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Validations\Strings.cs
 FN:7,System.Boolean ToolBox.Validations.Strings::SomeNullOrEmpty(System.String[])
 FNDA:0,System.Boolean ToolBox.Validations.Strings::SomeNullOrEmpty(System.String[])
 DA:8,0
@@ -73,7 +73,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Validations/Web.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Validations\Web.cs
 FN:7,System.Boolean ToolBox.Validations.Web::IsUrl(System.String)
 FNDA:0,System.Boolean ToolBox.Validations.Web::IsUrl(System.String)
 DA:8,0
@@ -94,7 +94,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Transform/Strings.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Transform\Strings.cs
 FN:7,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
 FNDA:0,System.String ToolBox.Transform.Strings::CleanSpecialCharacters(System.String)
 DA:8,0
@@ -175,7 +175,7 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Env.cs
+SF:d:\Developer\dein\toolbox\ToolBox\System\Env.cs
 FN:7,System.String ToolBox.System.Env::GetValue(System.String)
 FNDA:0,System.String ToolBox.System.Env::GetValue(System.String)
 DA:8,0
@@ -199,7 +199,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/Network.cs
+SF:d:\Developer\dein\toolbox\ToolBox\System\Network.cs
 FN:11,System.String ToolBox.System.Network::GetLocalIPv4()
 FNDA:0,System.String ToolBox.System.Network::GetLocalIPv4()
 DA:12,0
@@ -242,7 +242,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/System/User.cs
+SF:d:\Developer\dein\toolbox\ToolBox\System\User.cs
 FN:8,System.String ToolBox.System.User::GetUserName()
 FNDA:0,System.String ToolBox.System.User::GetUserName()
 DA:9,0
@@ -269,7 +269,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/CommandSystemMac.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Platform\CommandSystemMac.cs
 FN:9,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Mac()
 FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Mac()
 DA:10,0
@@ -292,7 +292,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/CommandSystemWin.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Platform\CommandSystemWin.cs
 FN:9,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Win()
 FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Platform.CommandSystem::get_Win()
 DA:10,0
@@ -317,7 +317,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Platform/Platform.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Platform\Platform.cs
 FN:7,System.Boolean ToolBox.Platform.OS::IsWin()
 FNDA:0,System.Boolean ToolBox.Platform.OS::IsWin()
 DA:8,0
@@ -352,7 +352,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Notification/NotificationSystemDefault.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Notification\NotificationSystemDefault.cs
 FN:9,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
 FNDA:0,ToolBox.Notification.INotificationSystem ToolBox.Notification.NotificationSystem::get_Default()
 DA:10,0
@@ -389,7 +389,7 @@ BRH:0
 FNF:6
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Log/FileLogCsv.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Log\FileLogCsv.cs
 FN:9,ToolBox.Files.IFileSystem ToolBox.Log.FileLogCsv::get__fileSystem()
 FNDA:0,ToolBox.Files.IFileSystem ToolBox.Log.FileLogCsv::get__fileSystem()
 DA:10,0
@@ -440,14 +440,14 @@ DA:73,0
 DA:74,0
 DA:75,0
 DA:76,0
-BRDA:69,163,0,0
-BRDA:69,163,1,0
-BRDA:69,175,0,0
-BRDA:69,175,1,0
-BRDA:70,217,0,0
-BRDA:70,217,1,0
-BRDA:70,229,0,0
-BRDA:70,229,1,0
+BRDA:69,227,0,0
+BRDA:69,227,1,0
+BRDA:69,239,0,0
+BRDA:69,239,1,0
+BRDA:70,296,0,0
+BRDA:70,296,1,0
+BRDA:70,308,0,0
+BRDA:70,308,1,0
 FN:13,System.Void ToolBox.Log.FileLogCsv::.ctor(ToolBox.Files.IFileSystem,System.String,System.String,System.Char)
 FNDA:0,System.Void ToolBox.Log.FileLogCsv::.ctor(ToolBox.Files.IFileSystem,System.String,System.String,System.Char)
 DA:14,0
@@ -479,7 +479,7 @@ BRH:0
 FNF:7
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Log/FileLogTxt.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Log\FileLogTxt.cs
 FN:8,ToolBox.Files.IFileSystem ToolBox.Log.FileLogTxt::get__fileSystem()
 FNDA:0,ToolBox.Files.IFileSystem ToolBox.Log.FileLogTxt::get__fileSystem()
 DA:9,0
@@ -516,8 +516,8 @@ DA:57,0
 DA:58,0
 DA:59,0
 DA:60,0
-BRDA:52,151,0,0
-BRDA:52,151,1,0
+BRDA:52,173,0,0
+BRDA:52,173,1,0
 FN:11,System.Void ToolBox.Log.FileLogTxt::.ctor(ToolBox.Files.IFileSystem,System.String,System.String)
 FNDA:0,System.Void ToolBox.Log.FileLogTxt::.ctor(ToolBox.Files.IFileSystem,System.String,System.String)
 DA:12,0
@@ -548,7 +548,7 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/DiskConfigurator.cs
+SF:d:\Developer\dein\toolbox\ToolBox\File\DiskConfigurator.cs
 FN:13,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
 FNDA:0,ToolBox.Files.IFileSystem ToolBox.Files.DiskConfigurator::get__fileSystem()
 DA:14,0
@@ -710,7 +710,7 @@ BRH:0
 FNF:10
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/FileSystemDefault.cs
+SF:d:\Developer\dein\toolbox\ToolBox\File\FileSystemDefault.cs
 FN:10,ToolBox.Files.IFileSystem ToolBox.Files.FileSystem::get_Default()
 FNDA:0,ToolBox.Files.IFileSystem ToolBox.Files.FileSystem::get_Default()
 DA:11,0
@@ -831,7 +831,7 @@ BRH:0
 FNF:20
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/File/PathsConfigurator.cs
+SF:d:\Developer\dein\toolbox\ToolBox\File\PathsConfigurator.cs
 FN:10,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
 FNDA:0,ToolBox.Platform.ICommandSystem ToolBox.Files.PathsConfigurator::get__commandSystem()
 DA:11,0
@@ -943,7 +943,7 @@ BRH:0
 FNF:10
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Bridge.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Bridge\Bridge.cs
 FN:4,System.String ToolBox.Bridge.Bridge::get_fileName()
 FNDA:0,System.String ToolBox.Bridge.Bridge::get_fileName()
 DA:5,0
@@ -960,7 +960,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBash.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Bridge\BridgeSystemBash.cs
 FN:12,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
 FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bash()
 DA:13,0
@@ -1012,7 +1012,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/BridgeSystemBat.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Bridge\BridgeSystemBat.cs
 FN:12,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
 FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.BridgeSystem::get_Bat()
 DA:13,0
@@ -1065,7 +1065,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/Response.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Bridge\Response.cs
 FN:4,System.Int32 ToolBox.Bridge.Response::get_code()
 FNDA:0,System.Int32 ToolBox.Bridge.Response::get_code()
 DA:5,0
@@ -1082,7 +1082,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:/Users/jcmartinez/Developer/DEIN/Projects/_devTB/ToolBox/Bridge/ShellConfigurator.cs
+SF:d:\Developer\dein\toolbox\ToolBox\Bridge\ShellConfigurator.cs
 FN:12,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
 FNDA:0,ToolBox.Bridge.IBridgeSystem ToolBox.Bridge.ShellConfigurator::get__bridgeSystem()
 DA:13,0

@@ -5,8 +5,8 @@ on:
     types: [published]
 
 env:
-  dotnet: 6.0.203
-  version: 1.10.0
+  dotnet: 7.0.101
+  version: 1.11.0
 
 jobs:
   pack:

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>dein.ToolBox</id>
-    <version>1.10.0</version>
+    <version>1.11.0</version>
     <title>dein ToolBox</title>
     <authors>Camilo Martinez</authors>
     <owners>dein,equiman</owners>
@@ -25,6 +25,7 @@
       <group targetFramework="netcoreapp3.1" />
       <group targetFramework="net5.0" />
       <group targetFramework="net6.0" />
+      <group targetFramework="net7.0" />
     </dependencies>
     <contentFiles>
       <files include="any/**/cmd.*" buildAction="None" copyToOutput="true" flatten="true" />
@@ -42,6 +43,8 @@
     <file src="bin\release\net5.0\T*.pdb" target="lib\net5.0" />
     <file src="bin\release\net6.0\T*.dll" target="lib\net6.0" />
     <file src="bin\release\net6.0\T*.pdb" target="lib\net6.0" />
+    <file src="bin\release\net7.0\T*.dll" target="lib\net7.0" />
+    <file src="bin\release\net7.0\T*.pdb" target="lib\net7.0" />
     <file src="cmd.*" target="contentFiles\any\any\" />
   </files>
 </package>

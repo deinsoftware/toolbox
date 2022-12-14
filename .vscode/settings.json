@@ -35,12 +35,22 @@
   ],
   "dotnet-test-explorer.testArguments": "/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov",
   "editor.tabSize": 4,
-  "grammarly.userWords": ["NotificationSystem"],
+  "grammarly.userWords": [
+    "NotificationSystem"
+  ],
   "grammarly.diagnostics": {
     "[markdown]": {
-      "ignore": ["inlineCode", "code"]
+      "ignore": [
+        "inlineCode",
+        "code"
+      ]
     }
   },
   "omnisharp.useEditorFormattingSettings": true,
-  "cSpell.words": ["dotnet", "Eomm", "netstandard"]
+  "cSpell.words": [
+    "deinsoftware",
+    "dotnet",
+    "Eomm",
+    "netstandard"
+  ]
 }
